@@ -1,7 +1,6 @@
 @charset "utf-8"; /* @ch */
 
 /* reset(초기화) */
-
 * {
     box-sizing: border-box; /* bx */
 }
@@ -23,8 +22,8 @@ ul {
    padding: 0; /* p0 */
 }
 a {
-    text-decoration: underline; /* tdu, 밑줄-> a, ins 태그의 기본값 */
+    text-decoration: underline; /* tdu, 밑줄 -> a태그, ins태그 기본값 */
     text-decoration: overline; /* tdo, 윗줄 */
-    text-decoration: line-through; /* tdl, 취소선 */
+    text-decoration: line-through; /* tdl, 취소선 -> del태그 */
     text-decoration: none; /* tdn, 없음 */
 }

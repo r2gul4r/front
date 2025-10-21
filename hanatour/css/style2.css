@@ -64,8 +64,8 @@
 
 /* section2 area */
 #sec2 {
-    /* background-image url(), url(), ... 앞에 쓴것이 위로 올라감 */
-    background: url(./assets/honorsville/bg_percel.jpg) no-repeat 50%/1180px 351px, url(./assets/honorsville/bg_section02.jpg) no-repeat 50%/cover;
+    /* background-image: url(), url(), ... 앞에 쓴것이 위로 올라감 */
+    background: url(../assets/img/bg_percel.jpg) no-repeat 50%/1180px 351px, url(../assets/img/bg_section02.jpg) no-repeat 50%/cover;
 }
 
 #sec2 .card-list {
@@ -146,11 +146,14 @@
 
 /* section3 area */
 #sec3 {
-    /* 배경이미지 + paralax Scrolling */
+    /* 
+        배경 이미지 +
+        패럴랙스 스크롤링(Parallax Scrolling)
+            - 웹사이트나 게임 등에서 배경 레이어는 느리게, 전경 레이어는 빠르게 움직여 입체감과 깊이감을 주는 디자인 기법입니다. 
+    */
     background-attachment: fixed; /* bga */
-    background: url(./assets/2025_autumn_pick_bg_250916.jpg)no-repeat 50%/cover fixed;
+    background: url(../assets/img/2025_autumn_pick_bg_250916.jpg) no-repeat 50%/cover fixed;
 }
-
 #sec3 .intro {
     position: absolute;
     left: 400px;
@@ -160,18 +163,16 @@
     height: 520px;
     text-align: right; /* tar */
 }
-
 #sec3 .intro h2 span {
     display: block;
 }
-
 #sec3 .intro p:first-of-type {
-    margin: 48px 0 16px; 
+    margin: 48px 0 16px; /* m48-0-16 */
 }
 #sec3 .intro a {
-     display: inline-block;
-    border: 1px solid #fff;;
-    border-radius: 5px;
+    display: inline-block;
+    border: 2px solid var(--white-color); /* bd */
+    border-radius: 5px; /* bdrr */
     margin-top: 28px;
     padding: 6px 24px;
 }
@@ -179,7 +180,7 @@
     background: var(--white-color);
     color: #222;
     text-decoration: underline;
-    transition: .7s;
+    transition: 0.7s; /* trs, 전환 */
 }
 #sec3 .product {
     position: absolute;
@@ -189,5 +190,3 @@
     width: 880px;
     height: 550px;
 }
-
-/* footer */

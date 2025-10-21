@@ -48,11 +48,12 @@ h2 {
     color: #fff;
     /* 글자사이 간격: 자간 */
     letter-spacing: 1rem; /* ls */
-    background: #404040;
-    /* 일반적으로 좌우 패딩을 상하보다 많이 준다. */
-    padding: 8px 24px 10px 30px;
-    /* text-transform: uppercase; */ /* 모두 대문자 [tt] */
-}   
+    text-transform: uppercase;
+
+}
+header a {
+    color: #ddd;
+}
 footer a, footer p {
     color: #fff;
 }
@@ -73,13 +74,27 @@ h2 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); /* trft */
+    background: #404040;
+    /* 일반적으로 좌우 패딩을 상하보다 많이 준다. */
+    padding: 8px 24px 10px 30px;
 }
 
 
-#home {
-    height: 100vh;
-    background: url(../assets/img/jules-marvin-eguilos-xLNl6CWIJng-unsplash.jpg) no-repeat 50% 50%/cover;  
-} 
+/* header area */
+header .gnb ul {
+    position: fixed; /* pof */
+    display: flex;
+}
+header .gnb li a {
+    display: inline-block;
+    padding: 8px 16px;
+}
+header .gnb li a:hover {
+    background: #333;
+}
+header .gnb li i {
+    margin-right: 8px;
+}
 
 /* footer area */
 footer {
@@ -98,4 +113,67 @@ footer .top-btn {
 }
 footer .top-btn i {
     margin-top: 8px;
+}
+
+
+/* section area: index.html */
+#home {
+    height: 100vh;
+    background: url(../assets/img/jules-marvin-eguilos-xLNl6CWIJng-unsplash.jpg) no-repeat 50% 50%/cover;  
+} 
+#home h2 {
+    background: #444;
+}
+
+/* section area: contact.html */
+#contact .contact {
+  width: 600px;
+}
+#contact .parallax-bg {
+    position: relative;
+    height: 400px;
+    background: url(/assets/img/parallax3.jpg)no-repeat 50% 50%/cover fixed;
+}
+#contact .parallax-bg h2 {
+    background: transparent;
+}
+
+#contact .container {
+    display: flex;
+    justify-content: center;
+    margin: 48px 0 96px;
+}
+#contact .map {
+    width: 280px;
+    height: 160px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 32px;
+}
+#contact .contact p {
+    margin: 24px 0 16px;
+}
+#contact input {
+    width: 295px;
+    height: 45px;
+}
+#contact input:first-of-type {
+    margin-right: 7px;
+}
+#contact textarea {
+    width: 100%;
+    resize: none;
+    height: 150px;
+    margin-top: 10px;
+}
+#contact button {
+    background: #111;
+    padding: 12px 24px;
+    margin-top: 10px;
+}
+#contact i {
+    margin-right: 8px;
+}
+#contact .addr i {
+    margin-right: 16px;
 }
