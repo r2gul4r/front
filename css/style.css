@@ -9,6 +9,14 @@
     font-family: Lato-Regular;
     src: url(./../assets/font/Lato-Regular.ttf);
 }
+@font-face {
+    /* 사용자 정의 폰트명 */
+    font-family: Lato-Thin;
+    /* 절대주소 */
+    /* URL: 프로토콜:// */
+    src: url(https://r2gul4r.github.io/jfs/assets/font/Lato-Thin.ttf);
+
+}
 
 /* reset(초기화) */
 * {box-sizing: border-box;}
