@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자</title>
+    <style>
+        /* 
+            1. 가상 클래스(Pseudo-class, 슈도 클래스) 선택자
+                :hover
+            2. 가상 요소(Pseudo-element) 선택자
+                ::after
+                ::before
+        */
+
+        div {
+            width: 340px; /* w340 */
+            height: 268px; /* h268 */
+            border: 5px solid red;
+            cursor: pointer; /* cu */
+            /* 넘친부분 숨기기 */
+            overflow: hidden; /* o */
+        }
+        img {
+            /* 전환(transition) */
+            /* 초(second) */
+            transition: 0.5s; /* trs */
+        }
+        /* div에 마우스를 올렸을 때 css를 div에 적용 */
+        /* div:hover {} */
+        /* div에 마우스를 올렸을 때 css를 img에 적용  */
+        div:hover img {
+            /* 변형(transform): 이미지 확대(scale) */
+            transform: scale(1.2, 1.2); /* trf:s */
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 선택자3</h1>
+    <div>
+        <img src="https://www.honorsville.co.kr/upload/temp/20255303432444.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관">
+    </div>
+</body>
+</html>

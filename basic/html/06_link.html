@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크: a</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <!-- 
+        <a href="URL">텍스트</a>
+            필수 속성: href
+                    - URL: 웹 주소
+                    - 메일 주소
+                    - 전화 번호
+                    - 파일(.html, .png, .pdf, ...)
+            선택 속성: target
+                        _self(기본값): 현재 창
+                        _blank: 새 창
+                        _top: 최상의 부모
+                        _parent: 상위 부모
+            글로벌 속성: title - 설명글 말충선(툴팁)
+    -->
+    <!-- 평상시(link): 파란색, 밑줄 -->
+    <!-- 활성화(active): 빨간색, 밑줄 -->
+    <!-- 방문후(visited): 보라색, 밑줄 -->
+
+    <!-- 
+        URL(uniform resource locator)
+            - 웹상에서 리소스의 주소를 나타냄. 넷에서 특정정보를 찾기 위한 웹주소 
+
+            -https://www.example.com[:443]
+        -->
+
+    <!-- target="_self": 하나의 사이트 내의 링크 -->
+     <a href="https://github.com/r2gul4r/jfs" title="텍스트를 클릭하면 나의 작품을 확인하실수 있습니다">개인 사이트</a>
+
+     <!-- taeget="_blank": 하나의 사이트에서 다른 사이트를 열 때 -->
+     <a href="https://www.figma.com" target="_blank"><img src="../assets/images/figma.svg" alt="피그마로 이동" title="현재 이미지는 피그마 로고입니다"></a>
+    
+     <!-- 메일주소 -->
+    메일주소<a href="mailto: leflex0821@gmail.com">leflex0821@gmail.com</a>
+
+    <!-- 전화번호 링크걸기 -->
+    연락처 <a href="tel: 010-5067-7916">010-5067-7916</a>
+
+</body>
+</html>

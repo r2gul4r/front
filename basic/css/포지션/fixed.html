@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed</title>
+    <style>
+      body  {
+        height: 2000px;
+      }
+        /* 
+            position: 위치;
+                기본값: static;
+                relative: 
+                  - static과 같지만 left, right, top, bottom을 사용
+                  - left, right, top, bottom의 기준은? 자기 자신
+                absolute
+                  - left, right, top, bottom의 기준은? 조상(부모)
+                fixed: 
+                  -  left, right, top, bottom의 기준은? 뷰포트
+                sticky
+
+            left
+            right
+            top
+            bottom
+        */
+      div {
+        position: fixed;/* pof */
+        width: 100px;
+        height: 100px;
+        left: 30px;
+        top: 30px;
+        /* right: 30px; *//* r30 */
+        /* bottom: 30px; *//* b30 */
+        border: 3px solid #73ad21;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

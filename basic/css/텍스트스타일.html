@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트스타일</title>
+    <style>
+        h1 {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 2em; /* 엠(M), 부모 글자 크기의 2배 = 32px */
+            color: red;/* c */
+            font-style: italic;/* fs */
+            font-weight: lighter;/* fwl */
+            text-align: left;/* ta */
+            text-align: center;/* tac */
+            text-align: right;/* tar */
+
+            /* 속기 속성 */
+            /* font는 속성 값의 순서가 있다 */
+            /* font: 스타일 크기/줄간격 글꼴; */
+            font: bold italic 2em/1.5 'Segoe UI', sans-serif; 
+            font: 2em 'Segoe UI', sans-serif; 
+            /* font: 'Segoe UI', sans-serif; (x)
+            font: 2em; (X)
+            font: bold 2em; (X) */
+
+            /* border는 속성 값의 순서가 없다. */
+            /* border: 두께 스타일 색;
+            border: 스타일 두께 색;
+            border: 색 스타일 두께; */
+        }
+        p {
+            font-size: 16px;
+            /* 본문의 줄 간격은 1.5 ~ 2가 가독성이 좋다 */
+            line-height: 1.5; /* lh1.5, 글자 크기의 1.5배 = 24px*/
+            text-align: justify;/* taj, 양쪽 맞춤 */
+            /* Q? 단어 사이가 떨어지는 현상 방지 방법은? */
+            word-break: break-all;/* 단어 단위 줄 바꿈이 글자 단위 줄 바꿈으로 바뀐다. */
+            overflow-wrap: break-word;/* ofw */
+        }
+    </style>
+</head>
+<body>
+    <h1>Text style</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, facere, eum distinctio nihil neque nisi amet doloremque sequi id molestiae nostrum impedit ab voluptate obcaecati sunt animi quasi cum sed corporis minima error assumenda temporibus. Nobis eum velit nihil sit molestias beatae tempore repellendus ipsa? Qui neque distinctio facere rerum!</p>
+</body>
+</html>

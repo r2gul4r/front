@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: 박스모델</title>
+    <style>
+        /* 
+            margin: 여백;
+
+            margin-top
+            margin-right
+            margin-bottom
+            margin-left
+        */
+
+        div {
+            /* 개별 속성 */
+            margin-top: 100px;
+            margin-right: 150px;
+            margin-bottom: 100px;
+            margin-left: 150px;
+
+            /* 속기 속성(Shorthand Property) */
+            /* margin: 상 우 하 좌 */
+            margin: 100px 150px 80px 150px;
+            /* margin: 상하 좌우 */
+            margin: 100px 150px;
+            /* margin: 상 좌우 하 */
+            margin: 100px 150px 80px;
+            /* margin: 상하좌우 */
+            margin: 100px;
+
+            /* 참고: 음수 지정 가능 */
+            background-color: darkgoldenrod;
+        }
+        
+        .div2 {
+            /* 위아래 margin 겹칠 경우 큰 쪽으로 지정된다. */
+            margin-top: 200px; /* mt200 */
+        }
+
+        section {
+            /* 방법3: diplay: flex 또는 grid; */
+            /* display: flex;
+            flex-direction: column; */
+            /* 방법1: display: flow-root; */
+            display: flow-root;
+            /* 방법2: overflow: auto 또는 hidden; */
+            /* overflow: auto; */
+            /* overflow: hidden; */
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>나는 단락이다.</div>
+        <div class="div2">나는 단락이다.</div>
+    </section>
+</body>
+
+</html>

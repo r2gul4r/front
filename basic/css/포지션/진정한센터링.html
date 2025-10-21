@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진정한 중앙 배치</title>
+    <style>
+        /* 뷰포트 전체를 차지하게 설정하기 */
+        .body {
+            margin: 0;                              
+        }
+        .outer {
+            background-color: lightblue;
+            height: 100vh;
+        }
+        .inner {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* 
+                transform: translateX(h위치);
+                transform: translateY(v위치);
+                transform: translate(h,v);
+                    h: horizontal(수평)
+                    v: vertical(수직)
+            */
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 400px;
+            /* margin: 150px 0 0 150px; */
+            /* margin-left: -200px;
+            margin-top: -200px; */
+            background-color: lightpink;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">콘텐츠</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS: flexbox</title>
+    <style>
+    /* 
+        justify-content
+            주축의 정렬
+            기본값은 normal(flex-start)
+                  flex-start: 시작을 기준으로 배치
+                  flex-end: 플렉스 아이템을 끝을 기준으로 배치
+                  center: 플렉스 아이템을 가운데 배치
+                  space-between: 시작과 끝에 플렉스 아이템을 배치하고, 나머지 공간을 균등 분배
+                  space-around: 플렉스 아이템을 둘러싼 공간을 같은 공간으로 분배
+                  space-evenly: 플렉스 아이템의 크기를 제외한 남은 공간을 균등 분배
+    */
+
+        /* 플렉스 컨테이너 */
+      .flex-container {
+        display: flex;
+        background-color: dodgerblue;
+        margin: 20px;
+      }
+
+        /* 플렉스 아이템 */
+      .flex-container div {
+        background-color: #f1f1f1;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      .fx1 {justify-content: flex-start;}/* jcfs */
+      .fx2 {justify-content: flex-end;}/* jcfe */
+      .fx3 {justify-content: center;}/* jcc */
+      .fx4 {justify-content: space-between;}/* jcsb */
+      .fx5 {justify-content: space-around}/* jcsa */
+      .fx6 {justify-content: space-evenly;}/* jcse */
+
+
+    </style>
+  </head>
+  <body>
+    <div class="flex-container fx1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container fx2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container fx3">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container fx4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container fx5">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container fx6">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+
+</body>
+</html>

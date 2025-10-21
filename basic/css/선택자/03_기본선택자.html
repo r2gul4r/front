@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자</title>
+    <style>
+        /* 전체(Universal) 선택자 */
+        * {border: 1px solid red;}
+        /* 그룹(Group) 선택자 
+            - 속성과 속성 값이 같을 경우 하나로 묶어 적용
+            형식: 선택자, 선택자, ...
+        */
+        html, body, h1, ul, li {border: 1px solid red;}
+
+        /* 타입(Type) 선택자: 태그 이름 */
+        li {color: orange;}
+        /* .클래스(Class) 선택자 */
+        /* 클래스는 한 페이지에서 중복 사용 가능 */
+        .li {color: darkcyan;}
+        /* #아이디(ID, identity, 식별자) 선택자 */
+        /* 아이디는 한 페이지에서 중복 사용x */
+        /* #li {color: darkkhaki;} */
+        .li2 {color: darkkhaki;}
+
+        /* 
+            아이디/클래스 이름 지정 규칙
+                1. 첫 글자에 숫자는 사용x
+                    예) .card1 (o)
+                    예) .1card (x)
+                2. 특수 문자는 -, _만 사용!
+                3. 캐밥-케이스 사용(관례적)
+        */
+    </style>
+</head>
+<body>
+    <h1>CSS 선택자</h1>
+    <ul>
+        <!-- shift+alt+방향키 -->
+        <li>태그 선택자</li>
+        <!-- 클래스는 여러 개의 값을 갖을 수 있다. -->
+        <!-- 아이디는 여러 개의 값을 갖을 수 없다. -->
+        <li id="li" class="li li2 li3">아이디 선택자</li>
+        <li class="li">클래스 선택자</li>
+        <li id="li2">그룹 선택자</li>
+        <li>전체 선택자</li>
+    </ul>
+</body>
+</html>

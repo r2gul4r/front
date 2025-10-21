@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Flexible</title>
+    <style>
+      /* 
+        부모 요소: 플렉스 컨테이너 
+          1. flex-direction
+            - row(행): 왼쪽에서 오른쪽
+            - column(열): 위에서 아래
+            - 만약 row이면 주축이 row, 교차축은 column
+            - 만약 column이면 주축이 column, 교차축은 row
+            -> 플렉스 항목의 표시 방향을 설정합니다
+
+          2. flex-wrap
+            -> 플렉스 항목을 래핑할지 여부를 지정합니다.
+            -> 플렉스 아이템이 많아서 플렉스 컨테이너 영억을 벋어날 경우 nowrap은
+               줄바꿈 되지 않고, wrap은 줄 바꿈된다
+            -> align-content의 경우
+          3. flex-flow
+            flex-direction및에 대한 약어 속성flex-wrap
+
+          4. justify-content 
+            -> 플렉스 아이템의 주축의 정렬
+          5. align-items 
+            -> 플렉스 아이템의 교차축의 정렬
+            -> 아래와 같은 상태에서 플렉스 아이템 한 줄씩 정렬된다.
+          6. align-content 
+            -> 플렉스 아이템의 교차축의 정렬
+            -> flex-wrap: nowrap;인 상태에서는 사용x
+            -> flex-wrap: wrap;인 상태일 때 사용!
+            -> 플렉스 아이템이 많아서 플렉스 컨테이너 영역을 벋어날 
+            경우 플렉스 아이템 전체가 그룹되어 정렬
+        
+        */
+
+      .container {
+        display: flex;
+        height: 600px;
+        background-color: DodgerBlue;
+      }
+
+      /* 
+        자식 요소: 플렉스 아이템 
+            - 가로 배치
+            - 크기: 콘텐츠 크기
+            -> display:inline-block; 과 같은 성격
+      */
+      .container div {
+        background-color: #f1f1f1;
+        margin: 10px;
+        padding: 20px;
+      }
+
+      /* div:nth-of-type(1) {font-size: 50px;}
+      div:nth-of-type(2) {font-size: 20px;}
+      div:nth-of-type(3) {font-size: 80px;} */
+    </style>
+  </head>
+
+  <body>
+    <!-- div.container는 플렉스 컨테이너 -->
+    <div class="container">
+      <!-- 플렉스 컨테이너의 자식은 플레스 아이템 -->
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+      <div>Item 4</div>
+      <div>Item 5</div>
+      <div>Item 6</div>
+      <div>Item 7</div>
+      <div>Item 8</div>
+      <div>Item 9</div>
+      <div>Item 10</div>
+      <div>Item 11</div>
+      <div>Item 12</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+CSS(Cascading Style Sheet)란?
+    - 스타일, 디자인
+
+어디에(where) 작성?
+    1. inline(인라인)
+        -> HTML 태그의 style속성 값으로 기록
+        -> 예) <p style="color:red;">
+    2. internal(내부)
+        -> HTML의 <style>태그 사이에 기록
+        -> 예) <style>p {color: red;}</style>
+    3. external(외부) -> 프로젝트
+        -> HTML의 <link>태그에 *.css 파일 연결
+        -> 예) <link rel="stylesheet" href="경로/파일명.css">
+
+형식
+    선택자 {
+        속성: 값;
+        속성: 값;
+        ...
+    }
+
+CSS 우선 순위
+0. !important -> 위치 관계 없다.
+1. 인라인 -> <body> 사이 필요한 태그에 기록
+2. 내부 또는 외부 -> <head> 사이에 기록
+3. 아래 기록한 것
+
+선택자 {
+    color: red !important;
+    color: blue;
+    color: yellow;
+}

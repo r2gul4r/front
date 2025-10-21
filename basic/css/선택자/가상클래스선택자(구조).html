@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS선택자</title>
+    <style>
+        /*  
+            가상 클래스 선택자
+                자식 요소의 타입을 구분x
+                    선택자:nth-child(n)
+                    선택자:nth-last-child(n)
+                    선택자:first-child
+                    선택자:last-child
+                    선택자:only-child
+                
+                    자식 요소의 타입(예, h1, h2 , p)을 구분o
+                    선택자:nth-of-type(n)       1번째 요소부터
+                    선택자:nth-last-of-type(n)  마지막 요소부터
+                    선택자:first-of-type        첫번째 요소
+                    선택자:last-of-type         마지막 요소
+                    선택자:only-of-type         자식이 하나인 요소
+            
+                n은 숫자(1, 2, 3...)
+                    수열(2n, 2n+1, ...)
+                    odd, even
+
+                홀수 번째: odd 또는 2n+1, 2n-1
+                짝수 번째: even 또는 2n
+                3의 배수 번쨰: 3n
+                4의 배수 번째: 4n
+
+                :empty      요소는 요소를 선택
+        */
+        /* p요소중 첫번째 요소 선택 */
+         p:nth-of-type(1) {text-decoration: underline;} /* tdu */
+         p:first-of-type {text-decoration: underline;} 
+
+         p:nth-child(1) {font-style: italic;} /* fs */ /* 적용x */
+         p:first-child {font-style: italic;} /* 적용x */
+
+        /* p요소중 마지막 번째 요소 선택 */
+         p:last-of-type {text-decoration: underline;}
+         p:nth-last-of-type(1) {text-decoration: underline;}
+
+        p:last-child {font-style: italic;}
+        p:nth-last-child(1) {font-style: italic;}
+
+        /* p요소중 짝수 번째 선택 */
+        p:nth-of-type(even) {color: red;}
+        p:nth-of-type(2n) {color: red;}
+
+        p:nth-child(even) {background-color: yellow;}
+        p:nth-child(2n) {background-color: yellow;}
+        
+        /* p요소중 홀수 번째 선택 */
+        p:nth-of-type(2n+1) {color: blue;}
+        p:nth-of-type(2n-1) {color: blue;}
+        p:nth-of-type(odd) {color: blue;}
+
+        p:nth-child(2n+1) {font-size: 40px;} 
+        p:nth-child(2n-1) {font-size: 40px;} 
+        p:nth-child(odd) {font-size: 40px;} 
+
+        /* div자식이 하나인 요소 */
+        div h2:only-of-type {border-left: 10px solid red;}
+        div h2:only-child {border-right: 10px solid blue;}
+
+        div:empty {
+            display: block;
+            width: 200px;
+            height: 100px;
+            border: 1px solid red;
+        }
+        </style>
+<body>
+    <div>
+        <h2>형제 관계 선택자</h2>
+        <!-- <p>나는 1번째 문단이다.</p> -->
+    </div>
+    <div></div>
+    <div>
+        <h1>1.가상 클래스 선택자</h1>
+        <h2>2.형제 선택자</h2>
+        <p>3.나는 1번째 문단이다</p>
+        <p>4.나는 2번째 문단이다</p>
+        <h2>5.인접 형제 선택자</h2>
+        <p>6.나는 3번째 문단이다</p>
+        <p>7.나는 4번째 문단이다</p>
+        <p>8.나는 5번째 문단이다</p>
+        <p>9.나는 6번째 문단이다</p>
+    </div>
+</body>
+</html>

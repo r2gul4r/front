@@ -1,0 +1,8 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="100" height="100" rx="20" fill="black" style="fill:black;fill-opacity:1;"/>
+<path d="M25 24.5C25 17.5964 30.5964 12 37.5 12H50V37H37.5C30.5964 37 25 31.4036 25 24.5Z" fill="#FF4B4B" style="fill:#FF4B4B;fill:color(display-p3 1.0000 0.2933 0.2933);fill-opacity:1;"/>
+<path d="M25 49.5C25 42.5964 30.5964 37 37.5 37H50V62H37.5C30.5964 62 25 56.4036 25 49.5Z" fill="#B13CBC" style="fill:#B13CBC;fill:color(display-p3 0.6937 0.2334 0.7356);fill-opacity:1;"/>
+<path d="M25 74.5C25 67.5964 30.5964 62 37.5 62H50V74.5C50 81.4036 44.4036 87 37.5 87C30.5964 87 25 81.4036 25 74.5Z" fill="#02B51D" style="fill:#02B51D;fill:color(display-p3 0.0068 0.7115 0.1125);fill-opacity:1;"/>
+<path d="M75 24.5C75 31.4036 69.4036 37 62.5 37H50L50 12L62.5 12C69.4036 12 75 17.5964 75 24.5Z" fill="#FF9999" style="fill:#FF9999;fill:color(display-p3 1.0000 0.6010 0.6010);fill-opacity:1;"/>
+<rect x="75" y="62" width="25" height="25" rx="12.5" transform="rotate(180 75 62)" fill="#0BBEFF" style="fill:#0BBEFF;fill:color(display-p3 0.0433 0.7449 1.0000);fill-opacity:1;"/>
+</svg>

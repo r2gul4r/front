@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS: flexbox</title>
+    <style>
+    /* 
+        align-items
+            교차축의 정렬
+            기본값은 normal(stretch)
+                  stretch: 플렉스 아이템의 크기가 부모 크기의 100% 지정
+                  flex-start: 플렉스 아이템을 시작을 기준으로 배치
+                  flex-end: 플렉스 아이템을 끝을 기준으로 배치
+                  center: 플렉스 아이템을 가운데 배치
+    */
+
+        /* 플렉스 컨테이너 */
+      .flex-container {
+        display: flex;
+        height: 300px;
+        background-color: dodgerblue;
+        margin: 20px;
+      }
+
+        /* 플렉스 아이템 */
+      .flex-container div {
+        background-color: #f1f1f1;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      /* 블록으로 지정한 영억의 같은 내용을 선택: ctrl+d */
+      .fx1 {align-items: flex-start;}/* aifs */
+      .fx2 {align-items: flex-end;}/* aife */
+      .fx3 {align-items: center;}/* aic */
+      .fx4 {align-items: stretch;}/* ais */
+      /* 텍스트의 크기가 같으면 flex-start와 같다. */
+      .fx5 {align-items: baseline;;}/* aib */
+      .fx5 div:nth-of-type(1) {font-size: 36px;}
+      .fx5 div:nth-of-type(2) {font-size: 24px;}
+      .fx5 div:nth-of-type(3) {font-size: 40px;}
+
+    </style>
+  </head>
+  <body>
+    <div class="flex-container fx1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container fx2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container fx3">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container fx4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container fx5">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+</body>
+</html>

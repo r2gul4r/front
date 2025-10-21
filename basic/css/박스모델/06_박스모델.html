@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: 박스모델</title>
+    <style>
+        /* 공통(common) */
+        .box {
+            width: 300px; /* w300 */
+            height: 200px; /* h200 */
+            padding: 50px; /* p50 */
+            border: 10px solid #000; /* bd */
+            margin: 20px; /* m20 */
+            background-color: black;
+        }
+        .box1 {
+            /* 
+                콘텐츠 안에 padding과 border가 생긴다.
+                전체 너비 = width = 300px
+            */
+            box-sizing: border-box; /* bx */
+        }
+        .box2 {
+            /* 
+                콘텐츠 바깥에 padding, padding 바깥에 border
+                전체 너비 = width + padding * 2 + border * 2
+                    = 300 + 50 * 2 + 10 * 2
+                    = 420px 
+            */
+            /* 기본값(default) */
+            /* box -> c */
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">박스1</div>
+    <div class="box box2">박스2</div>
+</body>
+
+</html>

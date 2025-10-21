@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: 가시성</title>
+    <style>
+        /* 
+            가상 클래스 선택자
+                :hover
+                :nth-of-type(N)
+                    n은 정수 -1, 0, 1...
+            
+        
+        
+        
+        
+        */
+        /* div 중 2번째 요소를 선택 */
+        /* 1th, 2th, 3th, ... */
+        /* display:none는 공간 차지X */
+        div:nth-of-type(2){
+            display: none; /* dn */
+        }
+        /* visibility: hidden과 opacity:0 은 공간 차지 */
+        div:nth-of-type(4) {
+            /* 보이기 */
+            visibility: visible; /* V */
+            /* 숨기기 */
+            visibility: hidden; /* V */
+        }
+        div:nth-of-type(6){
+            /* opactiy는 0에서 1사이 값 */
+            /* 보이기 */
+            opacity: 1; 
+            opacity: 0.5;
+            /* 숨기기 */
+            opacity: 0; /* op0 */
+        }
+
+    </style>
+</head>
+<body>
+    <div>가시성1</div>
+    <div>disable:none;</div>
+    <div>가시성3</div>
+    <div>visibility:hidden;</div>
+    <div>가시성5</div>
+    <div>opacity:1</div>
+    <div>가시성7</div>
+</body>
+</html>
