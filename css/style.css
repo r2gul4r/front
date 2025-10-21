@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* 웹 폰트 방법I - CDN */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* 웹폰트 방법II - @font-face -> CDN 지원x*/
+/* @f */
+@font-face {
+    /* 사용자 정의 폰트명 */
+    font-family: Lato-Regular;
+    src: url(./../assets/font/Lato-Regular.ttf);
+}
+
+/* reset(초기화) */
+* {box-sizing: border-box;}
+body, h1, h2, h3, p, ul {
+    margin: 0;
+}
+ul {padding: 0; list-style: none;}
+
+/* typo */
+body {
+    font-family: "Lato", sans-serif;    
+}
+h2 {
+    font-weight: 400;
+    font-size: 24px;
+    color: #fff;
+    /* 글자사이 간격: 자간 */
+    letter-spacing: 10px; /* ls */
+    background: #404040;
+    /* 일반적으로 좌우 패딩을 상하보다 많이 준다. */
+    padding: 8px 24px 10px 30px;
+    /* text-transform: uppercase; */ /* 모두 대문자 [tt] */
+}   
+
+/* common */
+h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* trft */
+}
+
+
+#home {
+    height: 100vh;
+    background: url(../assets/img/jules-marvin-eguilos-xLNl6CWIJng-unsplash.jpg) no-repeat 50% 50%/cover;  
+} 
+
