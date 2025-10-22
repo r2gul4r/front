@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼</title>
+</head>
+<body>
+    <!-- html태그명은 대소문자 구별없다. (관레: 소문자) -->
+    <form action="/action_page.php" method="get">
+  <label for="fname">First name:</label><br>
+  <!-- input type=text 일때 value는 입력의 초기값 -->
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <!-- input type=submit 일때 value는 입력의 초기값 -->
+  <input type="submit" value="Submit">
+  <input type="submit">
+</form>
+
+<!-- 로그인 창, 로그인 페이지 -->
+<form action="/login.jsp" method="POST">
+    <!-- label for속성값과 input id 속성값이 같아야 한다. -->
+  <!-- <label for="username">아이디:</label> -->
+   <!-- placeholder: 회색의 안내 텍스트 -->
+  <input type="text" id="username" name="username" required placeholder="아이디를 입력하세요"><br>
+  <!-- <label for="password">비밀번호:</label> -->
+  <input type="password" id="password" name="password" required placeholder="비밀번호를 입력하세요"><br>
+  <input type="submit" value="로그인">
+</form> 
+</body>
+</html> 
