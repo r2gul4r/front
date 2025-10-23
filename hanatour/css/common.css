@@ -22,8 +22,13 @@ ul {
    padding: 0; /* p0 */
 }
 a {
-    text-decoration: underline; /* tdu, 밑줄 -> a태그, ins태그 기본값 */
-    text-decoration: overline; /* tdo, 윗줄 */
-    text-decoration: line-through; /* tdl, 취소선 -> del태그 */
-    text-decoration: none; /* tdn, 없음 */
+    text-decoration: none;
+    color: #333;
+}
+button {
+    border: none;
+    background: transparent;
+}
+input {
+    border: none;
 }

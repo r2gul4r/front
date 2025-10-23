@@ -1,5 +1,32 @@
 @charset "utf-8";
 
+/* typo */
+footer {
+    /* function(arguments) */
+    /* 함수(인자) */
+    color: var(--gray5);
+}
+footer a {
+    color: var(--white-color);
+}
+footer .inquiry h2 {
+    color: var(--gray3);
+    font-size: 50px;
+}
+footer .inquiry .tel-area p {
+    font-size: 26px;
+    font-weight: 100;
+}
+footer .inquiry .tel-area a {
+    color: var(--gray3);
+    font-size: 50px;
+    font-weight: 700;
+}
+footer .inquiry .con-btn a {
+    font-size: 20px;
+}
+
+
 /* inquiry: 문의 */
 footer .inquiry {
     /* 콘텐츠 높이: 110px */

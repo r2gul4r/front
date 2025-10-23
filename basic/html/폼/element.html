@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼의 요소</title>
+    <style>
+        textarea:nth-of-type(2) {
+            width: 300px;
+            height: 150px;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/action_page.php">
+        <fieldset>
+            <legend>Personalia:</legend>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+
+        <label for="fname">First name:</label><br>
+        <!-- 
+            size: 입력 상자에 표시할 글자 수
+            예) size=4
+                    한글의 경우: 2byte -> 4자
+                    영문/숫자의 경우: 1byte -> 8자
+        -->
+        <input type="text" id="fname" name="fname" size="50"><br>
+        <label for="pin">PIN:</label><br>
+        <input type="text" id="pin" name="pin" size="4">
+    </form>
+    <form action="ele.jsp">
+        <fieldset>
+            <legend>캡션:설명글</legend>
+            <input type="text" id="naming">
+            <label for="naming"></label>
+
+            <button>전송</button>
+            <button type="submit">전송</button>
+            <button type="reset">초기화</button>
+            <button type="button">버튼</button>
+
+            <!-- 이벤트(event): click(클릭) -->
+            <!-- 이벤트(event) 속성: onclick -->
+            <!-- 자바스크립트 이벤트는 사용자가 웹 페이지에서 마우스를 클릭하거나, 키보드를 누르는 등 수행하는 모든 동작이나, 브라우저 스스로 발생하는 사건을 의미합니다.  -->
+            <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+        </fieldset>
+
+        <div>
+            <p>
+                Lorem ipsum
+                dolor sit
+                amet consectetur
+                adipisicing elit.
+            </p>
+            <pre>
+Lorem ipsum
+dolor sit
+amet consectetur
+adipisicing elit.
+            </pre>
+            <!-- 댓글, 이메일 내용, 회칙(readonly) -->
+            <!-- 
+                크기를 지정하지 않았을 때
+                    rows: 행수, 화면에 표시되는 줄 수
+                    cols: 열수, 화면에 표시되는 칸 수
+            -->
+            <textarea name="message1" rows="5"
+                cols="15">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem tenetur repellat aperiam nihil, fugiat porro ex sapiente sed ipsa soluta suscipit? Dolor non molestias assumenda nemo repellendus temporibus quas natus?</textarea>
+            <!-- readonly: 읽기 전용 -->
+            <textarea name="message2" rows="10" cols="30"
+                readonly>개인정보보호법에 따라 네이버에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
+
+1. 수집하는 개인정보
+이용자는 회원가입을 하지 않아도 정보 검색, 뉴스 보기 등 대부분의 네이버 서비스를 회원과 동일하게 이용할 수 있습니다. 이용자가 메일, 캘린더, 카페, 블로그 등과 같이 개인화 혹은 회원제 서비스를 이용하기 위해 회원가입을 할 경우, 네이버는 서비스 이용을 위해 필요한 최소한의 개인정보를 수집합니다. 중략...</textarea>
+            <!-- 목록 -->
+            <ul>
+                <li>목록1</li>
+                <li>목록2</li>
+                <li>목록3</li>
+            </ul>
+            <!-- 폼의 목록: 목록 상자 -->
+            <label for="cars">Choose a car:</label>
+            <!-- size: 목록의 내용을 화면에 표시할 개수 -->
+            <!-- multiple: 다중 선택 -->
+            <select id="cars" name="cars" size="3" multiple>
+                <!-- value: 전송값 -->
+                <option value="audi">Audi</option>
+                <option value="fiat">Fiat</option>
+                <option value="saab">Saab</option>
+                <!-- selected: 지정하지 않으면 option의 첫 번째 값이 보이고, 지정하면 지정한 값이 초기값으로 보인다. -->
+                <option value="volvo" selected>Volvo</option>
+            </select>
+            <!-- 콤보 상자: select + input -->
+            <!-- input의 list속성 값과 datalist의 id속성 값이 같아야 한다. -->
+            <input list="browsers">
+            <datalist id="browsers">
+                <option value="Edge">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+        </div>
+        <optgroup>
+    </form>
+</body>
+
+</html>
