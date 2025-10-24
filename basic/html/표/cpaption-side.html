@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>표: border-spacing</title>
+    <style>
+      table {
+        border: 1px solid;
+        margin: 50px;
+      }
+      td, th {
+        border: 1px solid;
+      }
+      #table1 {
+        caption-side: top;
+      }
+      #table2 {
+        caption-side: bottom;
+      }
+      #table2 caption {
+        text-align-last: left;
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="table1">
+        <caption>Naming</caption>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+      </tr>
+    </table>
+
+    <table id="table2">
+        <caption>Naming</caption>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+      </tr>
+    </table>
+  </body>
+</html>

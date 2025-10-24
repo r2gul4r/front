@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table</title>
+    <style>
+      table {
+        display: table;
+        font-family: arial, sans-serif;
+        border-collapse: separate;
+        /* border-collapse: collapse; */
+        /* border-spacing은 collapse에서 적용X */
+        border-spacing: 10px 
+      }
+
+      td,
+      th {
+        border: 1px solid #ccc;
+        padding: 15px;
+        width: 300px;
+      }
+      th {
+        text-align: center;
+      }
+      td {
+        text-align: left;
+      }
+      tr:nth-child(even) {
+        background-color: #ddd;
+      }
+      table {
+        margin-top: 50px;
+      }
+      .table2 {
+        width: 100%;
+      }
+      .table2 th:nth-first-of-type {
+        width: 70%;
+      }
+      .table2 h2 {
+        height: 50px;
+      }
+      .table2 tr:first-child,
+      .table2 tr:nth-child(2) {
+        height: 100px;
+        vertical-align: top;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        tr: table row
+        th: 항목의 제목
+        td: 내용
+    -->
+    <table class="table1">
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+    </table>
+
+    <table class="table2">
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Ernst Handel</td>
+        <td>Roland Mendel</td>
+        <td>Austria</td>
+      </tr>
+    </table>
+
+    <table class="table3">
+      <tr>
+        <th>Firstname</th>
+        <td>Jill</td>
+        <td>Eve</td>
+      </tr>
+      <tr>
+        <th>Lastname</th>
+        <td>Smith</td>
+        <td>Jackson</td>
+      </tr>
+      <tr>
+        <th>Age</th>
+        <td>50</td>
+        <td>94</td>
+      </tr>
+    </table>
+
+    <table class="table4">
+      <tr>
+        <th colspan="2">Name</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+    </table>
+
+    <table class="table5">
+      <caption>
+        Monthly savings
+      </caption>
+      <tr>
+        <th>Month</th>
+        <th>Savings</th>
+      </tr>
+      <tr>
+        <td>January</td>
+        <td>$100</td>
+      </tr>
+      <tr>
+        <td>February</td>
+        <td>$50</td>
+      </tr>
+    </table>
+  </body>
+</html>

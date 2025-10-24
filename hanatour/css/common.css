@@ -1,6 +1,6 @@
 @charset "utf-8"; /* @ch */
 /* 웹 아이콘: 폰트어썸 */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css'); /* @i */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'); /* @i */
 /* 웹 폰트 */
 /* 눈누: https://noonnu.cc/ */
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
@@ -30,7 +30,8 @@ body,h1,h2,h3,p,ul {
 body {
     /* font: 크기/줄간격 글꼴1,글꼴2; */
     font: 15px/1.6 "Noto Sans KR", sans-serif;
-    color: var(--main-color);
+    /* color: var(--main-color); */
+    color: var(--gray5);
 }
 
 
