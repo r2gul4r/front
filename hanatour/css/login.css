@@ -2,15 +2,17 @@
 @import url(common.css); /* @i */
 
 /* typo */
-body, ::placeholder, a {
+body, ::placeholder, a, button {
     color: #ccc;
 }
-i, h1, button{
-    color: var(--white-color);
+i, h1 {
+    color: var(--white-color)
 }
 ::placeholder {
     font-size: 1.6rem;
 }
+
+
 /* login page: login.html */
 .login_container {
     position: relative;
@@ -18,6 +20,7 @@ i, h1, button{
     background: url(../../assets/img/loginBg.jpg) no-repeat 50% 50%/cover;
 }
 .login_inner {
+    position: absolute;
     width: 420px;
     height: 330px;
     left: 50%;
@@ -32,43 +35,38 @@ i, h1, button{
 .login_group {
     display: flex;
     margin-bottom: 8px;
-    padding: 2px;
+    gap: 2px;
 }
 .login_group input {
     /* width: calc(100% - 49px); */
     width: 100%;
     height: 50px;
     /* vertical-align: middle; */
+    background: rgb(255, 255, 255,0.2);
+    padding-left: 16px;
 }
 .login_group label {
-    /* display: inline-block;
-    vertical-align: middle; */
+    /* display: inline-block; */
+    /* vertical-align: middle; */
     width: 45px;
     height: 50px;
-    line-height: 50px;
-    background: rgb(255, 255, 255, 0);
+    background: rgb(255, 255, 255,0.2);
     text-align: center;
-    line-height: 50;
-}
-.login_btn {
-    height: 50px;
     line-height: 50px;
-    border: 1px solid rgb(255, 255, 255, 0.5);
-    border-radius: 5px;
-    text-align: center;
 }
 .login_btn button {
     width: 100%;
     height: 50px;
-    border: 1px solid rgb(255, 255, 255, 0.5);
+    border: 1px solid rgb(255, 255, 255,0.5);
+    border-radius: 5px;
     font-size: 1.6rem;
     margin: 20px 0 30px;
     cursor: pointer; /* cu */
 }
 .login_btn button:hover {
     color: var(--white-color);
+    border-color: var(--white-color);
 }
-
 .links {
     display: flex;
     justify-content: space-evenly;
@@ -76,10 +74,9 @@ i, h1, button{
 }
 
 /* closed button */
-.login_container a {
+.login_container .closed_btn {
     position: absolute;
     top: 20px;
     right: 20px;
     font-size: 24px;
-    
 }

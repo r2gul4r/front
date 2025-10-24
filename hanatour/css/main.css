@@ -1,7 +1,7 @@
 @charset "utf-8"; /* @ch */
 @import url(common.css); /* @i */
 @import url(footer.css);
-@import url(login.css);
+
 
 /* typo */
 /* section1 area */
@@ -82,6 +82,7 @@
 #sec3 .intro p:first-of-type strong {
     font-weight: var(--fwm);
 }
+
 
 .card-details p {
     /* p는 위아래 기본 마진이 있다. 폰트 크기의 1em */
