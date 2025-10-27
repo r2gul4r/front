@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D변환</title>
+    <style>
+        /* 
+                transform:
+                    translate()     위치
+                    rotate()        회전
+                    scaleX()        크기
+                    scaleY()
+                    scale()
+                    skewX()         기울기
+                    skewY()
+                    skew()
+                    matrix()        혼합
+            */
+    
+    
+        .outer {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: lightblue;
+        }
+        .close {
+            display: inline-block;
+            transform: rotate(0deg);
+            transform-origin: 50% 50%;
+            transition: .5s;
+            /* transform: translate(0px, 250px); */
+        }
+        .close:hover {
+            /* transform: rotate(deg); */
+           transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <span class="close">❌</span>
+</body>
+</html>
