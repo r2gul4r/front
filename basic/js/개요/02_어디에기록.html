@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 어디에?</title>
+
+    <!-- 외부 스크립트 -->
+    <script src="script2.js"></script>
+    <!-- 내부 스크립트 -->
+    <script>
+     function fn3() {
+        alert('안녕!');
+     }
+
+     window.addEventListener("DOMContentLoaded", function(){
+         var btn3 = document.getElementById('btn3');
+         btn3.onclick = function() {
+            fn3();
+         };
+     });
+      -
+    </script>
+</head>
+<body>
+    <button type="button" id="btn">내부 스크립트</button>
+    <button type="button" id="btn2">외부 스크립트</button>
+    <button type="button" id="btn3">head의 내부 스크립트</button>
+    <button type="button" id="btn4">head의 외부 스크립트</button>
+
+    <!-- 외부 스크립트 -->
+    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
+
+    <!-- 인라인 스크립트 -->
+    <!-- <button type="button" onclick="JS문장">버튼 클릭</button> -->
+    <!-- 
+        HTML 이밴트 속성
+        onclick: 마우스 클릭
+        자바스크립트의 함수(메서드)
+        alert(); 
+        -->
+    <button type="button" onclick="alert('자바스크립트'); alert('HI')">버튼 클릭</button>
+
+    <!-- 내부 스크립트 -->
+    <script>
+        /* 
+        이벤트 종류
+        click -> 마우스 클릭
+        DOMContentLoaded (DOM) -> 돔 내용 불렀을때(읽었을때)
+        */
+        window.addEventListener("DOMContentLoaded", function () {
+            // 1. function 함수명(){JS문장;}
+            function fn() { alert('world~S2'); }
+            // 2. 버튼찾기
+            var btn = document.getElementById('btn')
+            // 3. 이벤트 작성
+            btn.onclick = function () {
+                // 4. 함수 호출
+                fn();
+            }
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>
