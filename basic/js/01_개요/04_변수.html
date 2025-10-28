@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 변수</title>
+</head>
+<body>
+    <script>
+        /* 
+            변수(variable)란?
+                박스, 그릇, 폴더, 저장 공간
+
+            변수 이름 정의 규칙
+                1. 문자, 특수문자(_ , $)로 시작
+                2. 대소문자 구별
+                3. 예약어(키워드)는 사용불가
+                예) true, false, ...
+                https://www.w3schools.com/js/js_reserved.asp
+
+            표기법
+                낙타(카멜) 표기법: 첫 단어는 대문자 아님
+                파스칼 표기법: 첫 단어부터 대문자
+                캐밥 표기법 -
+                스네이크 표기법 _
+             */
+        
+        // 올바른 사용법
+        // 1. 변수키워드 변수명=값;
+        var x;
+        // =은 할당(대입) 연산자
+        // ==은 비교연산자 (같다)
+        // ===  은 비교연산자 (같다)
+        console.log("x는 " + x + "이다")
+        // 2. 변수키워드 변수명;
+        var y=10; //10을 y변수에 할당
+        var x=y;
+        var a, b, c;
+        var a =10, b =10, c =10
+        var a=b=c=10;
+        var name="홍길동", age=25;
+        var total=a+b+c;
+        
+        // // 잘못된 사용법
+        // var 7num=100; //문자로 시작
+        // var &num = 100; // 특수문자는 _ $
+        // var true=1; // 예약어 사용
+        // var 10=x; // 숫자시작
+        // var a+b=20; // 특수문자 _ $ 만
+        // var "홍길동"=name;  
+        // var get Number=100; // 띄어쓰기x
+    </script>
+</body>
+</html>
