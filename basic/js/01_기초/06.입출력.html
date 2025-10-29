@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입출력</title>
+</head>
+<body>
+    <h1>JS 입출력</h1>
+    <p id="result">여기에 출력됩니다</p>
+    <p id="city">여기에 출력됩니다</p>
+    <script>
+        /* 
+            함수(): 객체없이 독립된 메서드
+
+            window는 자바스크립트의 최상위객체
+            출력
+               1. window.alert()
+                  alert("문자열")
+               2. console.log()
+               3. document.write()
+               4. document.getElemetById('ID').innerHTML            
+
+            입력
+                window.prompt()
+                prompt() 함수
+
+        */
+
+        // 경고창 출력
+        window.alert(100+21);
+        alert("mqyu");
+        alert(100);
+        alert((100+10));
+        alert((100+10) + '<br>' + "문자열");
+        alert((100+10) + '\n' + "문자열"); // alert에서 줄바꿈은 \n
+        // 콘솔 영역에 출력
+        console.log("mqyu");
+        console.log(10+4);
+        // body 영역에 출력
+        document.write("mqyu" + '<br>');
+        document.write(10+1);
+
+        // body 안의 p 태그에 출력
+        document.getElementById('result');
+        p.innerHTML = "HELLO"
+
+
+        // 입력
+        //promt('메시지', 기본값    )
+        var city = prompt("지역을 공유하세요", '서울');
+        alert('당신이 사는 곳은 ' + city + '입니다/');
+    </script>
+</body>
+</html>
