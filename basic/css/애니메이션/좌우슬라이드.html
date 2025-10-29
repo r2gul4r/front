@@ -7,9 +7,10 @@
     <style>
         /* reset */
         body {margin: 0;}
+        
         img {
             vertical-align: top; 
-            width: 100%;
+            width: 25%;
             height: 100%;
             object-fit: cover;
         }
@@ -24,18 +25,18 @@
         }
         .slides {
             display: flex;
-            width: 100%;
+            width: calc(100% * 4);
             height: 100%;
-            animation: slideRoll 11s infinite;
+            animation: slideRoll 11s infinite ease-in-out;
         }
         @keyframes slideRoll {
             0% {transform: translateX(0);}
-            11.11% {transform: translateX(-100%);}
-            33.33% {transform: translateX(-100%);}
-            44.44% {transform: translateX(-200%);}
-            66.66% {transform: translateX(-200%);}
-            77.77% {transform: translateX(-300%);}
-            100% {transform: translateX(-300%);}
+            11.11% {transform: translateX(-25%);}
+            33.33% {transform: translateX(-25%);}
+            44.44% {transform: translateX(-50%);}
+            66.66% {transform: translateX(-50%);}
+            77.77% {transform: translateX(-75%);}
+            100% {transform: translateX(-75%);}
         }
     </style>
 </head>

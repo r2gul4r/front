@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좌우 롤링 테스트</title>
+    <style>
+        /* reset */
+        body {
+                margin: 0;
+                font-size: 90px;
+                font-weight: bold;
+                line-height: 1;
+                letter-spacing: 12px;
+            }
+        .marquee {
+            font-size: 90px;
+            font-weight: bold;
+            letter-spacing: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .marquee .inner {
+             display: flex;
+            }
+        .marquee .inner_right {
+             animation: rolltxt 12s linear infinite;
+            }
+        .marquee .inner_left {
+             animation: rolltxt 12s linear infinite reverse;
+            }
+
+        @keyframes rolltxt {
+              0% {transform: translateX(0);}
+            100% {transform: translateX(-100%);}
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="marquee">
+        <div class="inner_left">
+            <span>PRESTIGE ● CONSIDERATION ● AFFINITY ● PRESTIGE ● CONSIDERATION ● AFFINITY</span>
+            <span>PRESTIGE ● CONSIDERATION ● AFFINITY ● PRESTIGE ● CONSIDERATION ● AFFINITY</span>
+        </div>
+         <div class="inner_right">
+            <span>PRESTIGE ● CONSIDERATION ● AFFINITY ● PRESTIGE ● CONSIDERATION ● AFFINITY</span>
+            <span>PRESTIGE ● CONSIDERATION ● AFFINITY ● PRESTIGE ● CONSIDERATION ● AFFINITY</span>
+        </div>
+    </div>
+</body>
+</html>
