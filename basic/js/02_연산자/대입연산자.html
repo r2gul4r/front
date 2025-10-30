@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대입연산자</title>
+    
+</head>
+<body>
+    <script>
+        /* 
+            대입연산자
+                =
+                x += 1;      x = x + 1;
+                x -= 1;      x = x - 1;
+                x *= 1;      x = x * 1;
+                x /= 1;      x = x / 1;
+                x %= 1;      x = x % 1;
+                x **= 1;     x = x ** 1;
+
+        */
+       let x = 10;
+       const y = prompt('1-5 사이 정수 입력')
+        x+=y;
+       document.write('x + = 1하면 x = ' + x + '<br>');
+        x-=y;
+       document.write('x - = 1하면 x = ' + x + '<br>');
+        x*=y;
+       document.write('x * = 1하면 x = ' + x + '<br>');
+        x/=y;
+       document.write('x / = 1하면 x = ' + x + '<br>');
+        x%=y;
+       document.write('x % = 1하면 x = ' + x + '<br>');
+        x**=y;
+       document.write('x ** = 1하면 x = ' + x + '<br>');
+
+       let str = 'Hello ';
+       str+= 'Javascript ';
+       document.write('str ** = "Javascript" 하면 str = ' + str  + '<br>');
+    </script>
+</body>
+</html>

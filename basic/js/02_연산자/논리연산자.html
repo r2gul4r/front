@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리연산</title>
+    <script>
+        /* 
+            논리연산자
+                && 그리고
+                || 또는
+                !  아니다
+
+            값1 && 값2
+              T && T > T
+              T && F > F
+              F && T > F
+              F && F > F
+             
+              T || T > T
+              T || F > T
+              F || T > T
+              F || F > F
+
+         */
+
+         const x = 5;
+         const y = 7;
+         let result;
+
+
+         /* 
+            출력 우선순위
+            ()
+            !
+            +
+            <, >
+            &&
+            ||
+         */
+         document.write('true && true = ' + (true && true) + '<br>');
+         document.write('true && false = ' + (true && false) + '<br>');
+         document.write('false && true = ' + (false && true) + '<br>');
+         document.write('false && false = ' + (false && false) + '<br>');
+         document.write('<br>')       
+
+         document.write('true || true = ' + (true || true) + '<br>');
+         document.write('true || false = ' + (true || false) + '<br>');
+         document.write('false || true = ' + (false || true) + '<br>');
+         document.write('false || false = ' + (false || false) + '<br>');
+         document.write('<br>')
+
+         document.write('!true = ' + true + '<br>');
+         document.write('!false = ' + false + '<br>');
+         document.write('<br>')
+
+         document.write('x<10 && y>10 = ' + (x<10 && y>10) + '<br>');
+         document.write('x<10 || y>10 = ' + (x<10 || y>10) + '<br>');
+         document.write('!x<10 && y>10 = ' + !(x<10 && y>10) + '<br>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
