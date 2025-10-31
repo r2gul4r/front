@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skew</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: orange;
+        }
+        div:hover {
+            /* transform: skew(x각도, y각도); */
+            transform: skew(0deg, 0deg);
+            transform: skew(10deg, 0deg);
+            
+            transform: skew(0deg, 10deg);
+            
+            transform: skewX(0deg) skewY(10deg);
+        }
+    </style>
+</head>
+<body>
+    <div>박스</div>
+</body>
+</html>

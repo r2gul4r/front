@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IF</title>
 </head>
+
 <body>
     <script>
         /* 
@@ -20,23 +22,23 @@
                 }
             }
         */
-        let age = prompt('나이를 입력하세요.');
+        var age = prompt('나이를 입력하세요.');
 
-        if(age >= 19){
+        if (age >= 19) {
             document.write('성인입니다.');
         }
 
-        if(false){
+        if (false) {
             document.write('성인입니다.');
         }
-        
-        if(age >= 19){
+
+        if (age >= 19) {
             document.write('성인입니다.');
-                if(age >= 30){
-            document.write('30대 아저씨.');
-                
-                }
-                
+            if (age >= 30) {
+                document.write('30대 아저씨.');
+
+            }
+
         }
         if (age < 19) {
             document.write('성인이 아닙니다');
@@ -51,13 +53,75 @@
                 }
                 -> 조건이 true이면 코드1 실행,
                 아니면 코드2를 실행
-        */    
+        */
 
         if (age >= 19) {
             document.write('성인입니다.');
         } else {
-            document.wirte('미성년자입니다.');
+            document.write('미성년자입니다.');
         }
+
+
+        // 변수선언
+        const gender = 'M';
+        let Age = prompt("나이와 성별을");
+
+        // 처리: 나이+성별
+        // ==는 타입비교X, === 타입비교O
+        if (gender === 'F') {
+            if (Age >= 19) {
+                result = '성인 여성입니다.';
+            } else {
+                result = '미성인 여성입니다';
+            }
+        } else {
+            if (Age >= 19) {
+                result = '성인 남성입니다.';
+            } else {
+                result = '미성인 남성입니다';
+            }
+        }
+        document.write('당신은' + result + '<br><br>');
+
+        /*
+            예약어(키워드): true, false, if, else
+
+            if문 세 번째 형식
+                if(조건) {
+                    코드1;
+                } else {
+                    코드2; 
+                }
+        */
+
+        // 변수 선언
+        const point = prompt('점수를 입력하세요');
+        let grade;
+
+        // 처리
+        if (point > 100) {
+            result = "점수는 100점을 초과할 수 없습니다. 다시 입력해 주세요."
+        } else if (point >= 90) {
+            grade = 'A';
+            result = "아주 잘했어요.";
+        } else if (point >= 80) {
+            grade = 'B';
+            result = "좀 잘했어요.";
+        } else if (point >= 70) {
+            grade = 'C';
+            result = "잘했어요.";
+        } else if (point >= 60) {
+            grade = 'D';
+            result = "했어요.";
+        } else {
+            grade = 'F';
+            result = "아주 못했어요.";
+        }
+
+        // 출력
+        document.write(result + '<br>' + '학생의 학점은 <b>' + grade + '</b>입니다.<br><br>');
+        
     </script>
 </body>
+
 </html>

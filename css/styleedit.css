@@ -1,34 +1,51 @@
 @charset "utf-8";
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css);
-/* 웹 폰트 방법I - CDN */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css");
+/* 웹 폰트: 방법I - CDN */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 
-/* 웹폰트 방법II - @font-face -> CDN 지원x*/
-/* @f */
+/* 웹 폰트: 방법II - @font-face -> CDN❌ */
 @font-face {
     /* 사용자 정의 폰트명 */
     font-family: Lato-Regular;
-    src: url(./../assets/font/Lato-Regular.ttf);
+    /* 상대주소 */
+    /* 
+        / 작업 영역 폴더(root)
+        ./ 현재위치, 한 번만
+        ../ 부모위치, 여러 번
+        예) a폴더>b폴더>c폴더: 파일.html
+        예) a폴더: ../../이미지.jpg
+    */
+    /* 내 컴퓨터에서는 */
+    src: url(../assets/font/Lato-Regular.ttf);
 }
 @font-face {
     /* 사용자 정의 폰트명 */
     font-family: Lato-Thin;
     /* 절대주소 */
-    /* URL: 프로토콜:// */
-    src: url(https://r2gul4r.github.io/jfs/assets/font/Lato-Thin.ttf);
-
+    /* URL: 프로토콜://도메인/폴더경로/파일 */
+    src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Thin.ttf);
 }
 
 /* reset(초기화) */
-* {box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 :root {
-    /* 박스내에서 부드럽게 */
+    /* 페이지 내에서 이동 시 부드러운 움직임 효과 */
     scroll-behavior: smooth;
 }
-body, h1, h2, h3, p, ul {
+body,
+h1,
+h2,
+h3,
+p,
+ul {
     margin: 0;
 }
-ul {padding: 0; list-style: none;}
+ul {
+    padding: 0;
+    list-style: none;
+}
 a {
     text-decoration: none;
 }
@@ -40,7 +57,8 @@ button {
     border: none;
 }
 
-/* typo */
+/* typography(타이포그래피) */
+/* :root는 html태그를 선택한다. */
 :root {
     font-size: 10px;
 }
@@ -49,7 +67,7 @@ body {
         단위: rem은 :root에서 지정한 크기의 배수
         예) 10px * 1.5배 -> 15px
     */
-    font: 15px/1.6 "Lato", sans-serif;    
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
     color: #777;
 }
 h2 {
@@ -58,13 +76,19 @@ h2 {
     color: #fff;
     /* 글자사이 간격: 자간 */
     letter-spacing: 1rem; /* ls */
+    text-transform: uppercase; /* tt */
+}
+h3 {
+    font-size: 2.4rem;
 }
 header a {
-    color: #ddd;
+    color: #f3f3f3;
 }
-footer a, footer p {
+footer a,
+footer p {
     color: #fff;
 }
+/* a태그는 글자색의 경우 a태그에 직접 지정(상속되지 않는다) */
 footer .top-btn a {
     color: #333;
 }
@@ -85,13 +109,22 @@ footer .sns i {
     color: #fff;
 }
 #contact .addr {
-    font-size: 1.8em;rem
+    font-size: 1.8rem;
+}
+textarea {
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
+}
+/* 가상 요소 선택자
+    ::placeholder
+*/
+::placeholder {
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
+    color: #ccc;
 }
 
-
-/* common */
+/* common(공통) */
 h2 {
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); /* trft */
@@ -100,7 +133,7 @@ h3 {
     text-align: center;
     margin: 64px 0 10px;
 }
-h3+p {
+h3 + p {
     text-align: center;
 }
 
@@ -133,39 +166,58 @@ footer {
 footer:hover {
     background: #111;
 }
+/* to the top button */
 footer .top-btn {
-    display: inline-block; /* dib */
+    display: inline-block;
     background: #ddd;
     padding: 8px 16px;
 }
 footer .top-btn i {
-    margin-top: 8px;
+    margin-right: 8px;
 }
-
 
 /* section area: index.html */
 #home {
+    /* 뷰포트 크기로 높이 지정 */
     height: 100vh;
-    background: url(../assets/img/jules-marvin-eguilos-xLNl6CWIJng-unsplash.jpg) no-repeat 50% 50%/cover fixed;  
-} 
+    background: url(/jfs/assets/img/marita-kavelashvili-ugnrXk1129g-unsplash.jpg)
+        no-repeat 50% 50% / cover fixed;
+}
 #home h2 {
-    background: #444;
-    /* 일반적으로 좌우 패딩을 상하보다 많이 준다. */
+    /* background: #555; */
+    /* 일반적으로 좌우패딩을 상하보다 많이 준다. */
     padding: 8px 24px 10px 30px;
 }
 
+.circle_ani {
+    position: absolute;
+    right: 0;
+    width: 135px;
+    height: 136px;
+    /* background: lightgrey; */
+    /* transform: rotate(0deg); 기본값 */
+    transition: linear 5s;
+    animation: circle 50s linear infinite;
+}
+@keyframes circle {
+    0% {
+        transform: rotate(0deg) scale(3);
+    }
+    100% {
+        transform: rotate(720deg) scale(3);
+    }
+}
 
-    
 /* section area: contact.html */
 #contact .contact {
-  width: 600px;
+    width: 600px;
 }
 #contact .parallax-bg {
     position: relative;
     height: 400px;
-    background: url(/assets/img/parallax3.jpg)no-repeat 50% 50%/cover fixed;
+    background: url(/jfs/assets/img/parallax3.jpg) no-repeat 50% 50% / cover
+        fixed;
 }
-
 #contact .container {
     display: flex;
     justify-content: space-between;
@@ -176,6 +228,7 @@ footer .top-btn i {
     width: 280px;
     height: 160px;
     border-radius: 5px;
+    /* 모서리 둥글게 하기 */
     overflow: hidden;
     margin-right: 32px;
 }
@@ -194,9 +247,12 @@ footer .top-btn i {
 }
 #contact textarea {
     width: 100%;
+    /* 텍스트영역 상자의 크기 조정 불가 */
     resize: none;
     height: 150px;
     margin-top: 10px;
+    padding-top: 16px;
+    padding-left: 16px;
 }
 #contact button {
     background: #111;
@@ -208,4 +264,7 @@ footer .top-btn i {
 }
 #contact .addr i {
     margin-right: 16px;
+}
+#contact .frm-btn {
+    text-align: right;
 }

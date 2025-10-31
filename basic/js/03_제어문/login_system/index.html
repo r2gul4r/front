@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+
+<body>
+    <p>아이디, 비밀번호 입력</p>
+    <script>
+        /* 
+            외부에서 사용자가 아이디와 비밀번호를 입력하다
+            - 아이디 검증후 비번 검증
+            회원 가입된
+                - 아이디: admin
+                - 비밀번호: 12341234
+            1. 입력
+                - 변수 선언: uid, upw
+            2. 처리
+                -
+            3. 출력
+                -
+        */
+        // 입력
+        let uid = prompt("아이디를 입력하세요.");
+        let upw = prompt("비밀번호를 입력하세요.");
+        // 처리
+        if (uid === 'admin') {
+            if (upw === 1234) {
+                // 로그인 성공
+                // 내장 객체: window, document, location, ...
+                location.href = 'main.html';
+            } else {
+                // 패스워드가 일치X
+                // location.href = 'error.html';
+                alert('비밀번호를 다시 입력해주세여');
+                upw = prompt("비밀번호를 입력하세요")
+            }
+        } else {
+            // 아이디 다름
+            // location.href = 'error.html';
+            alert('아이디를 다시 입력해주세여');
+        }
+    </script>
+</body>
+
+</html>

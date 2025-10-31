@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스위치</title>
+</head>
+<body>
+    <script>
+        /* 
+            switch문
+                switch (표현식) {
+                    case 값1: 코드; break;
+                    case 값2: 코드; break;
+                    case 값3: 코드; break;
+                    case 값4: 코드; break;
+                    case 값5: 코드; break;
+                    case 값6: 코드; break;
+                    default: 코드;
+            }
+        */
+        document.write(new Date()+'<br>');
+        
+        function digitalClock() {
+
+        
+
+        // 변수선언
+        const date = new Date();
+        let day; // 요일을 담을 정수
+
+        // 처리
+         switch (date.getDay()) {
+                case 0: 
+                    day = '일';
+                    break;
+                
+                case 1: 
+                    day = '월';
+                    break;
+               
+                case 2: 
+                    day = '화';
+                    break;
+                
+                case 3: 
+                    day = '수';
+                    break;
+                
+                case 4: 
+                    day = '목';
+                    break;
+                
+                case 5: 
+                    day = '금';
+                    break;
+               
+                case 6: 
+                    day = '토';
+                    break;
+                
+            }
+            
+
+        // if (date.getDay() === 0) {
+        //     day = '일';
+        // }
+        // if (date.getDay() === 1) {
+        //     day = '월';
+        // }
+        // if (date.getDay() === 2) {
+        //     day = '화';
+        // }
+        // if (date.getDay() === 3) {
+        //     day = '수';
+        // }
+        // if (date.getDay() === 4) {
+        //     day = '목';
+        // }
+        // if (date.getDay() === 5) {
+        //     day = '금';
+        // }
+        // if (date.getDay() === 6) {
+        //     day = '토';
+        // }
+
+        // 출력
+        document.write(date.getFullYear()+'년<br>'); //년
+        document.write(date.getMonth()+1+'월<br>'); //월+1(0~11)
+        document.write(date.getDate()+'일<br>'); //일
+        document.write(day +'요일<br>'); //요일(0:일 ~ 6:토)
+        document.write(date.getHours()+':'); //시
+        document.write(date.getMinutes()+':'); //분
+        document.write(date.getSeconds()+'<br>'); //초
+
+    }
+
+        setInterval(digitalClock, 1000);
+
+    </script>
+</body>
+</html>

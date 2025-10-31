@@ -24,37 +24,37 @@
                 -> contact.html
     -->
     <!-- shift+alt+f -->
-    <header>
+     <header id="header">
+    <div class="container">
       <!-- 로고 -->
       <!-- h1.logo>a[href=index.html] -->
       <h1 class="logo"><a href="index.html">경남아너스빌</a></h1>
       <!-- 내비게이션: GNB -->
       <nav id="gnb">
-        <ul>
-          <!-- shift+alt+방향키 -->
+        <ul class="main">
           <li><a href="#">분양단지</a>
-          <ul>
-            <li><a href="#">분양중인 단지</a></li>
-            <li><a href="#">분양예정 단지</a></li>
-            <li><a href="#">분양완료 단지</a></li>
-            <li><a href="#">연간분양계획</a></li>
-          </ul>
+            <ul class="sub">
+              <li><a href="#">분양중인 단지</a></li>
+              <li><a href="#">분양예정 단지</a></li>
+              <li><a href="#">분양완료 단지</a></li>
+              <li><a href="#">연간분양계획</a></li>
+            </ul>
           </li>
           <li><a href="#">브랜드</a>
-            <ul>
+            <ul class="sub">
               <li><a href="#">브랜드 스토리</a></li>
               <li><a href="#">브랜드 아이덴티티</a></li>
               <li><a href="#">특화아이템</a></li>
             </ul>
           </li>
           <li><a href="#">아너스빌 멤버스</a>
-            <ul>
+            <ul class="sub">
               <li><a href="#">아너스빌 소식</a></li>
               <li><a href="#">청약가이드</a></li>
             </ul>
           </li>
-          <li><a href="#">마이 아너스빌</a>
-            <ul>
+          <li><a href="#">마이아너스빌</a>
+            <ul class="sub">
               <li><a href="#">자주 묻는 질문</a></li>
               <li><a href="#">1:1 문의</a></li>
               <li><a href="#">A/S 문의</a></li>
@@ -64,13 +64,13 @@
           </li>
         </ul>
       </nav>
-
-      <div class="utill">
+      <div class="util">
         <a href="#">SNS</a>
         <a href="#">로그인</a>
         <a href="#">회원가입</a>
       </div>
-    </header>
+    </div><!-- .container -->
+  </header>
 
     <!-- section(본문) area -->
     <!-- https://composecoffee.com/ -->
