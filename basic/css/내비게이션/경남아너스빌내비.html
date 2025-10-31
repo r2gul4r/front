@@ -20,8 +20,8 @@
 
         /* header */
         #header {
-            height: 95px;
             background: #0f2244;
+            overflow: hidden;
         }
         #header::after {
             content: '';
@@ -29,17 +29,15 @@
             width: 100%;
             height: 0;
             background: lightcyan;
+            transition: .4s;
         }
         #header:hover::after {
-            transition: .4s;
             height: 200px;
         }
         #header a {
             color: white;
         }
-        #header a:hover {
-            color: #bbb;
-        }
+       
         .container {
             position: relative;
             padding: 0 50px;
@@ -81,9 +79,10 @@
 
         /* 메인 메뉴 하단 바 */
 
-        .main li a {
+        .main>li>a {
             display: inline-block;
         }
+
         .main>li>a::after {
             content: '';
             display: block;
@@ -95,7 +94,7 @@
             /* transform: scaleX(0); */
             transition: .3s;
         }
-       .main>li>a:hover::after {
+       .main li a:hover::after {
             /* transform: scaleX(1); */
             width: 100%;
         }
@@ -107,12 +106,11 @@
         /* 2depth: Sub Menu */
         .sub {
             /* display: none; */
-            visibility: hidden;
-            opacity: 0;
             font-size: 1.6rem;
             line-height: 2;
             font-weight: 400;
             margin-top: 48px;
+            background: lightcyan;
         }
 
         /* a태그 글자색은 반드시 a태그에 직접 지정 */
