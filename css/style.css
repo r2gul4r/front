@@ -10,13 +10,13 @@
     font-family: Lato-Regular;
     src: url(./../assets/font/Lato-Regular.ttf);
 }
+
 @font-face {
     /* 사용자 정의 폰트명 */
     font-family: Lato-Thin;
     /* 절대주소 */
     /* URL: 프로토콜:// */
     src: url(https://r2gul4r.github.io/jfs/assets/font/Lato-Thin.ttf);
-
 }
 
 /* reset(초기화) */
@@ -58,6 +58,10 @@ h2 {
     color: #fff;
     /* 글자사이 간격: 자간 */
     letter-spacing: 1rem; /* ls */
+    text-transform: uppercase; /* tt */
+}
+h3 {
+    font-size: 2.4rem;
 }
 header a {
     color: #ddd;
@@ -85,16 +89,23 @@ footer .sns i {
     color: #fff;
 }
 #contact .addr {
-    font-size: 1.8em;rem
+    font-size: 1.8rem;
 }
-
-
+textarea {
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
+}
+::placeholder {
+    font: 1.5rem/1.6 "Lato-Regular", sans-serif;
+    color: #ccc;
+}
 /* common */
+
 h2 {
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); /* trft */
+    text-align: center;
 }
 h3 {
     text-align: center;
@@ -153,7 +164,22 @@ footer .top-btn i {
     /* 일반적으로 좌우 패딩을 상하보다 많이 준다. */
     padding: 8px 24px 10px 30px;
 }
-
+.circle_ani {
+    position: absolute;
+    right: 0;
+    width: 135px;
+    height: 136px;
+    transition: linear 5s;
+    animation: circle 50s linear infinite;
+}
+@keyframes circle {
+    0% {
+        transform: rotate(0deg) scale(3);
+    }
+    100% {
+        transform: rotate(720deg) scale(3);
+    }
+}
 
     
 /* section area: contact.html */
@@ -197,6 +223,8 @@ footer .top-btn i {
     resize: none;
     height: 150px;
     margin-top: 10px;
+    padding-top: 16px;
+    padding-left: 16px;
 }
 #contact button {
     background: #111;
@@ -209,3 +237,9 @@ footer .top-btn i {
 #contact .addr i {
     margin-right: 16px;
 }
+#contact .frm-btn {
+    text-align: right;
+}
+
+
+

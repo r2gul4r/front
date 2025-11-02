@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +10,23 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
             background: #888;
         }
+
         /* 
             속성 선택자
                 [속성]
                 [속성="값"]
         */
+
         [type="checkbox"] {
             appearance: none;
             position: relative;
-            width: 12px;
-            height: 12px;
+            width: 13px;
+            height: 13px;
             border: 1px solid gray;
-            border-radius: 50%;
+            border-radius: 0%
         }
+
+        /* 체크됐을 때 표시 */
         [type="checkbox"]:checked::after {
             content: "";
             position: absolute;
@@ -34,37 +39,45 @@
             transform: rotate(45deg);
         }
 
-        /* 체크박스 */
+        /* 커스텀 체크박스 */
         .custom-checkbox {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
+            position: relative;
+            display: inline-block;
+        }
 
-.custom-checkbox input {
-  display: none;
-}
+        .custom-checkbox input {
+            display: none;
+        }
 
-.custom-checkbox .checkmark {
-  width: 11px;
-  height: 11px;
-  background-color: #eee;
-  border: 1px solid gray;
-  border-radius: 0px; /* 여기서 둥글기 조정 가능 */
-  display: inline-block;
-  transition: 0.2s;
-}
+        .custom-checkbox .checkmark {
+            width: 11px;
+            height: 11px;
+            background-color: #eee;
+            border: 1px solid gray;
+            border-radius: 0px;
+            /* 여기서 둥글기 조정 가능 */
+            display: inline-block;
+            transition: 0.2s;
+        }
+        /* 가상 클래스 선택자:checked */
+        .custom-checkbox input:checked+.checkmark {
+            background-color: #2196F3;
+        }
+        [type="number"] {
+            width: 50px;
+            text-align: right;
+        }
 
-.custom-checkbox input:checked + .checkmark {
-  background-color: #2196F3;
-}
-
+        [type="email"] {
+            width: 500px;
+        }
     </style>
 </head>
+
 <body>
     <!-- open in browser: alt+b(기본 브라우저), shift+alt+b(선택한 브라우저) -->
     <!-- 유효성 검사: 정규식 -->
-     <!-- 입력 상자 -->
+    <!-- 입력 상자 -->
     <form action="">
         <!-- value 초기값 -->
         <label for="user_id">아이디:</label>
@@ -79,8 +92,8 @@
         <input type="search" name="search_data">
         <input type="submit" value="검색" autocomplete="on"><br><br>
         <!-- 버튼 -->
-         <!-- value 버튼 이름 -->
-          <!-- submit: 데이터 전송 목적으로 사용 -->
+        <!-- value 버튼 이름 -->
+        <!-- submit: 데이터 전송 목적으로 사용 -->
         submit<input type="submit" value="제출"><br>
         <!-- reset: 데이터 초기화 목적으로 사용 -->
         reset<input type="reset"><br>
@@ -91,7 +104,7 @@
         <input type="checkbox" name="checkgroup" value="c">선택<br>
         동의여부 확인(radio): <input type="radio" name="radiogroup" value="yes" checked> Y
         <input type="radio" name="radiogroup" value="no"> N
-        <br><br>   
+        <br><br>
 
         <!-- 커스텀 체크박스 -->
         <label class="custom-checkbox">
@@ -105,14 +118,14 @@
         <!-- 파일업로드 -->
         file<input type="file" multiple><br>
         image<input type="image" src="./../../assets/images/btn.svg" alt="버튼 입니다"><br><br>
-        
+
         <!-- 
             이밴트 속성: onkeydown="return false"
                 -키보드 입력 막기
         -->
         상품수량<input type="number" name="product_count" min="1" max="5" step="2" onkeydown="return false">개<br>
         range<input type="range" name="range"><br><br>
-        
+
         <!-- 날짜시간 -->
         date<input type="date"><br>
         datetime-local<input type="datetime-local"><br>
@@ -123,4 +136,5 @@
         color<input type="color"><br>
     </form>
 </body>
+
 </html>
