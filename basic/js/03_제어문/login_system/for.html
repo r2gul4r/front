@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS: 폼</title>
+</head>
+<body>
+    <script>
+        /* 
+            반복문
+            for문 기본 형식
+                for(초기식; 조건식; 증감식) {
+                        코드;
+                    }
+                초기식: 반복 변숫값을 초기화한다. 처음 1번 실행
+                조건식:
+                    -블록 내 문장을 얼마나 반복할지 결정한다.
+                    -조건식이 참이면 반복
+                증감식:
+                    -변수의 값을 증가 또는 감소시킨다
+        */
+
+        // let num = 0;
+        // for (num=1; num<=5; num++) {
+            // 1) num=1;
+            // 2) num<=5 (true)
+            // 3) 출력문
+            // 4) num++; num은 2
+            // 5) num<=5; (true)
+            // 6) 출력문
+            // 7) num++; num은 3
+            // . . .
+            // 8) num++; num은 6
+            // 9) num<=5; (false)
+
+        //     document.write('for문 수행 : <br>' + num + '<br><br><br>');
+        // }
+
+        // 문자열
+        // let도 재선언X
+        num=1
+        const st='ABCDEF';
+        const ct=st.length;
+       
+        for( ; ; ) {
+            if(num<ct) {
+                document.write('문자열로 반복 수행 : ' + num + '<br>');
+                num++;
+                continue;
+            }
+            break;
+        }
+
+    </script>
+</body>
+</html>
