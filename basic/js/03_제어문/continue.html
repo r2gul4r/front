@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        break
+            -제어문 내에서 제어문을 탈출할때 사용
+        continue
+            -제어문 내에서 제어문의 시작 위치로 이동
+        */
+
+        let x = 1, sum = 0;
+        while (1) {
+            x += 3;
+            x++;
+        } while (x <= 100)
+            document.write('1=100합: ' + sum + '<br>')
+
+
+        for (let i = 0; i % 3 === 0; 1++) {
+            document.write((i + ''));
+        }
+
+        for (x = 1; x <= 100; x++) {
+            if (x % 3 !== 0)
+                continue;
+            sum += x;
+            document.write(x + ' ');
+        }
+
+        /* 
+            label 문
+                - 중첩 루프가 깊을 경우 사용!
+                - 이름 정의는 변수 이름 정의와 같다.
+                - break와 continue 뒤에 사용
+
+            식별자의 이름 정의
+                - 문자, 밑줄(_), 달러($)로 시작한다
+                - 대소문자 구별
+                - 한글사용 가능 but 영문추천
+                - 예약어(true, if, for, ... )불가능
+        */
+        var i, j;
+        outloop:   // label name
+        for (i = 0; i < 3; i++) {
+            inloop:  // label name
+            for (j = 0; j < 3; j++) {
+                if (i === 1 && j === 0) {
+                    continue outloop;
+                }
+                document.write("i = " + i + ", j = " + j + "<br>");
+            }
+        }
+    </script>
+</body>
+
+</html>

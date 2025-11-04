@@ -3,26 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>break</title>
+    <title>dowhile문</title>
 </head>
 <body>
     <script>
         /* 
-        break
-            -제어문 내에서 제어문을 탈출할때 사용
-        */
+            // 최초 1회는 실행
 
-              let x = 1, sum = 0;
-        while(1) {
-            x += 3;
+            do-while문 기본 형식
+                do {
+                    실행문;
+                    }while (조건식)
+        */
+       let x = 1, sum = 0;
+       do {
+            sum += x;
             x++;
        } while (x <= 100)
        document.write('1=100합: ' + sum + '<br>')
-    
-
-       for(let i = 0; i % 3 === 0; 1++){
-        document.write((i + ''));
-       }
     </script>
 </body>
 </html>

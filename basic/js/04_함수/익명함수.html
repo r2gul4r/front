@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선언과 호출</title>
+</head>
+<body>
+    <script>
+                
+
+        const txt1 = '함수 선언 전 호출';
+        const txt2 = '함수 선언 후 호출';
+
+        printmsg(txt1);
+
+
+        //함수 선언
+        var printmsg = function (msg) {
+            document.write( '익명함수: ' + msg + '<br>');
+
+        };
+
+        const printmsg = function (msg) {
+            document.write( '선언적함수: ' + msg + '<br>');
+
+        };
+        //함수호출
+        printmsg(txt2)
+
+
+    </script>
+</body>
+</html>

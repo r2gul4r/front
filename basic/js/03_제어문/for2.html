@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+              /* 
+            while문 기본 형식
+                while (조건식) {
+                    실행 문장;
+                }
+        */
+       // 1-100합
+       let x = 1; //1,2,3...,100
+       let sum = 0; //1+2+3....+100
+       // 누적 합계: sum = sum + x; -> sum += x;
+       while(x <= 100) {
+        sum = sum + x;
+        x++;
+       }
+       document.write('1-100까지의 합: ' + sum + '<br>');
+
+       while(NaN) { //무한 반복, 1은 true
+            // true, 0이 아닌 수
+            // false, 0, -0, 0n(BigInt, 큰 정수)
+            
+    }
+    </script>
+</body>
+</html>

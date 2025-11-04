@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선언과 호출</title>
+</head>
+<body>
+    <script>
+        
+        /* 
+            함수(function) 작성
+                
+                1) 함수 선언
+                    function 함수명(매개변수1, 매개변수2, ...) {
+                        실행문장;
+                        return 반환값;
+                    }
+
+                    매개변수(parameter): 변수
+                    인자(argument): 값
+
+                2) 익명(무명) 함수 선언
+                    var 변수명 = function (매개변수1, 매개변수2, ...) {
+                        코드;
+                    }
+
+                3) 함수 호출
+                    함수명([인자1, 인자2, ...]);
+        */
+
+        document.write('함수가 아닙니다');
+        document.write('함수가 아닙니다');
+        document.write('함수가 아닙니다');
+        document.write('함수가 아닙니다');
+        document.write('함수가 아닙니다');
+        document.write('함수가 아닙니다');
+        document.write('함수가 아닙니다');
+        document.write('함수가 아닙니다');
+        document.write('함수가 아닙니다');
+        document.write('함수가 아닙니다');
+        
+        function fn() {
+            document.write('함수입니다');
+        }
+        fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();fn();
+        
+        // 매개변수가 없는 함수
+        document.write('함수가 아닙니다');
+        document.write('함수가 아닙니다');
+
+        // 함수선언
+        function fn() {
+            document.write('함수')
+        }
+        // 함수 호출
+        fn(); fn();
+
+        const txt1 = '함수 선언 전 호출';
+        const txt2 = '함수 선언 후 호출';
+
+        printmsg(txt1);
+
+
+        //함수 선언
+        function printmsg(msg) {
+            document.write(msg + '<br>');
+
+        }
+        //함수호출
+        printmsg(txt2)
+
+        // 이름이 같으면 아래 함수가 호출된다
+        function printmsg(name, age) {
+            document.write('이름은' + name + '이고, 나이는' + age + '입니다.<br>');
+        }
+
+        printmsg('홍길동', 21);
+
+    </script>
+</body>
+</html>
