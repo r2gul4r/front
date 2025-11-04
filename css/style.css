@@ -23,7 +23,6 @@
 * {box-sizing: border-box;}
 :root {
     /* 박스내에서 부드럽게 */
-    font-size: 10px;
     scroll-behavior: smooth;
 }
 body, h1, h2, h3, p, ul {
@@ -116,7 +115,6 @@ h2 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); /* trft */
-    text-align: center;
 }
 h3 {
     text-align: center;
@@ -167,7 +165,9 @@ footer .top-btn i {
 
 /* section area: index.html */
 #home {
+    position: relative;
     height: 100vh;
+    overflow: hidden;
     background: url(../assets/img/jules-marvin-eguilos-xLNl6CWIJng-unsplash.jpg) no-repeat 50% 50%/cover fixed;  
 } 
 #home h2 {
@@ -201,14 +201,15 @@ footer .top-btn i {
 }
 .container {
     display: flex;
-    justify-content: space-between;
     width: 900px;
     margin: 48px auto 96px;
 }
 button {
     background: #f1f1f1;
     padding: 12px 24px;
-    
+    margin-top: 10px;
+    border-radius: 5px;
+
 }
 
 
@@ -222,7 +223,6 @@ button {
 }
 
 #work .portfolio li {
-    display: flex;
     width: 213px;
     height: 162px;
 }
@@ -231,9 +231,6 @@ button {
 }
     
 /* section area: contact.html */
-#contact .contact {
-  width: 600px;
-}
 #contact .parallax-bg {
     background-image: url(/assets/img/parallax3.jpg);
 }
@@ -241,8 +238,6 @@ button {
 #contact .container {
     display: flex;
     justify-content: space-between;
-    width: 900px;
-    margin: 48px auto 96px;
 }
 #contact .map {
     width: 280px;
