@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        document.write(isNaN(NaN)+ '<br>'); //false
+        document.write(isNaN('string')+ '<br>'); //false
+        document.write(isNaN(0) +'<br>'); //false
+        document.write(isNaN('0') +'<br>'); //false
+        document.write(isNaN(Infinity) +'<br>'); //false
+        document.write(isNaN(-Infinity) +'<br>'); //false
+        document.write(isNaN(null) +'<br>'); //false
+        document.write(isNaN(Number(123n)) +'<br>'); //false
+
+        document.write(isNaN(NaN) +'<br>'); //true
+        document.write(isNaN('string') +'<br>'); //true
+        document.write(isNaN(undefined) +'<br>'); //true
+        document.write(isNaN([1,2,3]) +'<br>'); //true
+        document.write(isNaN({name: '홍길동'}) +'<br>'); //true
+        document.write(isNaN(function(){}) +'<br>'); //true
+        </script>
+</body>
+</html>

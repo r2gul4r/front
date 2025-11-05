@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            매개변수와 인자
+        */
+        // 매개변수가 없을 경우
+        function add0() {
+            const sum = 1;
+            return sum;
+        }
+        function add1(x) {
+            const sum = x;
+            return sum;
+        }
+        function add2(x, y) {
+            const sum = x + y;
+            return sum;
+        }
+        function add3(x, y = 10, ...z) {
+            const sum = x + y + z;
+            return sum;
+        }
+        function add4(x, y = 10, ...z) {
+            const sum = x + y + z;
+            return sum;
+        }
+
+        const r0 = add0();
+        const r1 = add1(2);
+        const r2 = add2(2, 3);
+        const r3 = add3(2, 3, 4);
+        const r4 = add4(2, 3, 4, 5);
+
+        document.write('r0= ' + r0 + '<br>');
+
+
+        // 매개변수보다 인자의 개수가 작거나 같을 경우
+
+          function add4(x, y, ...z) {
+            const sum = x + y + z;
+            return sum;
+        }
+
+        document.write('---------------------------------------------<br>');
+        document.write(add5(2)+'<br>');
+        document.write(add5(2, 3)+'<br>');
+        document.write(add5(2, 3, 4)+'<br>');      
+
+        // 인자의 수와 관계없이 호출
+        function fruit(a, b, c) {
+            console.log(arguments);
+            console.log(arguments[1]);
+            console.log(arguments.length);
+        }
+
+        fruit("사과", "딸기", "포도");
+
+        function add() {
+            let sum = 0;
+            for(let i = 0; i<arguments.length; i++) {
+                sum += arguments[i];
+            }
+            document.write('수행결과: ' + sum + '<br>');
+        }
+
+        add();
+        add(1);
+        add(1, 2);
+        add(1, 2, 3);
+        add(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+    </script>
+</body>
+</html>
