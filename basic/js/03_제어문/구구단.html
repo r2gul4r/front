@@ -1,30 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>99단</title>
+  <meta charset="UTF-8">
+  <title>구구단 (1~9단, innerHTML 버전)</title>
+  <style>
+    body {
+      font-family: 'Pretendard', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #222;
+    }
+    table {
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th {
+      background: #6a11cb;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+    }
+    td {
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+      text-align: center;
+      font-size: 16px;
+    }
+    tr:nth-child(even) td {
+      background: #f9f9f9;
+    }
+  </style>
 </head>
-
 <body>
-    <script>
-        /* 
-            구구단
-        */
-        // for (let i = 1; i <= 9; i++) {
-        //     document.write('2*' + i + '=' + 2 * i + '<br>');
-        // }
+  <h1>📘 구구단 (1단 ~ 9단)</h1>
+  <div id="tableContainer"></div>
 
-        //다중 for문
-        for (let x = 1; x <= 9; x++) {
-            document.write('---[' + x + '단]---<br>');
+  <script>
+    // ✅ 표 전체 HTML을 문자열로 생성
+    let tableHTML = "<table>";
 
-            for (let i = 1; i <= 9; i++) {
-                document.write( x + '*' + i + '=' + x * i + '<br>');
-            }
-        }
-    </script>
+    // ✅ 1단~9단 제목 행
+    tableHTML += "<tr>";
+    for (let dan = 1; dan <= 9; dan++) {
+      tableHTML += `<th>${dan}단</th>`;
+    }
+    tableHTML += "</tr>";
+
+    // ✅ 각 행(1~9까지 곱셈 결과)
+    for (let i = 1; i <= 9; i++) {
+      tableHTML += "<tr>";
+      for (let dan = 1; dan <= 9; dan++) {
+        tableHTML += `<td>${dan} × ${i} = ${dan * i}</td>`;
+      }
+      tableHTML += "</tr>";
+    }
+
+    tableHTML += "</table>";
+
+    // ✅ 결과를 HTML에 출력
+    document.getElementById("tableContainer").innerHTML = tableHTML;
+  </script>
 </body>
-
 </html>

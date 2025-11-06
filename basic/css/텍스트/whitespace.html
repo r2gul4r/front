@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css white-space</title>
+    <style>
+        /* 
+            white-space
+                - 요소 내부의 공백을 처리하는 방법을 지정합니다.
+                - normal(기본값)
+                - nowrap: 줄바꿈X
+                - pre
+                - pre-line
+                - pre-wrap
+        */
+        p {
+            width: 500px;
+        }
+        p.a {
+            white-space: normal; 
+        }
+        
+        p.b {
+            white-space: nowrap;
+        }
+
+        p.c {
+            white-space: pre;
+        }
+        
+        p.d {
+            white-space: pre-line;
+        }
+        
+        p.e {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+<p class="a">
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+
+<p class="b">
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+
+<p class="c">
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+
+<p class="d">
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+
+<p class="e">
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+<pre>
+    Lorem, ipsum     dolor sit amet consectetur adipisicing elit. 
+    Dolores     dolore nemo nulla ea, sit minima rem unde alias 
+    eum     facere ipsa omnis iure nostrum laboriosam repellendus 
+        numquam quaerat asperiores nihil qui fuga quae molestias? 
+    Quas quo facere illum voluptate est sunt consectetur cum minima
+</pre>
+</body>
+
+</html>

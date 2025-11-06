@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script>
+    /* 
+        배열(array)
+            - 여러 데이터를 모아 놓은 하나의 덩어리
+            - 배열에 저장된 하나 하나의 데이터를 원소라고 한다
+            - 각 원소는 0~n-1의 인덱스로 구분
+            - 형식: [값, 값, ...]
+        배열 생성
+            1. 리터럴
+            2. 배열 객체 new Array()
+             예) const 배열명 = new Array()
+        
+        날짜 생성
+            const date - new Date();
+    */
+
+    // 배열 생성 - 리터럴 방식
+     const cities =['서울',, '경기',, '인천'];
+     console.log(cities);
+    //  객체.속성
+    // 객체.메서드()
+     console.log(cities.length);
+    // 배열의 인덱스
+    // 배열명[인덱스]
+
+    function city() {
+        for (let i=0; i<5; i++) {
+            document.write(cities[i]+'<br>');
+        }
+    }
+    city();
+    
+
+    // 요소추가
+    cities[3] = '광주';
+    // 요소 수정
+    cities[4] = '부산';
+    city(); 
+    
+    // 요소 제거
+    cities[3] = undefined;
+    cities[2] = '';
+    city(); 
+    console.log(cities);
+
+    // 배열로 평균 구하기
+    const nums = [95, 88,, 72, 68,, 99, 82, 78, 85];
+    document.write(nums.length + '<br>');
+
+    let sum = 0;
+    for (let i = 0; i<nums.length; i++) {
+        if (nums[i] === undefined) {
+            continue;
+        }
+        sum += nums[i];
+    }
+    // 평균(avg): 합계(sum)/총개수
+    const avg = sum / count;
+    document.write(`총원은 ${nums.length} 명에서 ${count} 명의 합계는 ${sum} 이고 평균은 ${avg} 이다.`);
+
+    // 다양한 데이터
+    const x = 5;
+    const arr = [100, 'string', true, x];
+    document.write('<br>' + arr);
+
+
+    document.write('----------------------------------<br>');
+    // 객체 생셩 = new Array()
+    // const 배열명 = new Array();
+    const city1 = '서울';
+    const city2 = '서울';
+    document.write((city1 == city2) + '<br>');
+
+    // 객체요소의 데이터는 힙에 저장되고, 배열 변수에는 요소가 저장된 힙(메모리)의 주소가 저장된다.
+    const cities2 = ['서울', '경기', '인천'];
+    const cities3 = ['서울', '경기', '인천'];
+    
+    // uncaught SyntaxError: Unexpected token ','
+    // Array 생성자 함수로 배열 객체를 생성하는 경우는 공백 요소를 삽입할수 없다.
+    const cities4 = new Array('서울', '경기', '인천');
+    const cities5 = new Array('서울', '경기', '인천');
+    
+    document.write(cities3 + '<br>');
+    document.write(cities3[0] + '<br>');
+    
+    document.write((cities2 == cities2) + '<br>');
+    document.write((cities == cities3) + '<br>');
+    document.write((cities3 == cities3) + '<br>');
+
+    // instanceof 연산자
+    // 사용법: city instanceof 객체
+    // - 객체의 인스턴스이면 true, 아니면 false
+    document.write(cities2 instanceof Array + '<br>');
+    document.write(cities4 instanceof Array + '<br>');
+    document.write(cities4 instanceof Date + '<br>');
+
+    const date = new Date();
+    // Array.isArray(인스턴스)
+    //  - 배열이면 true, 아니면 false
+    document.write((Array.isArray(city1)) + '<br>');
+    document.write((Array.isArray(date)) + '<br>');
+    document.write((Array.isArray(cities4)) + '<br>');
+    document.write((typeof cities4) + '<br>');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라디언트(Gradient)</title>
+    <style>
+        /* 
+              background-image: conic-gradient([from 각도], 섹[deg], 색[deg], ...);
+                - from 각도: 시작 기준
+                - at x위치 y위치: 중심점 위치
+                - 색뒤 deg는 색의 위치
+        */
+        p {
+            width: 500px;
+            height: 200px;
+            color: white;
+            font-size: 30px;
+        }
+
+        /* 투톤 배경색 */
+        #grad1 {
+            /* top to bottom(위에서 아래): 색1에서 색2 */
+            background-image: conic-gradient(red, yellow, green);
+        }
+
+        #grad2 {
+            background-image: conic-gradient(red 45deg, yellow 90deg, green 280deg);
+        }
+
+        #grad3 {
+            background-image: conic-gradient(closest-side at 70% 60%, red, yellow, black);
+        }
+
+        #grad4 {
+            background-image: conic-gradient(farthest-side at 70% 60%, red, yellow, black);
+        }
+
+        #grad5 {
+            background-image: conic-gradient(closest-corner at 70% 60%, red, yellow, black);
+        }
+
+        /* 기본값: farthest-corner */
+        #grad6 {
+            background-image: conic-gradient(at 70% 60%, red, yellow, black);
+        }
+
+        /* background-image: repeating-linear-gradient() */
+        #grad7 {
+            background-image: repeating-conic-gradient(red, yellow 10%, green 15%);
+        }
+    </style>
+</head>
+
+<body>
+    <p id="grad1">background-image: linear-gradient(to bottom, red, yellow);</p>
+    <p id="grad2">background-image: linear-gradient(to bottom, red, yellow);</p>
+    <p id="grad3">closest-side</p>
+    <p id="grad4">farthest-side</p>
+    <p id="grad5">closest-corner</p>
+    <p id="grad6">farthest-corner</p>
+    <p id="grad7">background-image: linear-gradient(to bottom, red, yellow);</p>
+</body>
+
+</html>

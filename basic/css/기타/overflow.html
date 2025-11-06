@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow</title>
+    <style>
+        .wrap {
+            display: flex;
+            gap: 30px;
+        }
+
+        .wrap div {
+            width: 200px;
+            height: 65px;
+            background: coral;
+        }
+        .div1 {
+            overflow: visible;
+        }
+        .div2 {
+            overflow: hidden;
+        }
+        .div3 {
+            overflow: scroll;
+        }
+        .div8 {
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        .div4 {
+            overflow: auto;
+        }
+        .div5 {
+            overflow: clip;
+        }
+        .div6 {
+            overflow: clip;
+        }
+        .div7 {
+            overflow: clip;
+        }
+        .div9 {
+            overflow: scroll;
+            overflow-y: hidden;
+            text-wrap: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="div1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea labore eligendi libero repudiandae impedit laudantium vel ipsum mollitia ab vitae aliquam adipisci voluptates debitis, ex deserunt distinctio perspiciatis maxime est.</div>
+        <div class="div2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae est, omnis architecto enim quaerat maiores corporis fugiat reprehenderit necessitatibus repellendus, cum, fuga veniam velit eveniet deleniti repellat facilis ad vitae.</div>
+        <div class="div3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit fugit tempore quibusdam consequuntur illum, quo tenetur quidem harum suscipit, sapiente voluptates. Delectus fugiat amet voluptatibus, libero est laudantium ratione dicta.</div>
+        <div class="div4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio repudiandae quisquam qui veniam! Iure, perspiciatis provident quo fugiat at dolores voluptatem vel consectetur quod ea. Dolor vitae neque ipsam esse?</div>
+        <div class="div5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ipsum cumque aspernatur, sequi iure eum quos ullam eligendi eius aut veniam nisi? Tenetur voluptate sint blanditiis voluptatem itaque sed explicabo!</div>
+        <div class="div6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ipsum cumque aspernatur, sequi iure eum quos ullam eligendi eius aut veniam nisi? Tenetur voluptate sint blanditiis voluptatem itaque sed explicabo!</div>
+        <div class="div7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ipsum cumque aspernatur, sequi iure eum quos ullam eligendi eius aut veniam nisi? Tenetur voluptate sint blanditiis voluptatem itaque sed explicabo!</div>
+        <div class="div8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ipsum cumque aspernatur, sequi iure eum quos ullam eligendi eius aut veniam nisi? Tenetur voluptate sint blanditiis voluptatem itaque sed explicabo!</div>
+        <div class="div9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ipsum cumque aspernatur, sequi iure eum quos ullam eligendi eius aut veniam nisi? Tenetur voluptate sint blanditiis voluptatem itaque sed explicabo!</div>
+    </div>
+</body>
+</html>
