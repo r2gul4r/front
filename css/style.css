@@ -200,9 +200,9 @@ footer .top-btn i {
     background: no-repeat 50% 50%/cover fixed;
 }
 .container {
-    display: flex;
     width: 900px;
     margin: 48px auto 96px;
+    text-align: center;
 }
 button {
     background: #f1f1f1;
@@ -226,18 +226,21 @@ button {
     width: 213px;
     height: 162px;
 }
-#work button {
+#shadow {
     margin: 64px 0 0;
+    width: 200px;
+    height: 50px;
+    background: inherit;
+    color: #000;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: all 200ms ease-out;
 }
- button.p2 {
-            width: 200px;
-            height: 50px;
-            background: inherit;
-            color: #000;
-            box-shadow: none;
-            border-radius: 3px;
-            transition: all 200ms ease-out;
-        }
+
+#shadow:hover {
+    box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+}
     
 /* section area: contact.html */
 #contact .parallax-bg {
@@ -254,6 +257,9 @@ button {
     border-radius: 5px;
     overflow: hidden;
     margin-right: 32px;
+}
+#contact .contact {
+    width: 600px;
 }
 #contact .contact p {
     margin: 24px 0 16px;
@@ -278,8 +284,6 @@ button {
 }
 #contact button {
     background: #111;
-    padding: 12px 24px;
-    margin-top: 10px;
 }
 #contact i {
     margin-right: 8px;
