@@ -108,6 +108,7 @@ textarea {
     font: 1.5rem/1.6 "Lato-Regular", sans-serif;
     color: #ccc;
 }
+
 /* common */
 
 h2 {
@@ -197,11 +198,63 @@ footer .top-btn i {
 #about .basic p {
     text-align: left;
 }
+#about .basic b {
+    display: inline-block;
+    margin-bottom: 48px;
+}
 #about .basic .inner {
     display: flex;
+    gap: 48px;
+    margin: 80px 0;
 }
 #about .basic .inner div {
     flex: 50%;
+}
+#about .basic .inner p {
+    flex: 50%;
+}
+
+
+/* skill area */
+#about .skill > p {
+    margin-bottom: 36px;
+    font-size: 1.8rem;
+}
+#about .skill .inner p {
+    text-align: left;
+    letter-spacing: 1rem;
+}
+ 
+#about .progressbar {
+    background: #f1f1f1;
+    color: #fff;
+}
+#about .progressbar div {
+    /* height: 35px; */
+    /* line-height: 35px; */
+    padding: 6px;
+    background: #616161;
+}
+#about .progressbar:nth-of-type(1) div {
+    width: 85%;
+}
+#about .progressbar:nth-of-type(2) div {
+    width: 95%;
+}
+
+/* count area */
+#about .count ul {
+    display: flex;
+    text-align: center;
+    padding: 36px 0;
+    background: #616161;
+    color: #fff;
+}
+#about .count ul li {
+    flex: 25%;
+}
+#about .count span {
+    font-size: 2.4rem;
 }
 
 /* work + contact sction common area */
