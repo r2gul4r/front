@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체사용</title>
+</head>
+<body>
+    <p id="var1">p#var1</p>
+    <p id="var2">p#var2</p>
+    <script>
+        
+        /* 
+            객체 생성
+        */
+       const car = {
+        name: '소나타',
+        speed: 100,
+        color: 'white'
+       }
+    //    객체.메서드():
+    document.write('잘가, write!');
+    const var1 = document.getElementById('var1');
+    const var2 = document.getElementById('var2');
+    var1.innerHTML = `<b>${car.name}</b> 입니다`;
+
+    console.log(var1.textContent);
+    var1.textContent = `<b>${car.name}</b>`;
+
+       
+    </script>
+</body>
+</html>

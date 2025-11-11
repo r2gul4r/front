@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2차원배열</title>
+</head>
+
+<body>
+    <button type="button" onclick="oddArr();">홀수배열</button>
+    <button type="button" onclick="evenArr();">짝수배열</button>
+    <script>
+        /* 
+            자바스크립트는 다차원 배열의 의미가 없다.
+                -배열의 값은 기본/참조 데이터를 모두 값으로 가질 수 있다.
+                예) [1, 'string', true]
+        */
+
+        // 배열생성
+        const arr = [
+            [1, 3, 5, 0],
+            [2, 4, 6, 8, 0],
+        ];
+
+        // 배열참조
+        document.write(arr[0][0] + '<br>');
+        document.write(arr[0][3] + '<br>');
+        // 배열 수정
+        arr[0][4] = 50;
+        arr[1][4] = 100;
+
+        document.write(arr[0][4] + '<br>');
+        document.write(arr[1][4] + '<br>');
+
+    
+
+       arr2 = [];
+        arr2.forEach((ele, i) => {
+            arr2[i]=[i+"="+0, i+"-"+1, i+"-"+2];
+        });
+        
+        arr2.forEach((ele, i) => {
+                arr2.forEach((ele, i) => {
+                    document.write(arr2[i][j]+ ' ');
+        });
+
+    </script>
+</body>
+
+</html>
