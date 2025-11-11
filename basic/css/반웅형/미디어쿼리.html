@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형미디어쿼리</title>
+</head>
+<style>
+    /*
+            미디어쿼리 형식:
+             @media (조건) {
+                    CSS 기록
+            }
+            조건:
+                min-width: 값;
+                max-width: 값;
+                
+                장치: 데스크탑pc, 테블릿pc, 폰
+                장치의 화면 해상도
+            
+            브레이크 포인트(break point, 중단점)
+                - 크롬 320, 375, 425, 768, 1024, 1440, 2560
+                - 부트스트랩 프레임워크: 576, 768, 992, 1200, 1400
+     */
+
+     /* 전체 */
+     body {
+        background: lightblue;
+     }
+     
+     /* 테블릿 */
+    @media (min-width: 768px) {
+        /* css기록 */
+        body {
+            background: lightcoral;
+        }
+    }
+    @media (min-width: 1024px) {
+        /* css기록 */
+        body {
+            background: lightgoldenrodyellow;
+        }
+    }
+</style>
+
+<body>
+
+</body>
+
+</html>
