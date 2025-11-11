@@ -195,17 +195,34 @@ footer .top-btn i {
 }
 
 /* about section area */
+#about .parallax-bg {
+    background-image: url(/assets/img/taxi.webp);
+    background-position: 50% 58%;
+    background-size: 105%;
+}
+
 #about .basic p {
     text-align: left;
 }
+#about .basic strong {
+    text-decoration: underline 2px wavy rgba(255,0,0,0.5);
+}
 #about .basic b {
     display: inline-block;
-    margin-bottom: 48px;
+    padding-bottom: 36px;
+}
+#about .basic img {
+    height: 280px;
+    border-radius: 5px;
+    filter: opacity(50%);
+}
+#about .basic img:hover {
+    filter: none; 
 }
 #about .basic .inner {
     display: flex;
     gap: 48px;
-    margin: 80px 0;
+    margin:48px 0 130px;
 }
 #about .basic .inner div {
     flex: 50%;
@@ -214,46 +231,48 @@ footer .top-btn i {
     flex: 50%;
 }
 
-
 /* skill area */
 #about .skill > p {
     margin-bottom: 36px;
     font-size: 1.8rem;
 }
 #about .skill .inner p {
-    text-align: left;
+    text-align: left; /* ta */
     letter-spacing: 1rem;
+    margin: 12px 0;
 }
- 
 #about .progressbar {
-    background: #f1f1f1;
+    background: #F1F1F1;
     color: #fff;
 }
 #about .progressbar div {
-    /* height: 35px; */
-    /* line-height: 35px; */
+    /* 한 줄 텍스트의 경우 height와 line-height가 같으면 수직 중앙 배치된다. */
+    /* height: 35px;
+    line-height: 35px; */
     padding: 6px;
     background: #616161;
 }
 #about .progressbar:nth-of-type(1) div {
-    width: 85%;
+        width: 85%;
 }
 #about .progressbar:nth-of-type(2) div {
-    width: 95%;
+        width: 95%;
 }
 
-/* count area */
+/* count ara */
 #about .count ul {
     display: flex;
     text-align: center;
-    padding: 36px 0;
     background: #616161;
     color: #fff;
+    padding: 36px 0;
 }
 #about .count ul li {
+    /* flex: [grow|shrink|basis]; */
     flex: 25%;
 }
 #about .count span {
+    display: block;
     font-size: 2.4rem;
 }
 
@@ -279,7 +298,7 @@ button {
 
 /* work section area: work.html */
 #work .parallax-bg {
-    background-image: url(/assets/img/parallax3.jpg);
+    background-image: url(/assets/img/portfolio.jpg);
 }
 #work .portfolio {
     display: flex;
@@ -308,7 +327,9 @@ button {
     
 /* section area: contact.html */
 #contact .parallax-bg {
-    background-image: url(/assets/img/parallax3.jpg);
+    background-image: url(/assets/img/kagosima.webp);
+    background-position: 50% 95%;
+    background-size: 105%;
 }
 
 #contact .container {
@@ -358,6 +379,3 @@ button {
 #contact .frm-btn {
     text-align: right;
 }
-
-
-
