@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>[Hong's Car]</h2>
+    <p>자동차 이름: <span>name</span></p>
+    <p>자동차 가격: <span>price</span></p>
+    <p>자동차 속도: <span>speed</span></p>
+    
+    <h2>[kim's Car]</h2>
+    <p>Name: <span>name</span></p>
+    <p>color: <span>price</span></p>
+    <p>speed: <span>speed</span></p>
+    <p>price: <span>price</span></p>
+
+    <script>
+        /* 
+            사용자 정의 생성자 함수로 객체 생성하기
+        */
+       function Car(name, color, speed) {
+        this.name = name;
+        this.color = color;
+        this.speed = speed;
+        this.speedUp = function() {
+            return this.speed + 20;
+        };
+        this.speedDown = function() {
+            return this.speed -= 20;
+        };
+    }
+
+    // car 생성자 함수로 객체 생성
+    const hongcar = new Car('Sonata', 'blue', 110)
+    const kimcar = new Car('Genesis', 'black', 200)
+    
+    // DOM 객체 선택
+    const carName = document.querySelector('p:nth-of-type(1) span');
+    const carColor = document.querySelector('p:nth-of-type(2) span');
+    const carSpeed = document.querySelector('p:nth-of-type(3) span');
+    
+    const carName2 = document.querySelector('p:nth-of-type(4) span');
+    const carColor2 = document.querySelector('p:nth-of-type(5) span');
+    const carSpeed2 = document.querySelector('p:nth-of-type(6) span');
+    const carPrice2 = document.querySelector('p:nth-of-type(7) span');
+    
+    // DOM 객체에 대한 내용 지정
+    carName.textContent = hongcar.name;
+    carColor.textContent = hongcar.color;
+    carSpeed.textContent = hongcar.speed;
+    carSpeed.textContent = hongcar.speedUp();
+    
+    carName2.textContent = kimcar.name;
+    carColor2.textContent = kimcar.color;
+    carSpeed2.textContent = kimcar.speed;
+    carSpeed2.textContent = kimcar.speedUp();
+    
+    // 객체의 속성 삭제
+    // delete 객체.속성명
+    delete kimcar.color;
+    // 객체의 속성 추가
+    // 객체.속성명 = 값;
+    kimcar.price = '3천만 원';
+    
+    // 객체의 속성 확인
+    
+    carColor2.textContent =kimcar.color;
+    carPrice2.textContent =kimcar.price;
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간 기반 다크모드</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: "Noto Sans KR", sans-serif;
+            background-color: #ffffff;
+            color: #222;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+            padding: 60px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 다크모드 */
+        body.dark {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark button {
+            background-color: #444;
+        }
+
+        body.dark button:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>시간 기반 다크모드 예제</h1>
+        <p id="info"></p>
+        <button id="toggle-btn">🌙 다크 모드 전환</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const body = document.body;
+        const info = document.getElementById('info');
+        const toggleBtn = document.getElementById('toggle-btn');
+
+        // 현재 시각에 따라 자동 적용
+        function applyThemeByTime() {
+            const now = new Date();
+            const hour = now.getHours();
+
+            // 19시(7PM) ~ 7시(7AM) 사이는 다크모드
+            if (hour >= 17 || hour < 7) {
+                body.classList.add('dark');
+                info.textContent = `현재 시각: ${hour}시 → 다크모드 자동 적용 🌙`;
+                toggleBtn.textContent = '☀️ 라이트 모드 전환';
+            } else {
+                body.classList.remove('dark');
+                info.textContent = `현재 시각: ${hour}시 → 라이트모드 적용 ☀️`;
+                toggleBtn.textContent = '🌙 다크 모드 전환';
+            }
+        }
+
+        // 수동 전환 (자동 모드와 별개)
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const isDark = body.classList.contains('dark');
+            toggleBtn.textContent = isDark ? '☀️ 라이트 모드 전환' : '🌙 다크 모드 전환';
+            info.textContent = isDark ? '사용자 설정: 다크모드 🌙' : '사용자 설정: 라이트모드 ☀️';
+        });
+
+        // 페이지 로드 시 자동 설정
+        applyThemeByTime();
+
+    </script>
+</body>
+
+</html>

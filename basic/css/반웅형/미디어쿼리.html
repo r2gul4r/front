@@ -28,6 +28,18 @@
      body {
         background: lightblue;
      }
+     /* orientation portrait (기본값) */
+     @media (orientation: portrait) {
+        body {
+            background: black;
+        }
+     }
+     @media (max-width: 768px) and (orientation: landscape) {
+        body {
+            background: lightseagreen;
+        }
+     }
+
      
      /* 테블릿 */
     @media (min-width: 768px) {
