@@ -162,6 +162,8 @@ footer .top-btn {
 footer .top-btn i {
     margin-top: 8px;
 }
+
+/* about - contact */
 .parallax-bg {
     position: relative;
     height: 400px;
@@ -179,6 +181,90 @@ button {
     border-radius: 5px;
 
 }
+/* about section area */
+#about .parallax-bg {
+    background-image: url(/assets/img/taxi.webp);
+    background-position: 50% 58%;
+    background-size: 105%;
+}
+
+#about .basic p {
+    text-align: left;
+}
+#about .basic strong {
+    text-decoration: underline 2px wavy rgba(255,0,0,0.5);
+}
+#about .basic b {
+    display: inline-block;
+    padding-bottom: 36px;
+}
+#about .basic img {
+    height: 280px;
+    border-radius: 5px;
+    filter: opacity(50%);
+}
+#about .basic img:hover {
+    filter: none; 
+}
+#about .basic .inner {
+    display: flex;
+    gap: 48px;
+    margin:48px 0 130px;
+}
+#about .basic .inner div {
+    flex: 50%;
+}
+#about .basic .inner p {
+    flex: 50%;
+}
+
+/* skill area */
+#about .skill > p {
+    margin-bottom: 36px;
+    font-size: 1.8rem;
+}
+#about .skill .inner p {
+    text-align: left; 
+    letter-spacing: 1rem;
+    margin: 12px 0;
+}
+#about .progressbar {
+    background: #F1F1F1;
+    color: #fff;
+}
+#about .progressbar div {
+    /* 한 줄 텍스트의 경우 height와 line-height가 같으면 수직 중앙 배치된다. */
+    /* height: 35px;
+    line-height: 35px; */
+    padding: 6px;
+    background: #616161;
+}
+#about .progressbar:nth-of-type(1) div {
+        width: 85%;
+}
+#about .progressbar:nth-of-type(2) div {
+        width: 95%;
+}
+
+/* count area */
+#about .count ul {
+    display: flex;
+    text-align: center;
+    background: #616161;
+    color: #fff;
+    padding: 36px 0;
+}
+#about .count ul li {
+    /* flex: [grow|shrink|basis]; */
+    flex: 25%;
+}
+#about .count span {
+    display: block;
+    font-size: 2.4rem;
+}
+
+
+/* work area */
 #work .parallax-bg {
     background-image: url(/assets/img/portfolio.jpg);
 }
@@ -210,6 +296,7 @@ button {
 
         /* 최대 1024px -> 1024px 이하의 장치: 테블릿(768px), 폰(360px) */
         @media (max-width: 1024px) {
+            /* 글꼴 */
             body {
                 /* 뷰포트 단위: vw, vh, vmax, vmin */
                 font-size: 2vw;
@@ -229,9 +316,28 @@ button {
             footer .sns a i {
                 font-size: 4vw;
             }
+
+            /* 공통사항 */
             .container {
-                width: 100%;
+                margin: 48px 24px 96px;
             }
+            /* about */
+            #about .count ul {
+                display: flex;
+                text-align: center;
+                background: #616161;
+                color: #fff;
+                padding: 36px 0;
+            }
+            #about .count ul li {
+                /* flex: [grow|shrink|basis]; */
+                flex: 25%
+            }
+            #about .count span {
+                display: block;
+                font-size: 4rem;
+            }
+            /* work */
             #work .portfolio {
                 flex-wrap: wrap;
                 padding: 0 24px;
@@ -269,3 +375,8 @@ button {
                 flex: 100%;
             }
         }
+        .ele-hide {
+            display: none;
+        }
+        /* 푸터 */
+        

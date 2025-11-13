@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- header -->
-     <header>
+     <header class="container-fluid">
         <!-- 1depth(깊이) GNB: Global(전역) Navi Bar -->
          <nav class="gnb">
             <ul>
@@ -24,15 +24,125 @@
          </nav>
      </header>
 
-     <!-- section -->
-    <div id="home">
+     <!-- home section -->
+    <div id="home" class="container-fluid">
             <div class="bgimg"></div>
             <h2 id="clock">Sungho Lee and mqyu</h2>
             <div class="circle_ani"><img src="/basic/assets/images/curve_text.svg" alt="나의작품"></div>
     </div>
+        <!-- about section -->
+    <div id="about" class="container-fluid">
+        <h3>나에 대해서</h3>
+        <p>나는 코딩을 좋아한다.</p>
+        <div class="container">
+            <div class="basic">
+                <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby
+                    photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="inner">
+                    <div>
+                        <b>LSH</b>
+                        <img src="./../assets/img/avatar_hat.jpg" alt="나">
+                    </div>
+                    <p class="ele-hide">Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                </div><!-- .inner -->
+            </div><!-- .basic -->
+            <div class="skill">
+                <p>저는 다음 분야에 정말 능숙합니다.</p>
+                <div class="inner">
+                    <p>Front-end</p>
+                    <div class="progressbar"><div><span>85%</span></div></div>
+                    <p>Back-end</p>
+                    <div class="progressbar"><div><span>95%</span></div></div>
+                </div>
+            </div><!-- .skill -->
+        </div><!-- .container -->
+        <div class="count">
+            <ul>
+                <li><span>3+</span>Partners</li>
+                <li><span>3+</span>Projects Done</li>
+                <li><span>20+</span>Total Page</li>
+                <li><span>2+</span>National technical certification</li>
+            </ul>
+        </div><!-- .count -->
+    </div><!-- #about -->
+
+        <!-- work section -->
+    <div id="work" class="container-fluid">
+        <div class="parallax-bg">
+            <h2>PORTFOLIO</h2>
+        </div>
+        <h3>나의 작품</h3>
+        <p>아래는 최근에 제작은 나의 작품입니다.<br>이미지를 클릭하면 큰 이미지를 확인할 수 있습니다.</p>
+        <div class="container">
+            <ul class="portfolio">
+                <li><a href="#"><img src="./../assets/img/p1.jpg" alt="팀 작품(필수)"></a></li>
+                <li><a href="./../hanatour/index.html" target="_blank"><img src="./../assets/img/p4.jpg" alt="개인 따라하기 작품"></a></li>
+                <li><a href="#"><img src="./../assets/img/p7.jpg" alt="개인 스스로 작품"></a></li>
+                <li><a href="#"><img src="./../assets/img/p8.jpg" alt="준비중..."></a></li>
+            </ul>
+            <button type="button" id="shadow">더보기</button>
+        </div><!-- .container -->
+    </div><!-- #work -->
+
+      <!-- contact section -->
+  <div id="contact" class="container-fluid">
+    <div class="parallax-bg">
+      <h2>contact</h2>
+    </div>
+    <h3>Where i work</h3>
+    <p>여러분의 피드백을 기다리고 있습니다!</p>s
+    <div class="container">
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.672085941143!2d127.10743907631547!3d37.35027123649884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b59c5d7697313%3A0xbba08f656485ef2c!2z65GQ65Oc66a87Lu07ZOo7YSw7ZWZ7JuQIOyEseuCqOu2hOuLuSAo6rWsLuydtOygoOyVhOy5tOuNsOuvuOy7tO2TqO2EsO2VmeybkCk!5e0!3m2!1sko!2skr!4v1761029173265!5m2!1sko!2skr"
+          width="284" height="160" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="contact">
+        <ul class="addr">
+          <li><i class="fa-solid fa-location-dot"></i>성남시, 분당구</li>
+          <li><i class="fa-solid fa-phone"></i>Phone: <a href="tel: +82 10-5678-1234">+82 10-5678-1234</a></li>
+          <li><i class="fa-solid fa-envelope"></i>Email: <a href="mailto:aaaa@gmail.com">aaaa@gmail.com</a></li>
+        </ul>
+        <p>차 한 잔 하러 들러주세요. 아니면 메모를 남겨주세요</p>
+        <!-- 
+            폼(form, 양식)
+              form
+                  input
+                  taxtarea
+                  button
+                  select
+                      option
+                  ...
+          -->
+        <form action="contact.jsp">
+          <div class="frm-input">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+          </div>
+          <textarea name="" id="" placeholder="메시지를 기록하세요."></textarea>
+          <!-- <input type="submit" value="메시지 보내기"> -->
+          <div class="frm-btn"><button type="submit"><i class="fa-solid fa-paper-plane"></i>메시지 보내기</button></div>
+        </form>
+      </div>
+    </div>
+  </div> <!-- #contact -->
 
     <!-- footer -->
-     <footer>
+     <footer class="container-fluid"    >
         <!-- 폰트어썸 -->
         <!-- 1. 라이브러리 CDN 연결: http://cdnjs.com -->
         <!-- 2. 아이콘을 검색후 지정 -->

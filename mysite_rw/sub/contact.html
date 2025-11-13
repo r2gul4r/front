@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이성호</title>
+  <link rel="stylesheet" href="./../css/style.css" />
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <!-- 1depth(깊이) GNB: Global(전역) Navi Bar -->
+    <nav class="gnb">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html"><i class="fa-solid fa-user-tie"></i>About</a></li>
+        <li><a href="work.html"><i class="fa-solid fa-laptop-code"></i>Portfollio</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-envelope"></i>Contect</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- section -->
+  <div id="contact">
+    <div class="parallax-bg">
+      <h2>contact</h2>
+    </div>
+    <h3>Where i work</h3>
+    <p>여러분의 피드백을 기다리고 있습니다!</p>s
+    <div class="container">
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.672085941143!2d127.10743907631547!3d37.35027123649884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b59c5d7697313%3A0xbba08f656485ef2c!2z65GQ65Oc66a87Lu07ZOo7YSw7ZWZ7JuQIOyEseuCqOu2hOuLuSAo6rWsLuydtOygoOyVhOy5tOuNsOuvuOy7tO2TqO2EsO2VmeybkCk!5e0!3m2!1sko!2skr!4v1761029173265!5m2!1sko!2skr"
+          width="284" height="160" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="contact">
+        <ul class="addr">
+          <li><i class="fa-solid fa-location-dot"></i>성남시, 분당구</li>
+          <li><i class="fa-solid fa-phone"></i>Phone: <a href="tel: +82 10-5678-1234">+82 10-5678-1234</a></li>
+          <li><i class="fa-solid fa-envelope"></i>Email: <a href="mailto:aaaa@gmail.com">aaaa@gmail.com</a></li>
+        </ul>
+        <p>차 한 잔 하러 들러주세요. 아니면 메모를 남겨주세요</p>
+        <!-- 
+            폼(form, 양식)
+              form
+                  input
+                  taxtarea
+                  button
+                  select
+                      option
+                  ...
+          -->
+        <form action="contact.jsp">
+          <div class="frm-input">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+          </div>
+          <textarea name="" id="" placeholder="메시지를 기록하세요."></textarea>
+          <!-- <input type="submit" value="메시지 보내기"> -->
+          <div class="frm-btn"><button type="submit"><i class="fa-solid fa-paper-plane"></i>메시지 보내기</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer>
+    <!-- 폰트어썸 -->
+    <!-- 1. 라이브러리 CDN 연결: http://cdnjs.com -->
+    <!-- 2. 아이콘을 검색후 지정 -->
+
+    <div class="top-btn">
+      <a href="#top"><i class="fa-solid fa-arrow-up"></i>To the top</a>
+    </div>
+    <div class="sns">
+      <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-square-snapchat"></i></a>
+      <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+    <p>&copy; COPYRIGHT 2025 LSH & Mqyu. ALL RIGHTS RESERVED.</p>
+  </footer>
+</body>
+
+</html>

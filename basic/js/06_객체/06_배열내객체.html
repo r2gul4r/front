@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button></button>
+
+    <div id="carList"></div>
+    <script>
+
+
+        // 선언부
+        const car = [
+            {items: '자동차', name: '소나타', color: '파랑', speed: 100},
+            {items: 'CAR', name: 'sonata', color: 'blur', speed: 70}
+        ];
+        // const car_list = document.getElementById('carList');
+        
+
+        // DOM객체 선택
+        const car_list = document.getElementById('car_list');
+        const kor_btn = document.querySelectorAll('button')[0];
+        const eng_btn = document.querySelectorAll('button')[1];
+
+        
+        // 출력
+        function carFn(i) {
+            carList.innerHTML += `<h2>${car[i].lang}</h2>
+            <p>${car[i].name}</p>
+            <p>${car[i].color}</p>
+            <p>${car[i].speed}</p>`
+        }
+        carFn(0);
+
+        // 이벤트
+        let state = 0;
+        kor_btn.textContent = 'English';
+
+        kor_btn.addEventListner ('click', function(){
+            if (state === 1){
+                carFn(0);
+                state = 0;
+                kor_btn.textContent = 'English';
+            } else {
+                carFn(1);
+                state = 1;
+                kor_btn.textContent = 'Korean';
+            }
+        });
+       /*  eng_btn.addEventListner('click', function(){
+            carFn(1);
+        });
+ */
+
+    </script>
+</body>
+</html>

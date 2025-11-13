@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="var1">아이디</p>
+    <p class="var1">클래스</p>
+    <script>
+        // DOM 객체 선택
+        const var1 = document.getElementById('var1');
+        const var2 = document.getElementsByClassName('var1');
+        const var3 = 10;
+
+        
+        
+        /* 
+        객체 생성
+        1. 리터럴
+        const 객체명 = {};
+        2. new 생성자함수
+        const r객체명
+        */
+       
+       // 리터럴
+       const car = {};
+       car2.name = '포르쉐';
+       car2.speed = 220;
+       car2.color = '흰색';
+       car2.msg = function(){
+           return `내 차는 ${this.color} ${this.name} 입니다`
+        }
+        
+        // 생성자 함수: new Object()
+        const car2 = new Object();
+
+        car2.name = '제네시스';
+        car2.speed = 120;
+        car2.color = '검은색';
+        car2.msg = function(){
+            return `내 차는 ${this.color} ${this.name} 입니다`
+        }
+        
+        
+        // DOM 객체의 내용 수정(update)
+        var1.innerHTML = car2.name;
+        var2.innerHTML = car2.msg;
+
+        </script>
+</body>
+</html>
