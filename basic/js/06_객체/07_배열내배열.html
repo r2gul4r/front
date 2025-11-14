@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="car"></div>
+    <script>
+        const car = [
+            ['소나타', '파랑', 100],
+            ['아우디', '노랑', 120],
+            ['캐딜락', '검정', 110]
+        ]
+        const div = document.querySelector('#car');
+        div.innerHTML = `car[2][1]: ${car[2][1]}`;
+        car.forEach((ele, idx) => {
+            
+        })
+    </script>
+</body>
+</html>
