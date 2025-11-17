@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리시작</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        /* 
+            ㅈ제이쿼리란
+                -자바스크립트 라이브러리
+        */
+       window.addEventListener("DOMContentLoaded", function(){
+           document.getElementById('p').innerHTML = "웹 프로그래밍";
+       });
+
+       $(()=>{
+            $('p').innerHTML = "웹 프로그래밍";
+       });
+    </script>
+</body>
+</html>
