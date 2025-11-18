@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 메서드</title>
+    <!-- 1. 제이쿼리 라이브러리 연결 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /* 
+            메서드 유형
+                1. 이벤트 메서드: 
+                    click(): 요소를 클릭한다.
+                    mouseenter(): 요소 안으로 마우스가 들어간다.
+                    mouseleave(): 요소 밖으로 마우스가 나간다.
+                    mousedown(): 요소를 마우스로 누르고 있다.
+                    mouseup(): 요소를 mousedown 후에 마우스를 뗀다.
+
+                2. 효과 메서드: 
+                    hide(): 요소를 숨긴다.
+                    show(): 요소가 보인다.
+
+                3. 탐색 메서드: eq()
+
+                4. HTML 메서드:
+                    text(): HTML의 내용을 가져온다.
+                    html(): HTML의 내용을 가져온다.(태그인식)         
+                    text('텍스트'): HTML의 내용을 지정한다.
+                    html('텍스트'): HTML의 내용을 지정한다.(태그인식)         
+                
+                5. CSS 메서드:
+                    addClass('클래스명 클래스명 ...'): 클래스 추가
+                    removeClass('클래스명 클래스명 ...'): 클래스 제거
+                    toggleClass('클래스명 클래스명 ...'): 클래스 추가/제거
+                    hasClass('클래스명 클래스명 ...'): 클래스 포함 여부
+                        -> 포함이면 true, 아니면 false
+
+                    css('속성'): 하나의 속성의 값을 가져오기
+                    css('속성','값'): 하나의 속성의 값을 지정하기
+
+                    css({'속성':'값', ...}): 하나 이상의 속성
+                    css({속성:'값', ...}): 하나 이상의 속성, 카멜 표기법
+
+                    width(): 크기를 가져오기
+                    height(): 크기를 가져오기
+                    width(크기): 크기를 지정하기
+                    height(크기): 크기를 지정하기
+        */
+
+        // 2. 준비 이벤트
+        // $(document).ready(function(){});
+        $(()=>{
+            // 버튼을 클릭하면
+            $('button').click(function(){
+                // 이름 부분을 선택하여
+                // p요소를 선택하여
+                // 노란 배경색과 
+                //$('p').css('background-color', 'yellow');
+                // 글자 크기를 200% 지정
+                //$('p').css('font-size', '200%');
+                $('p').css({
+                    background: 'yellow',
+                    // 카멜표기법을 사용하면 '' 또는 "" 생략 가능!
+                    fontSize: '200%'
+                });
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <p>김길동</p>
+    <div>02-123-4567</div>
+    <p>이길동</p>
+    <div>042-567-2929</div>
+    <p>홍길동</p>
+    <div>051-278-9485</div>
+    <br><br>
+    <button type="button">이름 강조</button>
+</body>
+
+</html>

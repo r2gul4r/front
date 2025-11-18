@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 CSS 스타일 변경</title>
+    <style>
+        .important {
+            font-weight: bold;
+            /* 
+                xx-small(10px) x-small(10px)small(13px) smaller(13.333333px) 
+                medium(16px)
+                large(18px) larger(19.2px) x-large(24px) xx-large(32px)
+            */
+            font-size: xx-large;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .red {
+            color: red;
+            border: 1px solid blue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /*
+            CSS 스타일 변경
+                .addClass('클래스명'): 클래스 추가 
+                .removeClass('클래스명'): 클래스 제거
+        */
+
+        // 준비 이벤트
+        //jQuery(document).ready(function(){});
+        $(() => {
+            // h1,h2,p첫번째를 선택하여
+            // 글자색을 파랑으로 지정
+
+            /* 
+                바닐라 스크립트란?
+                    프레임워크(앵귤러, 뷰, ...)나 라이브러리(리액트, 제이쿼리, ...)를 사용하지 않은 순수 자바스크립트를 가리키는 관용적 표현, 공식 명칭은 아님!
+            */
+
+            /* 
+                순수 자바스크립트(바닐라 스크립트)
+                    객체.style.color = 'blue';
+                    객체.style.border = '1px solid red';
+                    객체.style.cssText =`
+                            color: blue; 
+                            border: 1px solid red;`;
+
+                제이쿼리        
+                    객체.css('color','blue');
+                    객체.css('border','1px solid red');
+                    객체.css({
+                         color: blue,
+                         border: 1px solid red
+                    });
+            */
+
+
+
+            // $('h1,h2,p:first').css('color','blue');
+            // .blue 클래스를 추가한다.
+
+            // 두 번째 p를 선택하여
+            // 글자 크기는 xx-large로 굵기는 bold를 지정
+            // $('p:last').css('font-size', 'xx-large');
+            // $('p:last').css('font-weight', 'bold');
+
+            // $('p:last-of-type').css({'font-size': 'xx-large', 'font-weight': 'bold'});
+            // $('p:last').css({
+            //     // 속성명은 카멜표기법 사용시 '' 생략 가능
+            //     fontSize: 'xx-large', 
+            //     fontWeight: 'bold'
+            // });
+            // 두 번째 p를 선택하여
+            // important 클래스를 지정한다.
+
+
+            // 이벤트 작성
+            // 객체.이벤트메서드(function(){});
+            // 첫 번째 버튼 클릭하면
+            $('button:first').click(function () {
+                // h1,h2,첫번째p를 선택하여 blue클래스를 추가
+                $('h1,h2,p:first').addClass('blue red');
+                // 마지막p를 선택하여 important클래스를 추가
+                $('p:last').addClass('important');
+            });
+            // 두 번째 버튼을 클릭하면
+            $('button').eq(1).click(function () {
+                // h1,h2,첫번째p를 선택하여 red클래스를 제거
+                $('h1,h2,p:first').removeClass('red');
+                // 마지막p를 선택하여 important클래스를 제거
+                $('p:last').removeClass('important');
+            });
+            // 세 번째 버튼을 클릭하면
+            const btn = $('button');
+
+            /* 
+                '토글(toggle)'
+                    두 가지 상태를 번갈아 전환하는 기능이나 동작을 의미합니다. 주로 스위치를 한 번 누를 때마다 상태가 켜짐/꺼짐, 활성화/비활성화 등과 같이 변하는 것을 말합니다
+            */
+
+            btn.eq(2).click(function () {
+                // h1,h2,p를 선택하여 red클래스를 적용 또는 제거를 번갈아
+                $('h1,h2,p').toggleClass('red');
+            });
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <h1>HTML5</h1>
+    <h2>CSS3</h2>
+    <p>자바스크립트</p>
+    <p>제이쿼리</p>
+    <button type="button">addClass</button>
+    <button type="button">removeClass</button>
+    <button type="button">toggleClass</button>
+</body>
+
+</html>

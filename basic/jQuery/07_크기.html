@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 width/height</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            /* 
+                레이아웃 설정
+                    0 테이블 태그 사용 -> 비표준
+                    1. display: block, inline, inline-block, none;
+                    1. float: left|right;
+                        - clear:left|rihgt|both(둘 다) -> float 영향 제거
+                    1. position: static|relative|absolute|fixed;
+
+                    2. display: flex; (1차원)
+                        - flex-direction
+                        - flex-wrap
+                        - flex-flow
+                        - justify-content: flex-start, flex-end, center, space-between, space-around, space-evenly
+                        - align-items
+                        - align-content, ...
+
+                    3. display: grid; (2차원)
+            */
+            float: right; /* 공중에 뜬다. */
+            /* display: inline-block; */
+            margin: 5px;
+            background: yellow;
+        }
+
+        .box {
+            background: red;
+        }
+        /* p:first-of-type {
+            clear:both;
+        } */
+        .clearboth {
+            display: block;
+            clear:both;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /*
+            HTML/CSS 관련 메서드
+                width()
+                height()
+        */
+
+        $(()=>{
+            // div를 클릭하면
+            $('div').click(function(){
+                // div를 클릭한 것만 div 배경색을 빨강으로
+                // $(this)는 클릭한 div
+                $(this).css({background: 'red'});
+                // 클릭할 때마다 가로/세로 10px씩 작아지게
+                $(this).width(90);
+                $(this).height(90);
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div>박스1</div>
+    <div>박스2</div>
+    <div>박스3</div>
+    <p class="clearboth">박스4</p>
+    <p>박스5</p>
+</body>
+
+</html>

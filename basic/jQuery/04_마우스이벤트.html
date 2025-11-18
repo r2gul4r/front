@@ -1,14 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제쿼 마우스 이벤트</title>
+    <title>제이쿼리 마우스 이벤트</title>
+    <style>
+        div.out {
+            width: 300px;
+            height: 100px;
+            border: 1px solid #000000;
+            text-align: center;
+            background-color: yellow;
+        }
+    </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /*
+            마우스 이벤트: click, mouseenter, ...
+        */
+
+        $(() => {
+            let num = 0;
+            // 마우스가 div에 들어가면
+            $('div').mouseenter(function () {
+                // p에 들어있는 숫자가 증가
+                // :nth-child(n) 여기서 n은 1,2,...
+                // $('p:nth-child(2)').text(num++);
+                // 선택자 :eq(n) 여기서 n은 0,1,2,...
+                // $('p:eq(1)').text(num++);
+                // 메서드 .eq(n) 여기서 n은 0,1,2,...
+                // 메서드 체이닝 방식!
+                //  - 객체.메서드().메서드()...
+                //  - 메서드 간 순서는 있다.
+
+                // :first-of-type
+                // :first
+                // :last-of-type
+                // :last
+                // :nth-of-type(n) -> n은 1번부터
+                // :eq(n) -> n은 0번부터
+                // .eq(n)
+
+                $('p:first').text('마우스 <b>들어감</b>(enter)');
+                $('p:last').text(++num);
+            });
+
+            $('div').mouseleave(function () {
+                // $('p:eq(0)').html('마우스 <b>나감</b>(leave)');
+                // $('p').eq(1).text(`최종 횟수: ${num}`);
+                $('p:nth-of-type(1)').html('마우스 <b>나감</b>(leave)');
+                $('p:nth-child(2)').text(`최종 횟수: ${num}`);
+                // $('p:first-of-type').html('마우스 <b>나감</b>(leave)');
+                // $('p:last-of-type').text(`최종 횟수: ${num}`);
+            });
+
+            $('div').mousedown(function () {
+                // 첫 번째 p요소를 숨긴다.
+                $('p').eq(0).hide();
+                // 마지막 p요소에 '메시지 사라짐' 텍스트 표시
+                $('p').eq(1).text('메시지 사라짐');
+            });
+            $('div').mouseup(function () {
+                // 첫 번째 p요소가 보인다.
+                $('p').eq(0).show();
+                // 마지막 p요소에 '메시지 사라짐' 텍스트 표시
+                $('p').eq(1).text(`최종 횟수: ${num}`);
+            });
+        });
+
+    </script>
 </head>
+
 <body>
     <div class="out">
-
+        <p>마우스 이벤트 알아보기</p>
+        <p>0</p>
     </div>
 </body>
+
 </html>
