@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 slide</title>
+    <style>
+        #slide,
+        #panel,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 70px;
+            display: none;
+            background-color: #ffff00;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $(() => {
+            // #slide를 클릭하면
+            $('#slide').on('click', ()=>{
+                // #panel이 슬라이드 다운
+                $('#panel').slideDown();
+            });
+            // #panel을 클릭하면
+            $('#panel').on('click', e =>
+                // #panel이 슬라이드 업
+                // 화살표 함수
+                // - 매개변수가 1개이면 () 생략 가능
+                // - 실행문이 1개이면 {} 생략 가능
+                $(e.currentTarget).slideUp()
+            );
+
+            // #flip 클릭하면
+            $('#flip').on('click', ()=>{
+                $('#panel').slideToggle(1000);
+            });
+            $('button').on('click', ()=>{
+                $('panel').stop();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="slide">[오늘의 공지사항]</div>
+    <div id="panel">오늘은 jQuery 프로그램을 합습합니다.<br>예제를 작성한 후 실행해보세요.</div>
+    <div id="flip">Toggle slide</div>
+    <p></p>
+    <button id="stop">Stop sliding</button>
+</body>
+
+</html>

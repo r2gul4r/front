@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 모션</title>
+    <style>
+        section {
+            height: 100vh;
+        }
+
+        .result {
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 200px;
+            font-size: 3em;
+        }
+
+        #section2 {
+            position: relative;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            background: green;
+            list-style: none;
+        }
+        .motion {
+            position: relative;
+            top: 600px;
+            width: 300px;
+            height: 400px;
+            background: yellow;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $(window).scroll(function () {
+            //변수 선언
+            const windowHeight = $(window).height();
+            let windowScrollTop = $(window).scrollTop();
+            const speed = 1000, 
+                  easing = "easeOutExpo", 
+                  pos = 0, 
+                  offset = 2;
+
+            // 오른쪽 상단에 스크롤 양과 창 높이 값 출력
+            $(".result").html(windowScrollTop + " , " + windowHeight);
+
+            if (windowScrollTop > windowHeight / offset) {
+                //참일 경우
+                // i는 0, 1, 2, 3
+                for (let i = 0; i < 4; i++) {
+                    $(".motion").eq(i).stop().animate({ top: pos, opacity: 1 }, speed * (i + 1) / 2, easing);
+                }
+            } 
+            else {
+                //거짓일 경우
+                $(".motion").stop().animate({ top: pos + 600, opacity: 0 }, speed, easing);
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+    <section id="section1">
+        <div class="result">값 출력: 스크롤양 / 창 높이</div>
+    </section>
+
+    <section id="section2">
+        <h2>섹션2</h2>
+        <ul>
+            <li class="motion">나는 스크롤하면 움직여요~</li>
+            <li class="motion">나는 스크롤하면 움직여요~</li>
+            <li class="motion">나는 스크롤하면 움직여요~</li>
+            <li class="motion">나는 스크롤하면 움직여요~</li>
+        </ul>
+    </section>
+</body>
+
+</html>
