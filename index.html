@@ -37,7 +37,7 @@
 
     <!-- about section -->
     <div id="about" class="container-fluid px-0">
-        <h3 class="text-center mt-5 pt-5">나에 대해서</h3>
+        <h3 class="text-center mt-5 pt-5 fs-2">나에 대해서</h3>
         <p class="text-center mt-4 mb-5">나는 코딩을 좋아한다.</p>
         <div class="container pb-5">
             <div class="basic">
@@ -70,24 +70,24 @@
                 <p class="text-center my-5">저는 다음 분야에 정말 능숙합니다.</p>
                 <div class="inner">
                     <p class="ls10px">Front-end</p>
-                    <div class="progressbar bg-info">
-                        <div><span>85%</span></div>
+                    <div class="progress rounded-0">
+                        <div class="progress-bar bg-info"><span>85%</span></div>
                     </div>
                     <p class="ls10px">Back-end</p>
-                    <div class="progressbar bg-info">
-                        <div><span>95%</span></div>
+                    <div class="progress rounded-0">
+                        <div class="progress-bar bg-info"><span>95%</span></div>
                     </div>
                 </div>
             </div><!-- .skill -->
         </div><!-- .container -->
 
         <!-- counter -->
-        <div class="container-fluid bg- count py-5">
+        <div class="container-fluid bg-secondary count py-5">
             <ul class="row text-center py-2 list-unstyled">
-                <li class="col"><span>3+</span>Partners</li>
-                <li class="col"><span>3+</span>Projects Done</li>
-                <li class="col"><span>20+</span>Total Page</li>
-                <li class="col"><span>2+</span>National technical certification</li>
+                <li class="col text-white"><span class="fs-2 d-block">3+</span>Partners</li>
+                <li class="col text-white"><span class="fs-2 d-block">3+</span>Projects Done</li>
+                <li class="col text-white"><span class="fs-2 d-block">20+</span>Total Page</li>
+                <li class="col text-white"><span class="fs-2 d-block">2+</span>National technical certification</li>
             </ul>
         </div><!-- .counter -->
     </div><!-- #about -->
@@ -95,7 +95,7 @@
     <!-- work section -->
     <div id="work" class="container-fluid px-0 pb-5">
         <div class="parallax-bg position-relative">
-            <h2 class="position-absolute top-50 start-50 translate-middle text-white">PORTFOLIO</h2>
+            <h2 class="position-absolute top-50 start-50 translate-middle text-white ls10px display-6">PORTFOLIO</h2>
         </div>
         <h3 class="text-center mt-5 pt-5">나의 작품</h3>
         <p class="text-center mt-4 mb-5">아래는 최근에 제작은 나의 작품입니다.<br>이미지를 클릭하면 큰 이미지를 확인할 수 있습니다.</p>
@@ -114,14 +114,14 @@
     <!-- contact section -->
     <div id="contact" class="container-fluid px-0 pb-5">
         <div class="parallax-bg position-relative">
-            <h2 class="position-absolute top-50 start-50 translate-middle text-white">CONTACT</h2>
+            <h2 class="position-absolute top-50 start-50 translate-middle text-white ls10px display-6">CONTACT</h2>
         </div>
         <h3 class="text-center mt-5 pt-5">내가 일하는 곳</h3>
         <p class="text-center mt-4 mb-5">여러분의 피드백을 기다리고 있습니다!</p>
-        <div class="container">
+        <div class="container pb-5 mb-5">
             <div class="row">
                 <div class="col-6 map">
-                    <iframe
+                    <iframe class="w-100 h-100 border-0"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.672085941133!2d127.1074390763351!3d37.35027123649889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b59c5d7697313%3A0xbba08f656485ef2c!2z65GQ65Oc66a87Lu07ZOo7YSw7ZWZ7JuQIOyEseuCqOu2hOuLuSAo6rWsLuydtOygoOyVhOy5tOuNsOuvuOy7tO2TqO2EsO2VmeybkCk!5e0!3m2!1sko!2skr!4v1761029176552!5m2!1sko!2skr"
                         ></iframe>
                 </div>
@@ -135,11 +135,11 @@
                     <p>위의 연락처로 <i class="fa-solid fa-phone-volume"></i> 주시거나, 아래에 메모 남겨주세요.</p>
                     <form action="contact.jsp">
                         <div class="frm-input">
-                            <input type="text" placeholder="Name">
-                            <input type="email" placeholder="Email">
+                            <input class="w-100 my-1" type="text" placeholder="Name">
+                            <input class="w-100 my-1" type="email" placeholder="Email">
                         </div>
-                        <textarea name="" id="" placeholder="메시지를 기록하세요."></textarea>
-                        <div class="frm-btn"><button type="submit"><i class="fa-solid fa-paper-plane"></i>메시지 보내기</button>
+                        <textarea class="w-100 my-1" name="" id="" placeholder="메시지를 기록하세요."></textarea>
+                        <div class="frm-btn"><button type="submit" class="btn btn-outline-danger px-4 rounded-1"><i class="fa-solid fa-paper-plane"></i>메시지 보내기</button>
                         </div>
                     </form>
                 </div>
@@ -149,7 +149,7 @@
 
     <!-- footer -->
     <footer class="container-fluid bg-dark text-white text-center py-5">
-        <div class="top-btn"><a href="#top" class="text-white"><i class="fa-solid fa-arrow-up"></i>To the top</a></div>
+        <div class="top-btn"><a href="#top" class="text-white btn btn-outline-secondary px-4 rounded-1"><i class="fa-solid fa-arrow-up"></i>To the top</a></div>
         <div class="sns">
             <a class="text-white" href="#"><i class="fa-brands fa-square-facebook"></i></a>
             <a class="text-white" href="#"><i class="fa-brands fa-instagram"></i></a>

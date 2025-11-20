@@ -9,7 +9,9 @@
     font-family: Lato-Thin;
     src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Thin.ttf);
 }
-
+.ls10px {
+    letter-spacing: 0,625rem;
+}
 
 /* 공통 */
 .container {
@@ -52,8 +54,6 @@
 
 /* 애니메이션 */
 .circle_ani {
-    top: 0;
-    right: 0;
     width: 135px;
     height: 136px;
     transition: linear 5s;
@@ -78,4 +78,24 @@
 .myimg {
     width: 425px;
     height: 280px;
+}
+
+/* 진행률 바(progress-bar) */
+.progress {
+    height: 35px;
+}
+.progress:first-of-type .progress-bar {
+    width: 85%;
+}
+.progress:last-of-type .progress-bar {
+    width: 95%;
+}
+
+/* 폼(양식) */
+input {
+    height: 45px;
+}
+textarea {
+    height: 200px;
+    resize: none;
 }
