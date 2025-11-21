@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운터</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $(()=>{
+            let num = 0;
+            $('button').click(()=>{
+                $('p').text(++num);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>O</button>
+    <p></p>
+</body>
+</html>
