@@ -26,7 +26,7 @@
 
 #home .dark .bgimg {
     filter: brightness(50%);
-    background: url(../assets/img/taxi.webp) no-repeat 50% 43%/cover fixed;
+    background-image: url(../assets/img/taxi.webp);
     background-size: 105%;
 }
 
@@ -68,13 +68,43 @@
         transform: rotate(720deg) scale(3);
     }
 }
-/* 헤더 박스 그림자 */
-#header nav {
+/* 헤더 배경색 지정 */
+#header {
+    background: transparent;
+    transition: background 0.3s;
+}
+#header a {
+    color: #eee;
+}
+#header a:hover {
+    color: #FFF;
+}
+
+#header.active {
+    background: #FFF;
+    /* 헤더 박자 그림자 */
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+#header.active a {
+    color: #222;
+}
+#header.active a:hover {
+    color: #111;
 }
 /* 텍스트 그림자 */
 #home.dark h2 {
     text-shadow: 1px 1px 5px red, 0 0 25px red, 0 0 35px red;
+}
+
+/* 카운터 - 워크섹션 떨어짐 */
+#counter {
+    transform: translateY(56px);
+}
+
+#about::before, #work::before, #contact::before {
+    display: block;
+    content: '';
+    height: 56px;
 }
 
 /* 나의 사진 */

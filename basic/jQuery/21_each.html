@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 기타 메서드</title>
+    <style>
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /* 
+            이벤트
+                scroll
+
+            기타 메서드
+                반복할요소.each(function([idx], [ele]))
+                    - 반복
+                scrollTop(): 스크롤 양
+
+                offset().top: 요소의 위치(창 기준)
+                position().top: 요소의 위치(부모 기준)
+        */
+
+        // 이벤트 형식:
+        // 요소.이벤트종류(function(){});
+        // 요소.on('이벤트종류', function(){});
+        $(() => {
+            // 버튼을 클릭하면
+            $('button').on('click', ()=>{
+                // li의 내용을 가져와서 경고창을 띄운다.
+                // for (let i = 0; i < 3; i++) {
+                //     alert($('li').eq(i).text());
+                // }
+                // alert($('li').eq(1).text());
+                // alert($('li').eq(2).text());
+
+                // $('li').each(function(idx){
+                //     alert($('li').eq(idx).text());
+                // });
+                $('li').each(function(){
+                    alert($(this).text());
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+<button>Alert the value of each list item</button>
+
+<ul>
+  <li>Coffee</li>
+  <li>Milk</li>
+  <li>Soda</li>
+</ul>
+</body>
+
+</html>

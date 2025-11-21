@@ -5,12 +5,12 @@ $(window).scroll(function () {
     const speed = 1000,
         easing = "easeOutExpo",
         pos = 0,
-        offset = 0.5;
+        offset = 2.5;
 
     // 오른쪽 상단에 스크롤 양과 창 높이 값 출력
     // console.log(windowScrollTop + " , " + windowHeight);
 
-    if (windowScrollTop > windowHeight / offset) {
+    if (windowScrollTop > windowHeight * offset) {
         //참일 경우
         // i는 0, 1, 2, 3
         for (let i = 0; i < 4; i++) {
@@ -29,4 +29,10 @@ $(window).scroll(function () {
             .stop()
             .animate({ top: pos + 600, opacity: 0 }, speed, easing);
     }
+    if ($(window).scrollTop() > 0){
+        $("#header").addClass("active");
+    } else {
+        $("#header").removeClass("active");
+    }
+
 });

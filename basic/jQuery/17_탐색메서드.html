@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 탐색 메서드</title>
+    <style>
+        div {
+            margin: 20px;
+        }
+        .ancestors div {
+            width: 500px;
+        }
+
+        .ancestors * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /* 
+            탐색 메서드
+                조상
+                    filter과 sotp 인자는 조상(부모 포함) 요소로 지정!
+
+                    요소.parent([filter])
+                        - 요소의 부모 선택
+                    요소.parents([filter])
+                        - 요소의 모든 조상 선택
+                    요소.parentsUntil([stop], [filter])
+                        - 요소~stop선택자까지 선택 (요소와 선택자 제외)
+                        - 인자를 모두 생략하면 parents()와 같다.
+                자손
+                    children()
+                    find()
+                형제
+                    siblings()
+                    next()
+                    nextAll()
+                    nextUntil()
+                    prev()
+                    prevAll()
+                    prevUntil()  
+                필터
+                    first()
+                    last()
+                    eq()
+                    filter()
+                    not()      
+        */
+        $(() => {
+            //$('html,body,div,ul,li,p').css({color: 'red', border: '2px solid red'});
+            // span을 기준으로 
+            // span의 부모
+            $('span').parentsUntil().css({ color: 'red', border: '2px solid red' });
+            // p의 부모 선택, 부모의 배경색을 노랑
+            $('p').parent('.parent').css({ background: 'yellow' });
+
+            $('p').parentsUntil('.outer', '.inner').css('border', '2px solid blue');
+        });
+    </script>
+</head>
+
+<body>
+    <div class="ancestors">
+        <div>div (great-grandparent)
+            <ul>ul (grandparent)
+                <li>li (direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+
+        <div>div (grandparent)
+            <p>p (direct parent)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="parent">
+            <p>Child 1</p>
+        </div>
+        <div class="parent">
+            <p>Child 2</p>
+        </div>
+        <div class="other">
+            <p>Child 3</p>
+        </div>
+    </div>
+
+    <div class="outer">
+        <div class="inner">
+            <div class="target">
+                <p>This is the target element.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

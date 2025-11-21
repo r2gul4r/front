@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 탐색 메서드</title>
+    <style>
+        body > div {
+            border: 1px solid black;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /* 
+            탐색 메서드
+                탐색메서드(filter)
+                xxxUtil(stop, filter)
+                    - filter: 선택자
+                    - stop: 선택자
+
+                조상
+                    요소.parent([filter])
+                        - 요소의 부모 선택
+                    요소.parents([filter])
+                        - 요소의 모든 조상 선택
+                    요소.parentsUntil([stop], [filter])
+                        - 요소~stop선택자까지 선택 (요소와 선택자 제외)
+                        - 인자를 모두 생략하면 parents()와 같다.
+                자손
+                    요소.children([filter])
+                        - 요소의 자식 선택
+                    요소.find(filter)
+                        - 요소의 하위 요소 선택
+                형제
+                    요소.siblings([filter])
+                        - 요소의 형제 요소들을 선택
+                    요소.next([filter])
+                        - 요소의 다음 요소 1개 선택
+                    요소.nextAll([filter])
+                        - 요소의 다음 요소 모두 선택
+                    요소.nextUntil([stop], [filter])
+                        - 요소~stop요소까지 사이 요소 모두 선택
+                    요소.prev([filter])
+                        - 요소의 이전 요소 1개 선택
+                    요소.prevAll([filter])
+                        - 요소의 이전 요소 모두 선택
+                    요소.prevUntil([stop], [filter]) 
+                        - 요소~stop요소까지 사이 요소 모두 선택 
+                필터
+                    요소.first()
+                        - 요소 중 첫 번째 요소 선택
+                    요소.last()
+                        - 요소 중 마지막 번째 요소 선택
+                    요소.eq(index)
+                        - 요소 중 index 번째 요소 선택
+                        - index는 0,1,2,...(음수 가능!)
+
+                    요소.filter([조건],[function(index)])
+                    요소.not([criteria],[function(index)])      
+        */
+        $(() => {
+            // 첫 번째 div 선택, 테두리 지정
+            $('div').first().css({border: '2px solid red'});
+            $('div:first').css({border: '2px solid blue'});
+            $('div').eq(0).css({border: '2px solid blue'});
+            $('div').eq(-5).css({borderLeft: '12px solid blue'});
+
+            // 마지막 번째 div 선택, 테두리 지정
+            $('div').last().css({border: '2px solid red'});
+            $('div:last').css({border: '2px solid blue'});
+            $('div').eq(4).css({border: '2px solid blue'});
+            $('div').eq(-1).css({borderLeft: '12px solid blue'});
+
+            // 두 번째 div 선택, 테두리 지정
+            $('div').eq(1).css({border: '3px solid green'});
+            $('div:eq(1)').css({border: '3px solid blue'});
+
+            // .intro를 선택, 밑줄 긋기
+            $('p .intro').css({textDecoration: 'overline'});
+            $('p').find('.intro').css({textDecoration: 'overline'});
+
+            $('p.intro').css({textDecoration: 'underline'});
+            $('p').filter('.intro').css({textDecoration: 'underline'});
+
+            // intro를 갖지 않은 span요소 선택
+            $('span:not(".intro")').css({borderRight: '5px solid red'});
+            $('span').not('.intro').css({borderRight: '5px solid red'});
+        });
+    </script>
+</head>
+
+<body>
+    <h1 class="intro">Welcome to My Homepage</h1>
+
+    <p>This is a paragraph.</p>
+
+    <div>
+        <p>A paragraph in a div.</p>
+        <p class="intro">Another paragraph in a div.</p>
+    </div>
+    <br>
+
+    <div>
+        <p class="intro">A paragraph in another div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+    <br>
+    <div>
+        <p>A paragraph <span class="intro">난 intro로 있음!</span> div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+    <br>
+    <div>
+        <p class="intro">A paragraph in another div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+    <br>
+
+    <div>
+        <p>A paragraph <span>나다나 나는 intro 없음!</span> div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+</body>
+
+</html>

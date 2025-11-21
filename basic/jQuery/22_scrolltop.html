@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 기타 메서드</title>
+    <style>
+        div {
+            border: 1px solid black;
+            width: 100px;
+            height: 150px;
+            overflow: auto;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+       $(()=>{
+            $('div').on('scroll', ()=>{
+                let st = $('div').scrollTop();
+                console.log(st);
+            });
+       });
+    </script>
+</head>
+
+<body>
+<button>Alert the value of each list item</button>
+
+<div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore eveniet molestias hic. Placeat in dolorem corporis nisi. Illo quasi laboriosam, minus quibusdam fugit aut, quidem quia, velit fuga facilis consequatur.</div>
+</body>
+
+</html> 

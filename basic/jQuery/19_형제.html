@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 탐색 메서드</title>
+    <style>
+        .siblings * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        /* 
+            탐색 메서드
+                탐색메서드(filter)
+                xxxUtil(stop, filter)
+                    - filter: 선택자
+                    - stop: 선택자
+
+                조상
+                    요소.parent([filter])
+                        - 요소의 부모 선택
+                    요소.parents([filter])
+                        - 요소의 모든 조상 선택
+                    요소.parentsUntil([stop], [filter])
+                        - 요소~stop선택자까지 선택 (요소와 선택자 제외)
+                        - 인자를 모두 생략하면 parents()와 같다.
+                자손
+                    요소.children([filter])
+                        - 요소의 자식 선택
+                    요소.find(filter)
+                        - 요소의 하위 요소 선택
+                형제
+                    요소.siblings([filter])
+                        - 요소의 형제 요소들을 선택
+                    요소.next([filter])
+                        - 요소의 다음 요소 1개 선택
+                    요소.nextAll([filter])
+                        - 요소의 다음 요소 모두 선택
+                    요소.nextUntil([stop], [filter])
+                        - 요소~stop요소까지 사이 요소 모두 선택
+                    요소.prev([filter])
+                        - 요소의 이전 요소 1개 선택
+                    요소.prevAll([filter])
+                        - 요소의 이전 요소 모두 선택
+                    요소.prevUntil([stop], [filter]) 
+                        - 요소~stop요소까지 사이 요소 모두 선택 
+                필터
+                    first()
+                    last()
+                    eq()
+                    filter()
+                    not()      
+        */
+        $(() => {
+            // h2의 형제들 선택, 테두리 지정
+            $('h2').siblings('p').css({ border: '2px solid red' });
+            // h2의 다음 요소 선택, 왼쪽 테두리 지정
+            $('h2').next().css({ borderLeft: '15px solid blue' });
+            // h2의 다음(아래) 요소 모두 선택, 글자색 지정
+            $('h2').nextAll().css({ color: 'blue' });
+            // h2와 h6 사이 요소 선택(h2와 h6 제외)
+            $('h2').nextUntil('h6').css({  borderRight: '15px solid blue' });
+            // h2의 이전 요소 선택, 왼쪽 테두리 지정
+            $('h2').prev().css({ borderLeft: '15px solid orange' });
+            // h2의 이전(위) 요소 모두 선택, 글자 지정
+            $('h2').prevAll().css({ color: 'red' });
+            // h2와 h6 사이 요소 선택(h2와 h6 제외)
+            $('h2').prevUntil('p').css({ borderRight: '15px solid orange' });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="siblings">
+        <div>div (parent)
+            <p>p</p>
+            <span>span</span>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <h4>h4</h4>
+            <h5>h5</h5>
+            <h6>h6</h6>
+            <p>p</p>
+        </div>
+    </div>
+</body>
+
+</html>
