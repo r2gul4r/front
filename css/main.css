@@ -10,7 +10,7 @@
     src: url(https://fsclass-n.github.io/jfs/assets/font/Lato-Thin.ttf);
 }
 .ls10px {
-    letter-spacing: 0,625rem;
+    letter-spacing: 0.625rem;
 }
 
 /* 공통 */
@@ -20,13 +20,13 @@
 
 /* 배경이미지 */
 #home .bgimg {
-    background: url(assets/img/kagosima.webp) no-repeat 50% 50%/cover fixed;
+    background: url(../assets/img/kagosima.webp) no-repeat 50% 50%/cover fixed;
     background-size: 105%;
 }
 
 #home .dark .bgimg {
     filter: brightness(50%);
-    background-image: url(assets/img/taxi.webp);
+    background-image: url(../assets/img/taxi.webp);
     background-size: 105%;
 }
 
@@ -36,17 +36,17 @@
 }
 
 #about .parallax-bg {
-    background-image: url(assets/img/taxi.webp);
+    background-image: url(../assets/img/taxi.webp);
     background-position: 50% 58%;
     background-size: 105%;
 }
 
 #work .parallax-bg {
-    background-image: url(assets/img/portfolio.jpg);
+    background-image: url(../assets/img/portfolio.jpg);
 }
 
 #contact .parallax-bg {
-    background-image: url(assets/img/kagosima.webp);
+    background-image: url(../assets/img/kagosima.webp);
     background-position: 50% 95%;
     background-size: 105%;
 }
@@ -71,10 +71,11 @@
 /* 헤더 배경색 지정 */
 #header {
     background: transparent;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 #header a {
     color: #eee;
+    transition: 0.3s;
 }
 #header a:hover {
     color: #FFF;
@@ -87,6 +88,7 @@
 }
 #header.active a {
     color: #222;
+    transition: 0.3s;
 }
 #header.active a:hover {
     color: #111;
