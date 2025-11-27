@@ -8,28 +8,43 @@
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script>
         $(()=>{
+            // num 변수 선언
             let num = 0;
+
+            // 버튼을 클릭하면
             $('button').click(()=>{
+                // p요소에 num을 하나씩 증가 시켜 지정
                 $('p').text(++num);
             });
         });
-        
-        if (i0 < num0) {
-            
-        }
-        if (i1 < num1) {
-            
-        }
-        if (i2 < num2) {
-            
-        }
-        if (i3 < num3) {
-            
-        }
     </script>
 </head>
 <body>
-    <button>O</button>
-    <p></p>
+    <div class="count" data-target="3">0</div>
+    <div class="count" data-target="2">0</div>
+    <div class="count" data-target="20">0</div>
+    <div class="count" data-target="3">0</div>
+
+<script>
+  $(".count").each(function () {
+    let $this = $(this);
+    let target = parseInt($this.attr("data-target"));
+    let current = 0;
+    let duration = 1000;
+    let interval = 20;
+    let step = Math.ceil(target / (duration / interval));
+
+    let timer = setInterval(() => {
+      current++;/* 1씩 증가는 current++; */
+
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+
+      $this.text(current);
+    }, interval);
+  });
+</script>
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운터</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+        $(()=>{
+            let i = 0;
+            // 1부터 20까지 숫자가 증가
+            function counter() {
+                if (i > 20) {
+                    // break: 반복문(선택문)을 벗어남
+                    return;
+                }
+                $('span').text(i++);                
+            }
+            
+            // const 변수명 = setInterval(콜백함수, 시간)
+            // 시간은 밀리초(ms): 1000 -> 1초
+            // 매 시간마다 반복
+            // setInterval(function(){counter();}, 50);
+            setInterval(counter, 50);
+            // clearInterval(변수명)
+        });
+    </script>
+</head>
+<body>
+    <!-- 
+        data-* 
+        사용자 정의 속성
+     -->
+    <p><span data-count="55">0</span>+</p>
+    <p><span data-count="25">0</span>+</p>
+    <p><span data-count="20">0</span>+</p>
+    <p><span data-count="35">0</span>+</p>
+</body>
+</html>
