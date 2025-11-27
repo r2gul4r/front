@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS reduce()</title>
+</head>
+
+<body>
+    <script>
+        // reduce()는 배열의 모든 요소를 순회하며 
+        // 하나의 값으로 누적하는 메서드입니다.
+        /* 
+            arr.reduce((누적값, 현재값, [인덱스], [원본배열]) => {
+                // 실행 로직
+                return 새로운누적값;
+            }, 초기값);
+        */
+        const numbers = [1, 2, 3, 4];
+        // 배열.reduce(콜백함수, 초기값);
+        /* 
+            배열.reduce((누적값, 현재값) => 값, 0);
+        */
+        const sum = numbers.reduce((acc, cur) => acc + cur, 0);
+        console.log(sum); // 10
+    </script>
+</body>
+
+</html>

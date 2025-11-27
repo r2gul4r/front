@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 전개(...) 연산자</title>
+</head>
+
+<body>
+    <script>
+        // 이터러블(iterable, 반복 가능한) 객체
+        // - 반복 가능한 객체: 배열, 객체, 문자열 등
+        // - 여러 요소를 순서대로 하나씩 꺼낼 수 있는 객체
+        // - 전개(스프레드, spread, 펼침) 연산자를 이터러블 객체에 사용한다.
+
+        // 배열 복사
+        const arr = [1, 2, 3];
+        const copy = [...arr];
+        console.log(copy); // [1, 2, 3]
+
+        // 배열 병합
+        const a = [1, 2];
+        const b = [3, 4];
+        const merged = [...a, ...b];
+        console.log(merged); // [1, 2, 3, 4]
+
+        // 함수 인자 전달
+        function sum(x, y, z) {
+            return x + y + z;
+        }
+        const nums = [1, 2, 3];
+        console.log(sum(...nums)); // 6
+        //console.log(sum(...[1, 2, 3]));
+
+        // 객체 복사
+        const obj = { a: 1, b: 2 };
+        const copy2 = { ...obj };
+        console.log(copy2); // { a: 1, b: 2 }
+
+        // 객체 병합
+        // 나중에 오는 키가 앞의 값을 덮습니다.
+        const o1 = { a: 1, b: 2 };
+        const o2 = { b: 3, c: 4 };
+        const merged2 = { ...o1, ...o2 };
+        console.log(merged2); // { a: 1, b: 3, c: 4 }
+
+        // 문자열(string) 분해 
+        // -> 문자열을 분할하여 배열로 만든다.
+        const str = "hello";
+        const chars = [...str];
+        console.log(chars); // ['h', 'e', 'l', 'l', 'o']
+    </script>
+</body>
+
+</html>

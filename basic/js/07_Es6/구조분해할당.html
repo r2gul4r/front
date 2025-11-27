@@ -1,11 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JS 구조분해할당</title>
 </head>
+
 <body>
-    
+    <script>
+        // 구조분해할당
+        // 배열 선언
+        const arr = [1, 2, 3];
+        // 1. 배열 구조분해할당
+        // - 좌변의 순서대로 변수에 할당됩니다.
+        // const [변수1, 변수2, ..] = [값1, 값2, ..];
+        // 변수1 = 값1, 변수2 = 값2, ..
+        const [a, b, c, d] = arr;
+
+        console.log('a = ' + a); // 1
+        console.log('b = ' + b); // 2
+        console.log('c = ' + c); // 3
+        console.log('d = ' + d); // undefined
+
+        // 기본값 설정
+        const [x, y, z = 100] = [10, 20];
+        console.log('x =', x);
+        console.log('y =', y);
+        console.log('z =', z); // 100 (값이 없으면 기본값)
+
+        // 2. 객체 구조분해할당
+        // - 순서 없다.
+        // const { 변수1, 변수2, .. } = {속성1: 값1, 속성2: 값2, ..};
+        // 변수1 = 값1, 변수2 = 값2
+        // user 객체
+        const user = { name: '홍길동', age: 25 };
+        //const { name, age } = user;
+        const { age, name } = user;
+
+        console.log('name =', name); // 홍길동
+        console.log('age =', age);  // 25
+
+        // 다른 변수 이름으로 할당 (별칭 사용)
+        // const { 변수: 별칭 } = {};
+        const { name: userName } = user;
+        console.log('userName =', userName); // 홍길동
+
+        // 기본값 설정
+        //const { job } = user;
+        //console.log('job =',job); // job = undefined
+        const { job = '개발자' } = user;
+        console.log('job =', job); // job = 개발자
+
+        // 3. 매개변수 구조분해할당
+        function printUser({ name, age }) {
+            console.log(`이름은 ${name}이고, 나이는 ${age}살이다.`);
+        }
+
+        const user2 = { name: 'Jane', age: 22 };
+        printUser(user2);
+        // printUser({ name: 'Jane', age: 22 });
+
+        // 중첩 구조 분해
+        const arr2 = [1, 2, [3, 4, 5]];
+        const [m, n, [o, p, q]] = arr2;
+        console.log('m =', m); // 1
+        console.log('n =', n); // 2
+        console.log('o =', o); // 3
+        console.log('p =', p); // 4
+        console.log('q =', q); // 5
+
+        const user3 = {
+            name: '철수',
+            address: {
+                city: '서울',
+                zip: '12345'
+            }
+        };
+
+        // const { 변수1, 변수2, .. } = {};
+        // const { 변수1: { 변수2, 변수3, .. } } = {{}};
+        const { address, address: {city, zip} } = user3;
+        console.log('address =', address); // {city: '서울', zip: '12345'}
+        console.log('city =', city); // 서울
+    </script>
 </body>
+
 </html>
