@@ -122,12 +122,12 @@
 .progress {
   height: 35px;
 }
-.progress:first-of-type .progress-bar {
+/* .progress:first-of-type .progress-bar {
   width: 85%;
 }
 .progress:last-of-type .progress-bar {
   width: 95%;
-}
+} */
 
 /* 카운터 */
 .counter {
