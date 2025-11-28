@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 카운터</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        section {
+            height: 100vh;
+        }
+
+        #counters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: red;
+        }
+
+        .counter {
+            font-size: 4em;
+            font-weight: bold;
+            margin: 20px;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .counter.active {
+            opacity: 1;
+        }
+        .progress-wrap {
+            position: relative;
+            width: 400px;
+            height: 30px;
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #4caf50;
+            transition: width .3s ease-out;
+        }
+
+        .percent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+        }
+       
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+</head>
+
+<body>
+    <section>
+        <h1>스크롤 아래로 내려보세요</h1>
+    </section>
+
+    <section>
+        <div class="progress-wrap">
+            <div class="progress-bar"><span class="percent" data-target="85">85%</span></div>
+        </div>
+        
+        <div class="progress-wrap">
+            <div class="progress-bar"><span class="percent" data-target="95">95%</span></div>
+        </div>
+
+        <div id="counters">
+            <div class="counter" data-target="85">0</div>+<span>내용</span>
+            <div class="counter" data-target="95">0</div>+<span>내용</span>
+        </div>
+    </section>
+
+    <script>
+        $(function () {
+
+            function runCounter($counter) {
+                var target = parseInt($counter.attr("data-target")),
+                    count = 0,
+                    speed = 50;
+
+                $counter.text(0);
+
+                var counterInterval = setInterval(function () {
+                    // count += Math.ceil(target / 100);
+                    count++;
+                    if (count >= target) {
+                        //count = target;
+                        clearInterval(counterInterval);
+                    }
+                    $counter.text(count);
+                }, speed);
+            } // function runCounter($counter) end
+
+            function checkScroll() {
+                const scrollTop = $(window).scrollTop(),
+                    windowHeight = $(window).height(),
+                    elementTop = $('#counters').offset().top;
+
+                $(".counter").each(function () {
+                    const $this = $(this);
+
+                    if (scrollTop + windowHeight > elementTop + 100) {
+                    // if (scrollTop + windowHeight > elementTop + 50 && scrollTop < elementTop + $this.outerHeight()) {
+                        if (!$this.hasClass("active")) {
+                            $this.addClass("active");
+                            runCounter($this);
+                        }
+                    } else {
+                        $this.removeClass("active");
+                        $this.text(0);
+                    }
+                });
+                console.log($(window).scrollTop());
+            } // function checkScroll() end
+
+            // $.throttle(시간, 함수)
+            // -> 시간은 ms, 예) 100 -> 0.1초
+            $(window).on("scroll", $.throttle(100, checkScroll));
+            //$(window).on("scroll", checkScroll);
+            checkScroll();
+        });
+    </script>
+</body>
+
+</html>

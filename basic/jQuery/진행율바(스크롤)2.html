@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 카운터</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    padding: 50px;
+}
+
+.progress-wrap {
+    position: relative;
+    width: 400px;
+    height: 30px;
+    background: #ddd;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #4caf50;
+    transition: width 0.3s ease-out;
+}
+
+.percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+       
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+</head>
+
+<body>
+   <section style="height:100vh; display:flex; justify-content:center; align-items:center;">
+    <h1>스크롤 아래로 내려보세요</h1>
+</section>
+
+<section id="progress-section" style="height:100vh; display:flex; justify-content:center; align-items:center;">
+    <div class="progress-wrap">
+        <div class="progress-bar"></div>
+        <span class="percent">0%</span>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script-jquery.js"></script>
+<script src="script-js.js"></script>
+
+
+    <script>
+      $(function() {
+    let animated = false; // 한 번만 실행
+
+    function runProgressBar() {
+        let current = 0;
+        const target = 100;
+        const speed = 20;
+
+        let timer = setInterval(function() {
+            current++;
+            $(".progress-bar").css("width", current + "%");
+            $(".percent").text(current + "%");
+
+            if (current >= target) {
+                clearInterval(timer);
+            }
+        }, speed);
+    }
+
+    function checkScroll() {
+        const scrollTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+        const sectionTop = $("#progress-section").offset().top;
+
+        if (!animated && scrollTop + windowHeight > sectionTop + 20) {
+            animated = true;
+            runProgressBar();
+        }
+        // 화면에서 벗어나면 다시 초기화 가능
+        if (scrollTop + windowHeight < sectionTop + 20) {
+            animated = false;
+            $(".progress-bar").css("width", "0%");
+            $(".percent").text("0%");
+        }
+    }
+
+    $(window).on("scroll", $.throttle ? $.throttle(100, checkScroll) : checkScroll);
+    checkScroll();
+});
+    </script>
+</body>
+
+</html>
