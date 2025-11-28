@@ -51,12 +51,12 @@
     </div><!-- #home -->
 
     <!-- about section -->
-    <div id="about" class="container-fluid px-0">
+    <div id="about" class="container-fluid px-0 position-relative">
         <h3 class="text-center mt-5 pt-5 fs-2">나에 대해서</h3>
         <p class="text-center mt-4 mb-5">나는 코딩을 좋아한다.</p>
         <div class="container pb-5">
-            <div class="basic">
-                <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby
+            <div class="basic overflow-hidden">
+                <p class="motion position-relative">We have created a fictional "personal" website/blog, and our fictional character is a hobby
                     photographer. <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt</strong> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
@@ -66,12 +66,12 @@
                     enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.</p>
                 <div class="row inner mt-5">
-                    <div class="col text-center">
+                    <div class="col text-center motion position-relative">
                         <b class="d-block mb-5">LSH</b>
                         <div class="myimg"><img class="w-100 h-100 object-fit-cover" src="assets/img/avatar_hat.jpg"
                                 alt="나"></div>
                     </div>
-                    <p class="col ele-hide">Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do
+                    <p class="col ele-hide motion position-relative">Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do
                         eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                         ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
@@ -87,29 +87,37 @@
                 <div class="inner">
                     <p class="ls10px">Front-end</p>
                     <div class="progress rounded-0">
-                        <div class="progress-bar bg-info"><span>85%</span></div>
+                        <div class="progress-bar bg-info"><span class="percent">85%</span></div>
                     </div>
                     <p class="ls10px">Back-end</p>
                     <div class="progress rounded-0">
-                        <div class="progress-bar bg-info"><span>95%</span></div>
+                        <div class="progress-bar bg-info"><span class="percent">95%</span></div>
                     </div>
                 </div>
             </div><!-- .skill -->
         </div><!-- .container -->
 
         <!-- counter -->
-        <div id="counter" class="container-fluid bg-secondary count py-5">
-            <ul class="row text-center py-2 list-unstyled">
-                <li class="col text-white"><span class="fs-2 d-block" data-="3">0</span>Partners</li>
-                <li class="col text-white"><span class="fs-2 d-block" data-="3">0</span>Projects Done</li>
-                <li class="col text-white"><span class="fs-2 d-block" data-="20">0</span>Total Page</li>
-                <li class="col text-white"><span class="fs-2 d-block" data-="2">0</span>National technical certification</li>
+        <div id="counterWrap" class="container-fluid bg-secondary count py-5">
+            <ul class="row text-center py-2 list-unstyled" id="counters">
+                <li class="col text-white">
+                    <span class="counter fs-2" data-target="3">0</span><div>Partners</div>
+                </li>
+                <li class="col text-white">
+                    <span class="counter fs-2" data-target="3">0</span><div>Projects Done</div>
+                </li>
+                <li class="col text-white">
+                    <span class="counter fs-2" data-target="20">0</span><div>Total Page</div>
+                </li>
+                <li class="col text-white">
+                    <span class="counter fs-2" data-target="2">0</span><div>National technical certification</div>
+                </li>
             </ul>
         </div><!-- .counter -->
     </div><!-- #about -->
 
     <!-- work section -->
-    <div id="work" class="container-fluid px-0 pb-5">
+    <div id="work" class="container-fluid px-0 pb-5 position-relative overflow-hidden">
         <div class="parallax-bg position-relative">
             <h2 class="position-absolute top-50 start-50 translate-middle text-white ls10px display-6">PORTFOLIO</h2>
         </div>
@@ -188,11 +196,14 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+
     <script src="js/scrollMotion.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/dark.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/counter.js"></script>
+    <script src="js/prograss.js"></script>
 </body>
 
 </html>

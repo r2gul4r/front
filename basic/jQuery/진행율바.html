@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+
+        .progress-wrap {
+            position: relative;
+            width: 400px;
+            height: 30px;
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #4caf50;
+            transition: width .3s ease-out;
+        }
+
+        .percent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress-wrap">
+        <div class="progress-bar"></div>
+        <span class="percent">0%</span>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            let current = 0;            // 시작값
+            let target = 100;           // 목표값
+            let speed = 20;             // 20ms(=0.02초) 마다 업데이트
+
+            let timer = setInterval(function () {
+
+                current++;
+
+                // 진행바 채우기
+                $(".progress-bar").css("width", current + "%");
+
+                // 숫자 갱신
+                $(".percent").text(current + "%");
+
+                // 100% 되면 정지
+                if (current >= target) {
+                    clearInterval(timer);
+                }
+
+            }, speed);
+        });
+    </script>
+</body>
+
+</html>
