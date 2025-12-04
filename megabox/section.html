@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEET PLAY SHARE, 메가박스</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        /* section */
+        #section {
+            color: #fff;
+        }
+        .ibox {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h2 {
+            display: inline-block;
+            border-bottom: 1px solid #555;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .more {
+            text-align: right;
+            margin-bottom: 16px;
+        }
+        .more a {
+            color: #ccc;
+        }
+        .more i {
+            margin-left: 8px;
+            font-weight: 300;
+            transform: scale(2.3,2.3);
+        }
+        .link {
+            display: flex;
+            background: rgba(0,0,0,0.5);
+            margin: 50px 0;
+            padding: 25px 0;
+        }
+        .link li {
+            position: relative;
+            width: 275px;
+            text-align: center;
+        }
+        .link li:not(:last-of-type)::after {
+            position: absolute;
+            content: '';
+            width: 1px;
+            height:100%;
+            margin-left: 90px;
+            background: rgba(255,255,255,.3);
+        }
+        .link li:first-of-type::after {
+            margin-left: 40px;
+        }
+        .link .search {
+            position: relative;
+            display: inline-block;
+            width: 70%;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255, 0.3);
+            text-align: left;
+        }
+        .link .search::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            right: 0px;
+            width: 18px;
+            height: 18px;
+            background: url(images/ico-search-white.png) no-repeat;
+        }
+        .link .search input::placeholder {
+            font-size: 0.938rem;
+            color: #ccc;
+        }
+        .link img {
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+            margin-right: 8px;            
+        }
+        .link span {
+            vertical-align: middle;
+        }
+        .mouse {
+            text-align: center;
+        }
+        .mouse span {
+            display: inline-block;
+            width: 16px;
+            animation: mouse 2s infinite ease-in-out;
+        }
+        @keyframes mouse {
+            0% {transform: translateY(0);}
+            30% {transform: translateY(20px);}
+            80% {transform: translateY(20px);}
+            100% {transform: translateY(0px);}
+        }
+
+        /* Box Office Card UI */
+        .box_office {
+            display: flex;
+            gap: 40px;
+        }
+
+        .box_office_card {
+            position: relative;
+            width: 245px;
+        }
+
+        /* 영화 순위 */
+        .rank {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 300;
+            font-style: italic;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        /* 스크린 타입 */
+        .screen_type {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            width: 60px;
+        }
+
+        /* 연령 제한 */
+        .grade {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 28px;
+        }
+
+        /* 관람평 */
+        .score {
+            position: absolute;
+            width: calc(100% - 48px);
+            text-align: center;
+            bottom: 30px;
+            border-top: 1px solid rgba(255, 255, 255, .2);
+            padding-top: 8px;
+        }
+
+        /* 관람평 점수 */
+        .score span {
+            color: #59bec9;
+            font-size: 1.5rem;
+            margin-left: 16px;
+        }
+
+        /* 버튼 */
+        .btn {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        /* 좋아요! 버튼 */
+        .like {
+            color: #fff;
+            background: transparent;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            width: 100px;
+            /* height: 34px; */
+        }
+
+        .like i {
+            margin-right: 4px;
+        }
+
+        /* 예매 버튼 */
+        .reservation_link {
+            width: 100%;
+            background: #037b94;
+            border-radius: 5px;
+            text-align: center;
+            padding: 6px;
+            /* line-height: 34px; */
+        }
+
+        /* y축 회전 */
+        .inner {
+            position: relative;
+            height: 352px;
+            /* 원근감 */
+            perspective: 1000px;
+        }
+
+        .inner:hover {
+            /* 마우스 손가락 모양 */
+            cursor: pointer;
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transition: .5s;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .front {
+            transform: rotateY(0deg);
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            padding: 24px;
+            color: #fff;
+            background: rgb(0, 0, 0, 0.8);
+            /* 뒷면 숨기기 */
+            backface-visibility: hidden;
+        }
+
+        /* 호버시 뒤집기 */
+        .inner:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .inner:hover .back {
+            transform: rotateY(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <section id="section">
+        <div class="ibox">
+            <h2>박스오피스</h2>
+            <div class="more"><a href="https://www.megabox.co.kr/movie">더 많은 영화보기<i class="fa-solid fa-plus"></i></a></div>
+            
+            <!-- Card UI(카드 UI) -->
+            <div class="box_office"></div><!-- //.box_office -->
+            
+            <!-- 섹션 링크 -->
+            <ul class="link">
+                <!-- 검색 창 -->
+                <li><span class="search"><input type="text" placeholder="영화명을 입력해 주세요"></span></li>
+                <li><a href="https://www.megabox.co.kr/booking/timetable"><img src="images/ico-schedule-main.png" alt="상영시간표"><span>상영시간표</span></a></li>
+                <li><a href="https://www.megabox.co.kr/movie"><img src="images/ico-boxoffice-main.png" alt="박스오피스"><span>박스오피스</span></a></li>
+                <li><a href="https://www.megabox.co.kr/booking"><img src="images/ico-quick-reserve-main.png" alt="빠른예매"><span>빠른예매</span></a></li>
+            </ul>
+            <!-- 마우스 모양 애니메이션 -->
+            <div class="mouse"><span><img src="images/ico-mouse.png" alt="아래로"></span></div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/data.js"></script>
+
+    <script>
+        $(datas).each((idx, data)=>{
+            const screenImgs = data.screenTypes.map(ele=>`<img src="${ele}" alt="Screen Types">`).join('');
+            
+            const card = `<div class="box_office_card">
+            <div class="inner">
+                <div class="front">
+                    <span class="rank">${data.rank}</span>
+                    <div class="poster">
+                        <img src="${data.poster}" alt="${data.title}">
+                    </div>
+                    <div class="screen_type">${screenImgs}</div>
+                    <div class="grade">
+                        <img src="${data.grade}" alt="Grade ${data.age}">
+                    </div>
+                </div><!-- //.front -->
+                <div class="back">
+                    <p>${data.description}</p>
+                    <div class="score">관람평<span>${data.score}</span></div>
+                </div><!-- //.back -->
+            </div><!-- //.inner -->
+            <!-- btn -->
+            <div class="btn">
+                <button type="button" class="like"><i class="fa-regular fa-heart"></i>${data.like}</button>
+                <a href="" class="reservation_link">예매</a>
+            </div>
+        </div>`
+    
+        $('.box_office').append(card);
+
+        }); // forEach()
+    </script>
+</body>
+
+</html>

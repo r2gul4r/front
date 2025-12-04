@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>MEET PLAY SHARE, 메가박스</title>
+    <style>
+        @import url(css/reset.css);
+
+        .box_office {
+            display: flex;
+            gap: 40px;
+        }
+
+        .box_office_card {
+            width: 245px;
+        }
+
+        .box_office_card .rank {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 2rem;
+            font-weight: 300;
+            font-style: italic;
+            color: #fff;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        .box_office_card .poster {
+            height: 352px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .box_office_card .screen_type {
+            position: absolute;
+            width: 60px;
+            left: 10px;
+            bottom: 10px;
+        }
+
+        .box_office_card .movie_grade {
+            position: absolute;
+            width: 28px;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .box_office_card .btn {
+            display: flex;
+            gap: 8px;
+        }
+
+        .box_office_card .like {
+            width: 100px;
+            height: 34px;
+            border: 1px solid #fff;
+            background: transparent;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .box_office_card .like i {
+            margin-right: 8px;
+        }
+
+        /* 하트 좋아요! 클릭시 색상 변경하기 */
+        .box_office_card .like.active i {
+            color: red;
+        }
+
+        .box_office_card .reservation_link {
+            background: #037b94;
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* y축 회전 */
+        .box_office_card .poster_wrap {
+            position: relative;
+            height: 352px;
+            /* 3D 효과 필수 */
+            perspective: 1000px;
+            margin-bottom: 8px;
+        }
+
+        /* 앞면, 뒷면 공통 */
+        .box_office_card .poster_front,
+        .box_office_card .poster_back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 5px;
+            overflow: hidden;
+            /* 뒷면 숨김 */
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            transition: transform .6s;
+        }
+
+        /* 앞면 */
+        .box_office_card .poster_front {
+            transform: rotateY(0deg);
+        }
+
+        /* 뒷면 */
+        .box_office_card .poster_back {
+            color: #fff;
+            padding: 24px;
+            transform: rotateY(180deg);
+        }
+
+        .box_office_card .poster_back::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url(images/YiSbqEf6OvFcDoLoQCipDojOHqMCwKG4_420.jpg);
+            filter: brightness(30%);
+        }
+
+        .box_office_card .poster_back .score {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 30px;
+        }
+
+        .box_office_card .poster_back .score span {
+            margin-left: 16px;
+            font-size: 1.5rem;
+            color: #59bec9;
+        }
+
+        /* hover 시 뒤집기 */
+        .box_office_card .poster_wrap:hover .poster_front {
+            transform: rotateY(180deg);
+        }
+
+        .box_office_card .poster_wrap:hover .poster_back {
+            transform: rotateY(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box_office">
+        <!-- Card UI(카드 UI) -->
+        <div class="box_office_card">
+            <div class="poster_wrap">
+                <div class="poster_front">
+                    <span class="rank">1</span>
+                    <div class="poster">
+                        <img src="images/YiSbqEf6OvFcDoLoQCipDojOHqMCwKG4_420.jpg"
+                            alt="쥬토피아">
+                    </div>
+                    <div class="screen_type">
+                        <img src="images/type_mega_mx4d.png"
+                            alt="Mega MX4D">
+                        <img src="images/type_dolbycinema.png"
+                            alt="Dolby Cinema">
+                        <img src="images/type_dolbyatmos.png"
+                            alt="Dolby Atmos">
+                    </div>
+                    <div class="movie_grade"><img src="images/ALL_56x56.png"
+                            alt="Movie Grade All"></div>
+                </div>
+                <div class="poster_back">
+                    <p>더 화려해진 세계, 더 넓어진 주토피아!<br>디즈니의 가~~장 사랑스러운 콤비 '주디'와 '닉'이 돌아온다!<br><br>미스터리한 뱀 '게리'가 나타난 순간.</p>
+                    <div class="score">관람평<span>9.3</span></div>
+                </div>
+            </div><!-- //.poster_wrap -->
+            <div class="btn">
+                <button type="button"
+                    class="like"><i class="fa-regular fa-heart"></i>3600</button>
+                <a href="https://www.megabox.co.kr/booking"
+                    class="reservation_link">예매</a>
+            </div>
+        </div>
+        <div class="box_office_card">
+            <div class="poster_wrap">
+                <div class="poster_front">
+                    <span class="rank">2</span>
+                    <div class="poster">
+                        <img src="images/zRSHfdUWIaRvX73R2mpB6a5WHEyqilwA_420.jpg"
+                            alt="주술회전">
+                    </div>
+                    <div class="screen_type">
+                        <img src="images/type_mega_mx4d.png"
+                            alt="Mega MX4D">
+                    </div>
+                    <div class="movie_grade"><img src="images/15_56x56.png"
+                            alt="Movie Grade All"></div>
+                </div>
+                <div class="poster_back">
+                    <p>더 화려해진 세계, 더 넓어진 주토피아!<br>디즈니의 가~~장 사랑스러운 콤비 '주디'와 '닉'이 돌아온다!<br><br>미스터리한 뱀 '게리'가 나타난 순간.</p>
+                    <div class="score">관람평<span>9.3</span></div>
+                </div>
+            </div><!-- //.poster_wrap -->
+            <div class="btn">
+                <button type="button"
+                    class="like"><i class="fa-regular fa-heart"></i>1300</button>
+                <a href="https://www.megabox.co.kr/booking"
+                    class="reservation_link">예매</a>
+            </div>
+        </div>
+        <div class="box_office_card">
+            <div class="poster_wrap">
+                <div class="poster_front">
+                    <span class="rank">3</span>
+                    <div class="poster">
+                        <img src="images/QbA0Xu2pYIIskq4gziFxbiq6eL9N2i0w_420.jpg"
+                            alt="정보원">
+                    </div>
+                    <div class="screen_type">
+                    </div>
+                    <div class="movie_grade"><img src="images/15_56x56.png"
+                            alt="Movie Grade All"></div>
+                </div>
+                <div class="poster_back">
+                    <p>더 화려해진 세계, 더 넓어진 주토피아!<br>디즈니의 가~~장 사랑스러운 콤비 '주디'와 '닉'이 돌아온다!<br><br>미스터리한 뱀 '게리'가 나타난 순간.</p>
+                    <div class="score">관람평<span>9.3</span></div>
+                </div>
+            </div><!-- //.poster_wrap -->
+            <div class="btn">
+                <button type="button"
+                    class="like"><i class="fa-regular fa-heart"></i>142</button>
+                <a href="https://www.megabox.co.kr/booking"
+                    class="reservation_link">예매</a>
+            </div>
+        </div>
+        <div class="box_office_card">
+            <div class="poster_wrap">
+                <div class="poster_front">
+                    <span class="rank">4</span>
+                    <div class="poster">
+                        <img src="images/nsOm6ZHz6sFsfDNiZXluV3aEw4ymvmHm_420.jpg"
+                            alt="윗집사람들">
+                    </div>
+                    <div class="screen_type">
+                    </div>
+                    <div class="movie_grade"><img src="images/19_112x112.png"
+                            alt="Movie Grade All"></div>
+                </div>
+                <div class="poster_back">
+                    <p>더 화려해진 세계, 더 넓어진 주토피아!<br>디즈니의 가~~장 사랑스러운 콤비 '주디'와 '닉'이 돌아온다!<br><br>미스터리한 뱀 '게리'가 나타난 순간.</p>
+                    <div class="score">관람평<span>9.3</span></div>
+                </div>
+            </div><!-- //.poster_wrap -->
+            <div class="btn">
+                <button type="button"
+                    class="like"><i class="fa-regular fa-heart"></i>237</button>
+                <a href="https://www.megabox.co.kr/booking"
+                    class="reservation_link">예매</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        // --- 초기 숫자 자동 k 변환 ---
+        $('.like').each(function () {
+            // 0~9, .를 제외하고 모든 문자를 ''로 치환 -> 숫자와 .을 제외하고 모두 제거
+            // 예) 3.6k -> 3.6
+            // 예) 1,234명 -> 1234
+            // let text = $(this).text().replace(/[^0-9.]/g, '');
+            let text = $(this).text();
+            let num = parseFloat(text);
+
+            if (num >= 1000) {
+                $(this).contents().last()[0].textContent = (num / 1000).toFixed(1) + "k";
+            }
+        });
+
+        // --- 클릭 이벤트 ---
+        $('.like').click(function () {
+            let $btn = $(this);
+            // let text = $btn.text().replace(/[^0-9.]/g, '');
+            let text = $btn.text();
+            let current = parseFloat(text);
+
+            if ($btn.text().includes('k')) current *= 1000;
+
+            if ($btn.hasClass('active')) {
+                current -= 1;
+                $btn.removeClass('active');
+                $btn.find('i').attr('class', 'fa-regular fa-heart');
+            } else {
+                current += 1;
+                $btn.addClass('active');
+                $btn.find('i').attr('class', 'fa-solid fa-heart');
+            }
+
+            let display = current >= 1000 ? (current / 1000).toFixed(1) + "k" : current;
+
+            $btn.contents().last()[0].textContent = display;
+        });
+
+
+
+    </script>
+</body>
+
+</html>

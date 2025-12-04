@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEET PLAY SHARE, 메가박스</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        #footer {background: #F8F8FA; font-size: 0.813rem; padding-bottom: 50px;}
+        #footer a {color: #555;}
+        .inbox {width: 1100px; margin: 0 auto;}
+        /* 상단 영역 */
+        .footer_top {display: flex; justify-content: space-between; padding: 30px 0;}
+        .fnb {display: flex; gap: 8px;}
+        .fnb a:hover {text-decoration: underline;}
+        .btn_looking_theater {border: 1px solid #ccc; border-radius: 30px; padding: 4px 16px;}
+        .btn_looking_theater img {width: 15px; height: 15px; margin-right: 4px;}
+        /* 하단 영역 */
+        .footer_bottom {display: flex; justify-content: space-between;}
+        .info {line-height: 0.5;}
+        .ci {width: 150px; height: 50px;}
+        .sns a {display: inline-block; width: 30px; height: 30px;}
+        .sns a:not(:last-of-type) {margin-right: 4px;}
+
+        /* 극장 찾기 */
+        .theater {color: #fff; height: calc(100vh - 200px); display: none;}
+        .theater.active {display: block;}
+        .tit {display: flex; justify-content: space-between; align-items: center;}
+        .theater h2 {font-weight: normal;}
+        .closed {display: inline-block; width: 36px; height: 36px; cursor: pointer;}
+    </style>
+</head>
+<body>
+    <div class="theater">
+        <div class="inbox">
+            <div class="tit">
+                <h2>메가박스 극장 찾기</h2>
+                <span class="closed"><img src="images/ico-layer-close-g.png" alt="닫기"></span>
+            </div>
+            <div class="cont">지역별 극장명</div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="inbox">
+            <div class="footer_top">
+                <ul class="fnb">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">인재채용</a></li>
+                    <li><a href="#">사회공헌</a></li>
+                    <li><a href="#">제휴/광고/부대사업문의</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#"><strong>위치기반서비스 이용약관</strong></a></li>
+                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="#">윤리경영</a></li>
+                </ul>
+                <a href="#" class="btn_looking_theater"><img src="images/ico-footer-search.png" alt="극장찾기">극장찾기</a>
+            </div>
+            <div class="footer_bottom">
+                <div class="ci"><img src="images/logo-opacity_new2.png" alt="메가박스"></div>
+                <div class="info">
+                    <address>서울특별시 강남구 테헤란로 87길 22 도심공항터미널 건물 408호 ARS 1544-0070 대표이메일 m.dreamcenter@partner.megabox.co.kr</address>
+                    <p>대표자명 홍정인, 남용석 · 개인정보보호책임자 김수현 · 사업자등록번호 211-86-59478 · 통신판매업신고번호 2025-서울강남-00722cc</p>
+                    <p class="copy">COPYRIGHT MegaboxJoongAng, Inc. All rights reserved</p>
+                </div>
+                <div class="sns">
+                    <a href="#"><img src="images/ico-youtubeN.png" alt="유튜브"></a>
+                    <a href="#"><img src="images/ico-instagramN.png" alt="인스타그램"></a>
+                    <a href="#"><img src="images/ico-facebookN.png" alt="페이스북"></a>
+                    <a href="#"><img src="images/ico-twitterN.png" alt="트위터"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $('.btn_looking_theater').on('click', ()=>{
+            $('.theater').addClass('active');
+        });
+        $('.closed').on('click', ()=>{
+            $('.theater').removeClass('active');
+        });
+    </script>
+</body>
+</html>

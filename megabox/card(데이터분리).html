@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEET PLAY SHARE, 메가박스</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .box_office {
+            display: flex;
+            gap: 40px;
+        }
+
+        .box_office_card {
+            position: relative;
+            width: 245px;
+        }
+
+        /* 영화 순위 */
+        .rank {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 300;
+            font-style: italic;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        /* 스크린 타입 */
+        .screen_type {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            width: 60px;
+        }
+
+        /* 연령 제한 */
+        .grade {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 28px;
+        }
+
+        /* 관람평 */
+        .score {
+            position: absolute;
+            width: calc(100% - 48px);
+            text-align: center;
+            bottom: 30px;
+            border-top: 1px solid rgba(255, 255, 255, .2);
+            padding-top: 8px;
+        }
+
+        /* 관람평 점수 */
+        .score span {
+            color: #59bec9;
+            font-size: 1.5rem;
+            margin-left: 16px;
+        }
+
+        /* 버튼 */
+        .btn {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        /* 좋아요! 버튼 */
+        .like {
+            color: #fff;
+            background: transparent;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            width: 100px;
+            /* height: 34px; */
+        }
+
+        .like i {
+            margin-right: 4px;
+        }
+
+        /* 예매 버튼 */
+        .reservation_link {
+            width: 100%;
+            background: #037b94;
+            border-radius: 5px;
+            text-align: center;
+            padding: 6px;
+            /* line-height: 34px; */
+        }
+
+        /* y축 회전 */
+        .inner {
+            position: relative;
+            height: 352px;
+            /* 원근감 */
+            perspective: 1000px;
+        }
+
+        .inner:hover {
+            /* 마우스 손가락 모양 */
+            cursor: pointer;
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transition: .5s;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .front {
+            transform: rotateY(0deg);
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            padding: 24px;
+            color: #fff;
+            background: rgb(0, 0, 0, 0.8);
+            /* 뒷면 숨기기 */
+            backface-visibility: hidden;
+        }
+
+        /* 호버시 뒤집기 */
+        .inner:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .inner:hover .back {
+            transform: rotateY(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Card UI(카드 UI) -->
+    <div class="box_office"></div><!-- //.box_office -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/data.js"></script>
+
+    <script>
+        // ${data.screenTypes[0] === undefined ? "" : `<img src="${data.screenTypes[0]}" alt="mega mx4d">`}
+        // ${data.screenTypes[1] === undefined ? "" : `<img src="${data.screenTypes[1]}" alt="dolby cinema">`}
+        // ${data.screenTypes[2] === undefined ? "" : `<img src="${data.screenTypes[2]}" alt="dolby atmos">`}
+
+        
+        // datas.forEach(([요소], [인덱스], [배열])=>{});
+        // datas.forEach(data=>{
+        // $(datas).each(([인덱스], [요소])=>{});
+        $(datas).each((idx, data)=>{
+            // datas.map(([요소], [인덱스], [배열])=>{});
+            const screenImgs = data.screenTypes.map(ele=>`<img src="${ele}" alt="Screen Types">`).join('');
+            
+            const card = `<div class="box_office_card">
+            <div class="inner">
+                <div class="front">
+                    <span class="rank">${data.rank}</span>
+                    <div class="poster">
+                        <img src="${data.poster}" alt="${data.title}">
+                    </div>
+                    <div class="screen_type">${screenImgs}</div>
+                    <div class="grade">
+                        <img src="${data.grade}" alt="Grade ${data.age}">
+                    </div>
+                </div><!-- //.front -->
+                <div class="back">
+                    <p>${data.description}</p>
+                    <div class="score">관람평<span>${data.score}</span></div>
+                </div><!-- //.back -->
+            </div><!-- //.inner -->
+            <!-- btn -->
+            <div class="btn">
+                <button type="button" class="like"><i class="fa-regular fa-heart"></i>${data.like}</button>
+                <a href="" class="reservation_link">예매</a>
+            </div>
+        </div>`
+    
+        $('.box_office').append(card);
+
+        }); // forEach()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEET PLAY SHARE, 메가박스</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .box_office {
+            display: flex;
+            gap: 40px;
+        }
+
+        .box_office_card {
+            position: relative;
+            width: 245px;
+        }
+
+        /* 영화 순위 */
+        .rank {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 300;
+            font-style: italic;
+            text-shadow: 2px 2px 2px #000;
+        }
+
+        /* 스크린 타입 */
+        .screen_type {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            width: 60px;
+        }
+
+        /* 연령 제한 */
+        .grade {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 28px;
+        }
+
+        /* 관람평 */
+        .score {
+            position: absolute;
+            width: calc(100% - 48px);
+            text-align: center;
+            bottom: 30px;
+            border-top: 1px solid rgba(255, 255, 255, .2);
+            padding-top: 8px;
+        }
+
+        /* 관람평 점수 */
+        .score span {
+            color: #59bec9;
+            font-size: 1.5rem;
+            margin-left: 16px;
+        }
+
+        /* 버튼 */
+        .btn {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        /* 좋아요! 버튼 */
+        .like {
+            color: #fff;
+            background: transparent;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            width: 100px;
+            /* height: 34px; */
+        }
+
+        .like i {
+            margin-right: 4px;
+        }
+
+        /* 예매 버튼 */
+        .reservation_link {
+            width: 100%;
+            background: #037b94;
+            border-radius: 5px;
+            text-align: center;
+            padding: 6px;
+            /* line-height: 34px; */
+        }
+
+        /* y축 회전 */
+        .inner {
+            position: relative;
+            height: 352px;
+            /* 원근감 */
+            perspective: 1000px;
+        }
+
+        .inner:hover {
+            /* 마우스 손가락 모양 */
+            cursor: pointer;
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transition: .5s;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .front {
+            transform: rotateY(0deg);
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            padding: 24px;
+            color: #fff;
+            background: rgb(0, 0, 0, 0.8);
+            /* 뒷면 숨기기 */
+            backface-visibility: hidden;
+        }
+
+        /* 호버시 뒤집기 */
+        .inner:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .inner:hover .back {
+            transform: rotateY(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Card UI(카드 UI) -->
+    <div class="box_office">
+        <div class="box_office_card">
+            <div class="inner">
+                <div class="front">
+                    <span class="rank">1</span>
+                    <div class="poster">
+                        <img src="images/YiSbqEf6OvFcDoLoQCipDojOHqMCwKG4_420.jpg" alt="쥬토피아">
+                    </div>
+                    <div class="screen_type">
+                        <img src="images/type_mega_mx4d.png" alt="mega mx4d">
+                        <img src="images/type_dolbycinema.png" alt="dolby cinema">
+                        <img src="images/type_dolbyatmos.png" alt="dolby atmos">
+                    </div>
+                    <div class="grade">
+                        <img src="images/ALL_56x56.png" alt="Grade All">
+                    </div>
+                </div><!-- //.front -->
+                <div class="back">
+                    <p>더 화려해진 세계, 더 넓어진 주토피아!<br>
+                        디즈니의 가~~장 사랑스러운 콤비 '주디'와 '닉'이 돌아온다!<br><br>
+                        미스터리한 뱀 '게리'가 나타난 순간,</p>
+                    <div class="score">관람평<span>9.3</span></div>
+                </div><!-- //.back -->
+            </div><!-- //.inner -->
+            <!-- btn -->
+            <div class="btn">
+                <button type="button" class="like"><i class="fa-regular fa-heart"></i>3.6k</button>
+                <a href="" class="reservation_link">예매</a>
+            </div>
+        </div>
+        <div class="box_office_card">
+            <div class="inner">
+                <div class="front">
+                    <span class="rank">2</span>
+                    <div class="poster">
+                        <img src="images/fIwkU2Lnmv8AZzLk9gDbdlhDNSk2WFy6_420.jpg" alt="반지의 제왕">
+                    </div>
+                    <div class="screen_type">
+                        <img src="images/type_mega_mx4d.png" alt="mega mx4d">
+                        <!-- <img src="images/type_dolbycinema.png" alt="dolby cinema">
+                        <img src="images/type_dolbyatmos.png" alt="dolby atmos"> -->
+                    </div>
+                    <div class="grade">
+                        <img src="images/15_56x56.png" alt="Grade 15">
+                    </div>
+                </div><!-- //.front -->
+                <div class="back">
+                    <p>2002년 12월, 운명을 건 최후의 전쟁이 시작된다!<br>9명의 반지원정대는 사우론의 사악한 세력에 맞서 반지를 지켜냈지만 반지 원정대는 뿔뿔이 흩어지게 된다.<br>호빗족으로 절대 반지에 유일한 내성을 보이는 '프로도'는 일행</p>
+                    <div class="score">관람평<span>9.7</span></div>
+                </div><!-- //.back -->
+            </div><!-- //.inner -->
+            <!-- btn -->
+            <div class="btn">
+                <button type="button" class="like"><i class="fa-regular fa-heart"></i>1.3k</button>
+                <a href="" class="reservation_link">예매</a>
+            </div>
+        </div>
+        <div class="box_office_card">
+            <div class="inner">
+                <div class="front">
+                    <span class="rank">3</span>
+                    <div class="poster">
+                        <img src="images/QbA0Xu2pYIIskq4gziFxbiq6eL9N2i0w_420.jpg" alt="정보원">
+                    </div>
+                    <div class="screen_type">
+                        <!-- <img src="images/type_mega_mx4d.png" alt="mega mx4d">
+                        <img src="images/type_dolbycinema.png" alt="dolby cinema">
+                        <img src="images/type_dolbyatmos.png" alt="dolby atmos"> -->
+                    </div>
+                    <div class="grade">
+                        <img src="images/15_56x56.png" alt="Grade 15">
+                    </div>
+                </div><!-- //.front -->
+                <div class="back">
+                    <p>&quot;나 오늘 거기 털고 옷 벗는다&quot;<br><br>
+                        공들인 작전 실패로 강등당한 후 열정도, 의지도, 수사 감각도 모두 잃은 형사 오남혁.<br>
+                        이제 그가 바라는 것은 오로지 한탕과 은퇴뿐.</p>
+                    <div class="score">관람평<span>8.5</span></div>
+                </div><!-- //.back -->
+            </div><!-- //.inner -->
+            <!-- btn -->
+            <div class="btn">
+                <button type="button" class="like"><i class="fa-regular fa-heart"></i>142</button>
+                <a href="" class="reservation_link">예매</a>
+            </div>
+        </div>
+        <div class="box_office_card">
+            <div class="inner">
+                <div class="front">
+                    <span class="rank">4</span>
+                    <div class="poster">
+                        <img src="images/nsOm6ZHz6sFsfDNiZXluV3aEw4ymvmHm_420.jpg" alt="윗집사람들">
+                    </div>
+                    <div class="screen_type">
+                        <!-- <img src="images/type_mega_mx4d.png" alt="mega mx4d">
+                        <img src="images/type_dolbycinema.png" alt="dolby cinema">
+                        <img src="images/type_dolbyatmos.png" alt="dolby atmos"> -->
+                    </div>
+                    <div class="grade">
+                        <img src="images/19_112x112.png" alt="Grade 19">
+                    </div>
+                </div><!-- //.front -->
+                <div class="back">
+                    <p>세상의 부부들은 정말 밤마다 사랑을 나눌까?<br>
+                        너희도 솔직해지고 싶지 않아?<br><br>
+                        불같던 결혼 생활은 사라지고 무미건조한 일상만 남은 정아(공효진)와 현수(김동욱).</p>
+                    <div class="score">관람평<span>8.3</span></div>
+                </div><!-- //.back -->
+            </div><!-- //.inner -->
+            <!-- btn -->
+            <div class="btn">
+                <button type="button" class="like"><i class="fa-regular fa-heart"></i>238</button>
+                <a href="" class="reservation_link">예매</a>
+            </div>
+        </div>
+    </div><!-- //.box_office -->
+</body>
+
+</html>
