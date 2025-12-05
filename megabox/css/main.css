@@ -1,115 +1,5 @@
 @charset "utf-8";
-@import url(reset.css);
-
-/* header(헤더) */
-#header {
-    position: relative;
-    background: #111;
-    padding: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-#header .inner {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* logo(로고) */
-#logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* top menu */
-#header .top_link {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* justify-content: space-between; */
-}
-
-#header .top_link a {
-    font-size: 0.8125rem;
-    color: #888;
-    margin: 0 10px;
-}
-
-/* link icon */
-#header .link_icon {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 8px;
-}
-
-#header .link_icon a {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-/* GNB(글로벌 내비게이션 바) */
-#gnb {
-    position: absolute;
-    width: 100%;
-    max-width: 900px;
-    left: 50%;
-    top: 50px;
-    transform: translateX(-50%);
-    /* margin: 0 auto; */
-}
-
-/* 1depth */
-#gnb .main {
-    display: flex;
-    justify-content: space-evenly;
-    /* align-content: flex-end; */
-}
-
-#gnb .main a {
-    position: relative;
-    font-size: 1.125rem;
-}
-
-#gnb .main > li:nth-of-type(1) {
-    margin-left: 30px;
-}
-
-#gnb .main > li:nth-of-type(4) {
-    margin-left: 300px;
-}
-#gnb .main > li:hover .sub {
-    display: flex;
-}
-/* 메인 메뉴 호버시 하단의 바 */
-#gnb .main > li:not(:nth-of-type(5)) > a:hover::after {
-    position: absolute;
-    bottom: -14px;
-    transform: translateX(-100%);
-    content: "";
-    width: 100%;
-    height: 3px;
-    background: #fff;
-}
-
-/* 2depth */
-#gnb .sub {
-    position: absolute;
-    padding-top: 30px;
-    transform: translateX(-25%);
-    display: none;
-    /* 마지막 메뉴(혜택 메뉴)의 영역이 부족하여 줄 바꿈되는 현상 제거 */
-    text-wrap: nowrap;
-}
-#gnb .sub li {
-    margin: 0 8px;
-}
-#gnb .sub a {
-    font-size: 0.9375rem;
-}
-#gnb .sub a:hover {
-    text-decoration: underline;
-}
+@import url(common.css);
 
 /* section(섹션) */
 #section {
@@ -274,7 +164,8 @@ h2 {
 
 /* 버튼 */
 .btn {
-    display: flex;
+    display: grid;
+    grid-template-columns: 80px auto;
     gap: 8px;
     margin-top: 8px;
 }
@@ -285,8 +176,6 @@ h2 {
     background: transparent;
     border: 1px solid #fff;
     border-radius: 5px;
-    width: 100px;
-    /* height: 34px; */
 }
 
 .like i {
@@ -348,91 +237,4 @@ h2 {
 
 .inner:hover .back {
     transform: rotateY(360deg);
-}
-
-/* footer(푸터) */
-#footer {
-    background: #f8f8fa;
-    font-size: 0.813rem;
-    padding-bottom: 50px;
-}
-#footer a {
-    color: #555;
-}
-.inbox {
-    width: 1100px;
-    margin: 0 auto;
-}
-/* 상단 영역 */
-.footer_top {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 0;
-}
-.fnb {
-    display: flex;
-    gap: 8px;
-}
-.fnb a:hover {
-    text-decoration: underline;
-}
-.btn_looking_theater {
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    padding: 4px 16px;
-}
-.btn_looking_theater img {
-    width: 15px;
-    height: 15px;
-    margin-right: 4px;
-}
-/* 하단 영역 */
-.footer_bottom {
-    display: flex;
-    justify-content: space-between;
-}
-.info {
-    line-height: 0.5;
-}
-.ci {
-    width: 150px;
-    height: 50px;
-}
-.sns a {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-}
-.sns a:not(:last-of-type) {
-    margin-right: 4px;
-}
-
-/* 극장 찾기 */
-.theater {
-    position: absolute;
-    left: 0;
-    top: 250px;
-    width: 100%;
-    height: calc(100vh - 200px);
-    color: #fff;
-    display: none;
-    background: #333;
-    padding: 20px;
-}
-.theater.active {
-    display: block;
-}
-.tit {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.theater h2 {
-    font-weight: normal;
-}
-.closed {
-    display: inline-block;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
 }

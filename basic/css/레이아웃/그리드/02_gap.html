@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+        /* 
+            그리드 컨테이너
+                display: grid; 
+
+                grid-template
+                grid-template-columns
+                    - 그리드의 열 개수와 너비를 정의합니다.
+                        Fixed lengths (100px 300px 200px)
+                        Percentages (20% 60% 20%)
+                        fr unit (1fr 2fr 1fr)
+                        auto (auto auto auto)
+                        repeat() (repeat(3, 1fr))
+                        minmax() (minmax(80px, 1fr) 150px 150px)
+                grid-template-rows
+                    - 그리드의 행 수와 높이를 정의합니다.
+                        Fixed lengths
+                        Percentages
+                        fr unit
+                        auto
+                        min-content
+                        max-content
+                        repeat()
+                        minmax()
+                        fit-content()
+                grid-template-areas
+                    - 그리드의 열과 행을 정의합니다.
+
+                gap
+                column-gap
+                row-gap
+
+                justify-content
+                place-content
+                align-content
+                align-items
+                
+                grid-auto-columns
+                grid-auto-rows
+                grid-auto-flow
+        
+        */
+        .container {
+            display: grid;
+            /* 3열(column), 폭은 자동(auto) */
+            grid-template-columns: auto auto auto;
+            grid-template-columns: 80px 200px auto;
+            grid-template-columns: 1fr 1fr 1fr; /* fraction(분수) */
+            grid-template-columns: minmax(200px, 1fr) 200px 200px;
+            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-rows: 396px 83px;
+
+            column-gap: 40px;
+            row-gap: 50px;
+            /* gap: 행 열; */
+            gap: 50px 40px;
+
+            background-color: dodgerblue;
+            /* padding: 10px; */
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 그리드 아이템(item) */
+        .container div {
+            background-color: #f1f1f1;
+            border: 1px solid black;
+            padding: 10px;
+            font-size: 30px;
+            text-align: center;.container {
+  display: grid;
+  height: 300px;
+  grid-template-columns: auto auto auto;
+  background-color: dodgerblue;
+  padding: 5px;
+  gap: 5px;
+  align-content: space-evenly;
+}
+
+.container div {
+  background-color: #f1f1f1;
+  color:#000;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+</body>
+
+</html>
