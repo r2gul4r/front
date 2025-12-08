@@ -3,64 +3,104 @@
 
 /* 헤더 */
 #header .sub {
-  background: #339eb2;
+    background: #339eb2;
 }
 
 #section {
-  background: #fff;
-  padding-bottom: 150px;
+    background: #fff;
+    color: #fff;
+    padding-bottom: 150px;
 }
 
 #section .inner {
-  max-width: 1100px;
-  margin: 0 auto;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 #section h2 {
-  padding: 50px 0;
-  font-size: 2rem;
-  font-weight: normal;
-  text-align: center;
+    padding: 50px 0;
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+    color: #222;
 }
 
 #section img {
-  height: 28px;
-  object-fit: contain;
+    height: 28px;
+    object-fit: contain;
 }
 
 .special {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 .special:nth-of-type(2) {
-  margin: 100px 0;
+    margin: 100px 0;
 }
 .special div,
 .special h3 {
-  height: 260px;
-  border-radius: 12px;
-  background: yellow;
+    height: 260px;
+    border-radius: 12px;
+    background: rgb(6, 149, 125);
 }
+
+/* 제목 배경색 */
 .special:nth-of-type(1) h3 {
-  background: #000;
+    background: #000;
 }
 .special:nth-of-type(2) h3 {
-  background: #8e6916;
+    background: #8e6916;
 }
 .special:nth-of-type(3) h3 {
-  background: #390081;
+    background: #390081;
+}
+
+/* 그리드 아이템 박스 공통 */
+.special h3 {
+    padding: 30px;
+}
+.special div {
+    padding: 30px;
+    background: no-repeat 50% 50%/cover;
+}
+
+/* 배경 이미지 */
+.special:nth-of-type(1) div:nth-of-type(4) {
+    background-image: url(/images/specialtheater/bg_LED.png);
+}
+.special:nth-of-type(1) div:nth-of-type(5) {
+    background-image: url(/images/specialtheater/bg_dolby_atmos.png);
+}
+.special:nth-of-type(3) div:nth-of-type(1) {
+    background-image: url(/images/specialtheater/bg_recliner.png);
+}
+.special:nth-of-type(3) div:nth-of-type(2) {
+    background-image: url(/images/specialtheater/bg_comfort.png);
 }
 
 /* 그리드 아이템 크기 */
 .special:nth-of-type(1) div:nth-of-type(1) {
-  grid-column: 2 / span 2;
+    grid-column: 2 / span 2;
+    grid-row-start: 1;
+    background-image: url(/images/specialtheater/bg_dolbycinema.png);
 }
 .special:nth-of-type(1) div:nth-of-type(2) {
-  grid-column: 1 / span 2;
-  grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+    grid-row-start: 2;
+    background-image: url(/images/specialtheater/bg_dolbyvision.png);
 }
 .special:nth-of-type(1) div:nth-of-type(3) {
-  grid-column: 3 / span 1;
-  grid-row: 2 / span 2;
+    grid-column-start: 3;
+    grid-row: 2 / span 2;
+    background-image: url(/images/specialtheater/bg_MX4D.png);
+}
+
+.special:nth-of-type(2) div:nth-of-type(1) {
+    grid-column: 2 / span 2;
+    background-image: url(/images/specialtheater/bg_boutique_private.png);
+}
+.special:nth-of-type(2) div:nth-of-type(2) {
+    grid-column: 1 / span 2;
+    background-image: url(/images/specialtheater/bg_suite.png);
 }
