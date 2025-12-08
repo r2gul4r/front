@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리액트 JSX</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.28.4/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // JSX 문법
+        const element = <h1>Hello, world!</h1>;
+        // 1. 반드시 self-closing
+        const img = <img src="logo.png" />;
+        const input2 = <input type="text" />;
+        const element2 = <br />;
+
+        /* 
+            컴포넌트
+                function 컴포넌트명(){
+                    return (
+                        // JSX 실행문;
+                    );
+                }
+        */
+        function App() {
+            // 올바른 JSX
+            return (
+                // 2. JSX는 반드시 하나의 부모 태그로 감싸야 합니다.
+                // <></>: flagment 태그 (ver.16)
+                <>
+                    <div>
+                        <h1>제목</h1>
+                        <p>본문</p>
+                    </div>
+                    <div>
+                        <h1>제목</h1>
+                        <p>본문</p>
+                    </div>
+                </>
+            );
+        }
+        function App2() {
+            // 올바른 JSX
+            return (
+                // 2. JSX는 반드시 하나의 부모 태그로 감싸야 합니다.
+                <React.Fragment>
+                    <div>
+                        <h1>제목</h1>
+                        <p>본문</p>
+                    </div>
+                    <div>
+                        <h1>제목</h1>
+                        <p>본문</p>
+                    </div>
+                </React.Fragment>
+            );
+        }
+        function App3() {
+            // 올바른 JSX
+            return (
+                // 2. JSX는 반드시 하나의 부모 태그로 감싸야 합니다.
+                <div>
+                    <div>
+                        <h1>제목</h1>
+                        <p>본문</p>
+                    </div>
+                    <div>
+                        <h1>제목</h1>
+                        <p>본문</p>
+                    </div>
+                </div>
+            );
+        }
+
+
+        // 3. 속성 이름은 카멜 표기법으로
+        // 예) className, htmlFor, disabled={true}, ...
+        const div = <div className="box">내용</div>;
+        const lbl = <label htmlFor="inputId">이름</label>;
+        const input3 = <input disabled /> // 속성 값을 생략하면 true
+        const input4 = <input disabled={false} />
+
+        // 4. JSX 안에서는 JavaScript 표현식을 {}로 감쌉니다.
+        const name = "React";
+        const element3 = <h1>{name} 배우기</h1>;
+
+        // 4-1 조건부 렌더링
+        // -> 3항 연산자 또는 && 연산자를 조건식으로 사용!
+        const isLoggedIn = false;
+        const isAdmin = true;
+        const login = <div>{isLoggedIn ? <p>환영합니다</p> : <p>로그인하세요</p>}</div>;
+        const admin = <div>{isAdmin && <button>관리자 페이지</button>}</div>;
+
+        // 4-2 인라인 style 속성은 표현식 안의 객체 형태로 작성한다.
+        const element4 = <h1 style={{ color: 'red', fontSize: '20px' }}>스타일 적용</h1>;
+        const element5 = <h1 style={{ color: 'blue', 'font-size': '20px' }}>스타일 적용</h1>;
+
+        // 4-3 이벤트 핸들링 - 속성명은 카멜 표기법
+        // App4 컴포넌트
+        function App4() {
+            // JS 영역
+            // doSomething 함수
+            function doSomething() { alert('doSomething 함수!') }
+            return (
+                <>
+                    {/* JSX 영역: shift+alt+a */}
+                    <button onClick={doSomething}>Click</button>
+                </>
+            );
+        }
+
+        function App5() {
+            // const [변수, 함수] = React.useState(초기값);
+            const [text, setText] = React.useState('');
+
+            const handleChange = e => setText(e.target.value);
+            const handleClick = del => setText(del);
+
+            // function handleChange(e) {
+            //     setText(e.target.value);
+            //     console.log(e.target);
+            // }
+
+            return (
+                // onChange: 입력 값의 변경이 있을 때
+                <>
+                    <input type="text" value={text} onChange={handleChange} />
+                    {/* JSX에서 변수를 출력(렌더링)하려면 중괄호 {}를 사용합니다. */}
+                    <p>You typed: {text}</p>
+                    {/* <button onClick={function(){handleClick('')}}>Delete</button> */}
+                    <button onClick={() => handleClick('')}>Delete</button>
+                </>
+            );
+        }
+
+        // 5. 변수 출력
+        // JSX에서 변수를 출력(렌더링)하려면 중괄호 {}를 사용합니다.
+        function App6() {
+            const name = "Alice";
+            function getGreeting(name) {
+                // 순수 JS에서 템플릿 리터럴: ${표현식}
+                return `Hi, ${name}`;
+            }
+
+            return (
+                <div>
+                    {/* JSX의 표현식: {표현식} */}
+                    <h1>Hello, {name}!</h1>
+                    <h2>{getGreeting("Tom")}</h2>
+                </div>
+            );
+        }
+
+        // 배열 map()으로 출력
+        function App7() {
+            const fruits = ['🍎', '🍌', '🍇'];
+            // 배열.map((요소, 인덱스) => {});
+            return (
+                <ul>
+                    {fruits.map((fruit, index) => (
+                        <li key={index}>{fruit}</li>
+                    ))}
+                </ul>
+            );
+        }
+
+
+        const root = ReactDOM.createRoot(document.querySelector('#root'));
+        root.render(<App7 />);
+    </script>
+</body>
+
+</html>
