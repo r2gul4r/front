@@ -3,7 +3,7 @@
 const datas = [
     {
         rank: 1,
-        poster: "assets/img/p1.jpg",
+        poster: "assets/img/kagosima.webp",
         title: '???', 
         task: 'TE',
         description: [],
