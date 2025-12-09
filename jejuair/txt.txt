@@ -1,0 +1,1356 @@
+/* ==================== 기본 스타일 ==================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ==================== 헤더 ==================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 60%;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-btn {
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: #1a1a1a;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    border-color: #FF5000;
+    color: #FF5000;
+}
+
+/* ==================== 풀페이지 컨테이너 ==================== */
+.fullpage-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ==================== 섹션 ==================== */
+.section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px 40px;
+    opacity: 0;
+    transform: translateY(100vh); /* 초기 위치를 아래로 설정 */
+    pointer-events: none;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* 스크롤 다운 (다음 섹션으로 이동) */
+.section.active.down {
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+.section.prev.down {
+    animation: slideOutUp 0.8s ease-out forwards;
+}
+
+/* 스크롤 업 (이전 섹션으로 이동) */
+.section.active.up {
+    animation: slideInDown 0.8s ease-out forwards;
+}
+
+.section.prev.up {
+    animation: slideOutDown 0.8s ease-out forwards;
+}
+
+/* 애니메이션 정의 */
+@keyframes slideInUp { /* 아래에서 위로 올라옴 */
+    from {
+        transform: translateY(100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutUp { /* 위로 사라짐 */
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100vh);
+    }
+}
+
+@keyframes slideInDown { /* 위에서 아래로 내려옴 */
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutDown { /* 아래로 사라짐 */
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.section-content {
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.section-number {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* ==================== 섹션 1: 키비주얼 ==================== */
+.section-1 {
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    background-image: url(/images/213.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    justify-content: center;
+}
+
+.section-1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+
+.section-1 .section-content {
+    position: relative;
+    z-index: 2;
+}
+
+.visual-slider {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+    padding: 40px;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.6s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-title {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    color: #1a1a1a;
+}
+
+.slide-subtitle {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 300;
+}
+
+.slide-description {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.slide-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+.slide-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.slide-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.8);
+    color: #1a1a1a;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 12px;
+}
+
+.slide-btn:hover {
+    background: #FF5000;
+    border-color: #FF5000;
+    color: #ffffff;
+}
+
+/* ==================== 섹션 2: 메뉴 스토리 ==================== */
+.section-2 {
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    background-image: url('# 섹션 2 배경 이미지 URL');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.section-2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+
+.section-2 .section-content {
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.franchise-description {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+.menu-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: rgba(227, 27, 35, 0.1);
+    border-color: #FF5000;
+    box-shadow: 0 4px 12px rgba(227, 27, 35, 0.15);
+}
+
+.tab-number {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: #FF5000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.tab-text {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.tab-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.menu-image {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-image: url('# 메뉴 이미지 URL');
+    background-size: cover;
+    background-position: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.coffee-image {
+    background: linear-gradient(135deg, rgba(139, 90, 43, 0.1) 0%, rgba(210, 180, 140, 0.1) 100%);
+}
+
+/* ==================== 섹션 3: 브랜드 지원 ==================== */
+.section-3 {
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    background-image: url('# 섹션 3 배경 이미지 URL');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.section-3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+
+.section-3 .section-content {
+    position: relative;
+    z-index: 2;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.brand-item {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.brand-item:hover {
+    background: rgba(227, 27, 35, 0.05);
+    border-color: #FF5000;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(227, 27, 35, 0.15);
+}
+
+.brand-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.brand-desc {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.brand-link {
+    color: #FF5000;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.brand-link:hover {
+    transform: translateX(5px);
+}
+
+/* ==================== 섹션 4: 프랜차이즈 ==================== */
+.section-4 {
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    background-image: url('# 섹션 4 배경 이미지 URL');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.section-4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+
+.section-4 .section-content {
+    position: relative;
+    z-index: 2;
+}
+
+.franchise-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.franchise-item {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.franchise-item:hover {
+    border-color: #FF5000;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(227, 27, 35, 0.15);
+}
+
+.franchise-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(227, 27, 35, 0.1) 0%, rgba(227, 27, 35, 0.05) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    background-image: url('# 프랜차이즈 이미지 URL');
+    background-size: cover;
+    background-position: center;
+}
+
+.franchise-item h3 {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* ==================== 섹션 5: 뉴스 & 공지사항 ==================== */
+.section-5 {
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    background-image: url('# 섹션 5 배경 이미지 URL');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.section-5::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+
+.section-5 .section-content {
+    position: relative;
+    z-index: 2;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.news-item {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.news-item:hover {
+    border-color: #FF5000;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(227, 27, 35, 0.15);
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(227, 27, 35, 0.1) 0%, rgba(227, 27, 35, 0.05) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    background-image: url('# 뉴스 이미지 URL');
+    background-size: cover;
+    background-position: center;
+}
+
+.news-title {
+    padding: 20px 20px 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.news-date {
+    padding: 0 20px 20px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* ==================== 스크롤 인디케이터 ==================== */
+.scroll-indicator {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 50;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.indicator-dot:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.indicator-dot.active {
+    background: #FF5000;
+    width: 16px;
+    height: 16px;
+    border-color: #FF5000;
+}
+
+/* ==================== 반응형 디자인 ==================== */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .section {
+        padding: 100px 20px 40px;
+    }
+
+    .section-number {
+        font-size: 32px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .slide-title {
+        font-size: 36px;
+    }
+
+    .brand-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .scroll-indicator {
+        right: 20px;
+        gap: 10px;
+    }
+
+    .indicator-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .indicator-dot.active {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 100px 15px 40px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .slide-title {
+        font-size: 28px;
+    }
+
+    .slide-subtitle {
+        font-size: 16px;
+    }
+
+    .menu-tabs {
+        max-width: 100%;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제주항공</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo"><img src="/images/logo_jeju.png" alt="Jejuair"></div>
+            <nav class="nav">
+                <ul class="header_util"><!-- 헤더유틸 -->
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul><!-- //헤더유틸 -->
+
+                <ul class="header_inner"><!-- 헤더이너 -->
+                  <li><a href="#">항공권 예약</a>
+                    <ul class="sub">
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">호텔 예약</a>
+                    <ul class="sub">
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">여행 준비</a>
+                    <ul class="sub">
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">투어/입장권</a>
+                    <ul class="sub">
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">이벤트</a>
+                    <ul class="sub">
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">공지사항</a>
+                    <ul class="sub">
+                      <li><a href="#"></a></li>
+                      <li><a href="#"></a></li>
+                    </ul>
+                  </li>
+                </ul><!-- //헤더이너 -->
+                <button class="nav-btn">English</button>
+                <a href="#" class="btn_mypage"><i class="fa-solid fa-plane-departure"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 풀페이지 스크롤 컨테이너 -->
+    <div class="fullpage-container">
+        <!-- 섹션 1: 키비주얼 -->
+        <section class="section section-1">
+            <div class="section-content">
+                <div class="visual-slider">
+                    <div class="slide active">
+                        <h1 class="slide-title">항공권 예매</h1>
+                        <p class="slide-subtitle">온가족이 다함께</p>
+                        <p class="slide-description">제주항공이 함께하는 특별한 경험</p>
+                    </div>
+                    <div class="slide">
+                        <h1 class="slide-title">호텔 예약</h1>
+                        <p class="slide-subtitle">온가족이 다함께</p>
+                        <p class="slide-description">제주항공이 함께하는 특별한 경험</p>
+                    </div>
+                </div>
+                <div class="slide-counter">
+                    <span class="current-slide">1</span> / <span class="total-slides">2</span>
+                </div>
+                <div class="slide-controls">
+                    <button class="slide-btn prev" aria-label="이전">이전</button>
+                    <button class="slide-btn next" aria-label="다음">다음</button>
+                </div>
+            </div>
+            <div class="section-number">01</div>
+        </section>
+
+        <!-- 섹션 2: 메뉴 스토리 -->
+        <section class="section section-2">
+            <div class="section-content">
+                <h2 class="section-title">제주항공</h2>
+                <div class="menu-tabs">
+                    <button class="tab-btn active" data-tab="coffee">
+                        <span class="tab-number">1</span>
+                        <span class="tab-text">제주항공</span>
+                        <span class="tab-label">제주항공</span>
+                    </button>
+                    <button class="tab-btn" data-tab="dessert">
+                        <span class="tab-number">2</span>
+                        <span class="tab-text">제주항공</span>
+                        <span class="tab-label">제주항공</span>
+                    </button>
+                    <button class="tab-btn" data-tab="deli">
+                        <span class="tab-number">3</span>
+                        <span class="tab-text">제주항공</span>
+                        <span class="tab-label">제주항공</span>
+                    </button>
+                </div>
+                <div class="menu-image">
+                    <div class="image-placeholder coffee-image">제주항공 이미지</div>
+                </div>
+            </div>
+            <div class="section-number">02</div>
+        </section>
+
+        <!-- 섹션 3: 브랜드 지원 -->
+        <section class="section section-3">
+            <div class="section-content">
+                <h2 class="section-title">제주항공</h2>
+                <div class="brand-grid">
+                    <div class="brand-item">
+                        <div class="brand-icon">제주항공</div>
+                        <h3 class="brand-name">제주항공</h3>
+                        <p class="brand-desc">제주항공</p>
+                        <a href="#" class="brand-link">자세히 보기 →</a>
+                    </div>
+                    <div class="brand-item">
+                        <div class="brand-icon">제주항공</div>
+                        <h3 class="brand-name">제주항공</h3>
+                        <p class="brand-desc">제주항공</p>
+                        <a href="#" class="brand-link">자세히 보기 →</a>
+                    </div>
+                    <div class="brand-item">
+                        <div class="brand-icon">제주항공</div>
+                        <h3 class="brand-name">제주항공</h3>
+                        <p class="brand-desc">제주항공</p>
+                        <a href="#" class="brand-link">자세히 보기 →</a>
+                    </div>
+                    <div class="brand-item">
+                        <div class="brand-icon">제주항공</div>
+                        <h3 class="brand-name">제주항공</h3>
+                        <p class="brand-desc">제주항공</p>
+                        <a href="#" class="brand-link">자세히 보기 →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="section-number">03</div>
+        </section>
+
+        <!-- 섹션 4: 프랜차이즈 -->
+        <section class="section section-4">
+            <div class="section-content">
+                <h2 class="section-title">제주항공</h2>
+                <p class="section-subtitle">제주항공</p>
+                <p class="franchise-description">제주항공</p>
+                <div class="franchise-slider">
+                    <div class="franchise-item">
+                        <div class="franchise-image">제주항공</div>
+                        <h3></h3>
+                    </div>
+                    <div class="franchise-item">
+                        <div class="franchise-image">제주항공</div>
+                        <h3></h3>
+                    </div>
+                    <div class="franchise-item">
+                        <div class="franchise-image">제주항공</div>
+                        <h3></h3>
+                    </div>
+                    <div class="franchise-item">
+                        <div class="franchise-image">제주항공</div>
+                        <h3></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="section-number">04</div>
+        </section>
+
+        <!-- 섹션 5: 뉴스 & 공지사항 -->
+        <section class="section section-5">
+            <div class="section-content">
+                <h2 class="section-title"></h2>
+                <div class="news-grid">
+                    <article class="news-item">
+                        <div class="news-image">제주항공</div>
+                        <h3 class="news-title">제주항공</h3>
+                        <p class="news-date">제주항공</p>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-image">제주항공</div>
+                        <h3 class="news-title">제주항공</h3>
+                        <p class="news-date">제주항공</p>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-image">제주항공</div>
+                        <h3 class="news-title">제주항공</h3>
+                        <p class="news-date">제주항공</p>
+                    </article>
+                </div>
+            </div>
+            <div class="section-number">05</div>
+        </section>
+    </div>
+
+    <!-- 스크롤 인디케이터 -->
+    <div class="scroll-indicator">
+        <div class="indicator-dot active" data-section="0"></div>
+        <div class="indicator-dot" data-section="1"></div>
+        <div class="indicator-dot" data-section="2"></div>
+        <div class="indicator-dot" data-section="3"></div>
+        <div class="indicator-dot" data-section="4"></div>
+    </div>
+
+    <!-- 푸터 -->
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
+
+// ==================== 풀페이지 스크롤 관리 ==================== 
+class FullPageScroll {
+    constructor() {
+        this.currentSection = 0;
+        this.totalSections = document.querySelectorAll('.section').length;
+        this.isScrolling = false;
+        this.scrollDelay = 800; // 스크롤 애니메이션 시간
+        this.touchStartY = 0;
+        this.touchEndY = 0;
+        
+        this.init();
+    }
+
+        init() {
+        this.setupEventListeners();
+        this.updateActiveSection();
+        this.setupHeaderScroll(); // 헤더 스크롤 기능 추가
+    }
+
+
+    setupEventListeners() {
+        // 마우스 휠 스크롤
+        window.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
+        
+        // 터치 스크롤
+        window.addEventListener('touchstart', (e) => this.handleTouchStart(e), false);
+        window.addEventListener('touchend', (e) => this.handleTouchEnd(e), false);
+        
+        // 키보드 네비게이션
+        window.addEventListener('keydown', (e) => this.handleKeyboard(e));
+        
+        // 인디케이터 클릭
+        document.querySelectorAll('.indicator-dot').forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goToSection(index));
+        });
+    }
+    setupHeaderScroll() {
+        const header = document.querySelector('.header');
+        const topBar = document.querySelector('.top-bar');
+        
+        // 초기 로드 시 top-bar 숨김
+        if (this.currentSection > 0) {
+            header.classList.add('scrolled');
+        }
+
+        // 섹션 이동 시 top-bar 숨김/표시
+        window.addEventListener('sectionChange', (e) => {
+            if (e.detail.index > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
+
+    handleWheel(e) {
+        if (this.isScrolling) return;
+        
+        e.preventDefault();
+        
+        if (e.deltaY > 0) {
+            this.nextSection();
+        } else {
+            this.previousSection();
+        }
+    }
+
+    handleTouchStart(e) {
+        this.touchStartY = e.touches[0].clientY;
+    }
+
+    handleTouchEnd(e) {
+        this.touchEndY = e.changedTouches[0].clientY;
+        this.handleSwipe();
+    }
+
+    handleSwipe() {
+        const difference = this.touchStartY - this.touchEndY;
+        const threshold = 50;
+        
+        if (Math.abs(difference) > threshold) {
+            if (difference > 0) {
+                this.nextSection();
+            } else {
+                this.previousSection();
+            }
+        }
+    }
+
+    handleKeyboard(e) {
+        if (this.isScrolling) return;
+        
+        switch(e.key) {
+            case 'ArrowDown':
+            case ' ':
+                e.preventDefault();
+                this.nextSection();
+                break;
+            case 'ArrowUp':
+                e.preventDefault();
+                this.previousSection();
+                break;
+        }
+    }
+
+    nextSection() {
+        if (this.currentSection < this.totalSections - 1) {
+            this.goToSection(this.currentSection + 1);
+        }
+    }
+
+    previousSection() {
+        if (this.currentSection > 0) {
+            this.goToSection(this.currentSection - 1);
+        }
+    }
+
+    goToSection(index, animate = true) {
+        if (index < 0 || index >= this.totalSections || this.isScrolling) return;
+        
+        this.isScrolling = true;
+        
+        const direction = index > this.currentSection ? 'down' : 'up';
+        const prevIndex = this.currentSection;
+        
+        this.currentSection = index;
+        
+        const prevSectionElement = document.querySelectorAll('.section')[prevIndex];
+        const currentSectionElement = document.querySelectorAll('.section')[this.currentSection];
+        
+                if (animate) {
+            // 이전 섹션에 'prev' 클래스와 방향 클래스 추가
+            if (prevSectionElement) {
+                prevSectionElement.classList.add('prev', direction);
+            }
+            
+            // 현재 섹션에 'active' 클래스와 방향 클래스 추가
+            if (currentSectionElement) {
+                currentSectionElement.classList.add('active', direction);
+            }
+        } else {
+            // 애니메이션이 아닐 경우, 단순히 active 클래스만 추가하여 표시
+            if (currentSectionElement) {
+                currentSectionElement.classList.add('active');
+            }
+        }
+
+        
+        // 인디케이터 업데이트
+        this.updateIndicator();
+        
+        // URL 업데이트 (선택사항)
+        window.history.pushState(null, null, `#section-${this.currentSection}`);
+
+        // 섹션 변경 이벤트 발생
+        window.dispatchEvent(new CustomEvent('sectionChange', { detail: { index: this.currentSection } }));
+        
+        setTimeout(() => {
+            this.isScrolling = false;
+            
+            // 애니메이션 완료 후 클래스 정리
+            document.querySelectorAll('.section').forEach((section, idx) => {
+                section.classList.remove('prev', 'up', 'down');
+                if (idx !== this.currentSection) {
+                    section.classList.remove('active');
+                }
+            });
+        }, this.scrollDelay);
+    }
+
+    updateActiveSection() {
+        // 초기 로드 시에만 사용
+        document.querySelectorAll('.section').forEach((section, index) => {
+            section.classList.remove('active', 'up', 'down', 'prev');
+        });
+        
+        const activeSection = document.querySelectorAll('.section')[this.currentSection];
+        if (activeSection) {
+            activeSection.classList.add('active');
+        }
+        
+        this.updateIndicator();
+        
+        // URL 업데이트 (선택사항)
+        window.history.pushState(null, null, `#section-${this.currentSection}`);
+        // 섹션 변경 이벤트 발생 (초기 로드용)
+        window.dispatchEvent(new CustomEvent('sectionChange', { detail: { index: this.currentSection } }));
+    }
+
+    
+    updateIndicator() {
+        // 인디케이터 업데이트
+        document.querySelectorAll('.indicator-dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === this.currentSection);
+        });
+    }
+}
+
+// ==================== 슬라이더 관리 ==================== 
+class SlideManager {
+    constructor() {
+        this.currentSlide = 0;
+        this.slides = document.querySelectorAll('.slide');
+        this.totalSlides = this.slides.length;
+        
+        this.init();
+    }
+
+    init() {
+        this.setupEventListeners();
+        this.updateSlide();
+    }
+
+    setupEventListeners() {
+        document.querySelector('.slide-btn.prev').addEventListener('click', () => this.previousSlide());
+        document.querySelector('.slide-btn.next').addEventListener('click', () => this.nextSlide());
+    }
+
+    nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.updateSlide();
+    }
+
+    previousSlide() {
+        this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+        this.updateSlide();
+    }
+
+    updateSlide() {
+        this.slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === this.currentSlide);
+        });
+        
+        document.querySelector('.current-slide').textContent = this.currentSlide + 1;
+    }
+}
+
+// ==================== 탭 관리 ==================== 
+class TabManager {
+    constructor() {
+        this.tabs = document.querySelectorAll('.tab-btn');
+        this.init();
+    }
+
+    init() {
+        this.tabs.forEach(tab => {
+            tab.addEventListener('click', () => this.selectTab(tab));
+        });
+    }
+
+    selectTab(selectedTab) {
+        this.tabs.forEach(tab => tab.classList.remove('active'));
+        selectedTab.classList.add('active');
+        
+        // 여기에 탭 콘텐츠 변경 로직을 추가할 수 있습니다
+        const tabName = selectedTab.dataset.tab;
+        console.log('Selected tab:', tabName);
+    }
+}
+
+// ==================== 스크롤 애니메이션 ==================== 
+class ScrollAnimation {
+    constructor() {
+        this.observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        this.init();
+    }
+
+    init() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, this.observerOptions);
+        
+        document.querySelectorAll('.brand-item, .franchise-item, .news-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        });
+    }
+}
+
+// ==================== 페이지 로드 시 초기화 ==================== 
+document.addEventListener('DOMContentLoaded', () => {
+    // 풀페이지 스크롤 초기화
+    window.fullPageScroll = new FullPageScroll();
+    
+    // 슬라이더 초기화
+    window.slideManager = new SlideManager();
+    
+    // 탭 관리자 초기화
+    window.tabManager = new TabManager();
+    
+    // 스크롤 애니메이션 초기화
+    window.scrollAnimation = new ScrollAnimation();
+    
+    // 페이지 로드 시 첫 번째 섹션 표시
+    window.fullPageScroll.goToSection(0, false);
+});
+
+// ==================== URL 해시 처리 ==================== 
+window.addEventListener('hashchange', () => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#section-')) {
+        const sectionIndex = parseInt(hash.split('-')[1]);
+        if (!isNaN(sectionIndex)) {
+            window.fullPageScroll.goToSection(sectionIndex);
+        }
+    }
+});
+
+// ==================== 초기 로드 시 URL 확인 ==================== 
+window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#section-')) {
+        const sectionIndex = parseInt(hash.split('-')[1]);
+        if (!isNaN(sectionIndex) && sectionIndex < window.fullPageScroll.totalSections) {
+            window.fullPageScroll.goToSection(sectionIndex);
+        }
+    }
+});
