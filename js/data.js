@@ -17,11 +17,11 @@ const datas = [
         task: 'PE',
         description: ["풀 페이지 방식", "적응형 웹 사이트", "페이지수: 5장", "기술 스택: HTML, CSS, JS(jQuery) 등"],
         worktime: "40H",
-        siteurl: "https://fsclass-n.github.io/jfs/project"
+        siteurl: "https://hana-r2gul4r.netlify.app/"
     },
     {
         rank: 3,
-        poster: "https://www.dummyimage.com/400x600/000/fff&text=+preparing...",
+        poster: "assets/img/megabox_thumb.png",
         title: "메가커피",
         task: "PE",
         description: ["준비중..."],
