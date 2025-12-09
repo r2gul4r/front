@@ -18,9 +18,9 @@
 <body>
     <!-- header -->
     <header id="header" class="container-fluid p-0 fixed-top">
-        <nav class="navbar navbar-expand-sm bg-light">
+        <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#home">Home</a>
+                <a class="navbar-brand text-danger" href="#home">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -45,18 +45,18 @@
     <!-- home section -->
     <div id="home" class="container-fluid p-0 position-relative overflow-hidden">
         <div class="bgimg vh-100"></div>
-        <h2 id="clock" class="position-absolute top-50 start-50 translate-middle text-white">Sungho Lee and mqyu</h2>
+        <h2 id="clock" class="ls10px position-absolute top-50 start-50 translate-middle text-white d-none d-md-block">Sungho Lee and mqyu</h2>
         <div class="circle_ani position-absolute top-0 end-0"><img src="basic/assets/images/curve_text.svg"
                 alt="나의 작품"></div>
     </div><!-- #home -->
 
     <!-- about section -->
-    <div id="about" class="container-fluid px-0">
+    <div id="about" class="container-fluid px-0 position-relative">
         <h3 class="text-center mt-5 pt-5 fs-2">나에 대해서</h3>
         <p class="text-center mt-4 mb-5">나는 코딩을 좋아한다.</p>
-        <div class="container pb-5">
-            <div class="basic">
-                <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby
+        <div class="container pb-3">
+            <div class="basic overflow-hidden">
+                <p class="motion position-relative">We have created a fictional "personal" website/blog, and our fictional character is a hobby
                     photographer. <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt</strong> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
@@ -66,12 +66,12 @@
                     enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat.</p>
                 <div class="row inner mt-5">
-                    <div class="col text-center">
-                        <b class="d-block mb-5">LSH</b>
-                        <div class="myimg"><img class="w-100 h-100 object-fit-cover" src="assets/img/avatar_hat.jpg"
+                    <div class="col text-center motion position-relative">
+                        <i class="fa-solid fa-person me-2"></i><b>LSH</b>
+                        <div class="myimg mt-5"><img class="w-100 h-100 object-fit-cover" src="assets/img/avatar_hat.jpg"
                                 alt="나"></div>
                     </div>
-                    <p class="col ele-hide">Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do
+                    <p class="col ele-hide motion position-relative mt-4 mt-md-0">Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do
                         eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                         ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
@@ -84,49 +84,61 @@
             </div><!-- .basic -->
             <div class="skill">
                 <p class="text-center my-5">저는 다음 분야에 정말 능숙합니다.</p>
-                <div class="inner">
-                    <p class="ls10px">Front-end</p>
+                <div class="inner counters">
+                    <p class="ls10px"><i class="fa-solid fa-code me-2"></i>Front-end</p>
                     <div class="progress rounded-0">
-                        <div class="progress-bar bg-info"><span>85%</span></div>
+                        <div class="progress-bar bg-info"><span class="counter percent fs-6" data-target="85">0%</span></div>
                     </div>
-                    <p class="ls10px">Back-end</p>
+                    <p class="ls10px mt-4"><i class="fa-solid fa-terminal me-2"></i>Back-end</p>
                     <div class="progress rounded-0">
-                        <div class="progress-bar bg-info"><span>95%</span></div>
+                        <div class="progress-bar bg-info"><span class="counter percent2 fs-6" data-target="95">0%</span></div>
                     </div>
                 </div>
             </div><!-- .skill -->
         </div><!-- .container -->
 
         <!-- counter -->
-        <div id="counter" class="container-fluid bg-secondary count py-5">
-            <ul class="row text-center py-2 list-unstyled">
-                <li class="col text-white"><span class="fs-2 d-block">3+</span>Partners</li>
-                <li class="col text-white"><span class="fs-2 d-block">3+</span>Projects Done</li>
-                <li class="col text-white"><span class="fs-2 d-block">20+</span>Total Page</li>
-                <li class="col text-white"><span class="fs-2 d-block">2+</span>National technical certification</li>
+        <!-- 중단점: sm(576), md(768), lg(992), xl(1200), xxl(1400) -->
+
+        <div id="counterWrap" class="container-fluid bg-secondary count py-5">
+            <ul class="row text-center py-2 list-unstyled counters">
+                <li class="col-lg col-md-6 text-white">
+                    <span class="counter fs-2" data-target="3">0</span><div>Partners</div>
+                </li>
+                <li class="col-lg col-md-6 text-white mt-md-0 mt-4">
+                    <span class="counter fs-2" data-target="3">0</span><div>Projects Done</div>
+                </li>
+                <li class="col-lg col-md-6 mt-lg-0 mt-4 text-white">
+                    <span class="counter fs-2" data-target="20">0</span><div>Total Page</div>
+                </li>
+                <li class="col-lg col-md-6 mt-lg-0 mt-4 text-white">
+                    <span class="counter fs-2" data-target="2">0</span><div>National technical certification</div>
+                </li>
             </ul>
         </div><!-- .counter -->
     </div><!-- #about -->
 
     <!-- work section -->
-    <div id="work" class="container-fluid px-0 pb-5">
+    <div id="work" class="container-fluid px-0 pb-5 position-relative overflow-hidden">
         <div class="parallax-bg position-relative">
             <h2 class="position-absolute top-50 start-50 translate-middle text-white ls10px display-6">PORTFOLIO</h2>
         </div>
         <h3 class="text-center mt-5 pt-5">나의 작품</h3>
         <p class="text-center mt-4 mb-5">아래는 최근에 제작은 나의 작품입니다.<br>이미지를 클릭하면 큰 이미지를 확인할 수 있습니다.</p>
         <div class="container">
-            <ul class="row portfolio list-unstyled">
-                <li class="col motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
+            <!-- <ul class="row portfolio list-unstyled">
+                <li class="col-lg col-md-6 motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
                             src="assets/img/p1.jpg" alt="팀 작품(필수)"></a></li>
-                <li class="col motion position-relative"><a href="hanatour/index.html" target="_blank"><img
-                            class="w-100 h-100 object-fit-cover" src="assets/img/p4.jpg" alt="개인 따라하기 작품"></a></li>
-                <li class="col motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
+                <li class="col-lg col-md-6 mt-md-0 mt-4 motion position-relative"><a href="project" target="_blank"><img
+                            class="w-100 h-100 object-fit-cover" src="assets/img/project_sum.jpg" alt="개인 따라하기 작품"></a></li>
+                <li class="col-lg col-md-6 mt-lg-0 mt-4 motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
                             src="assets/img/p7.jpg" alt="개인 스스로 작품"></a></li>
-                <li class="col motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
+                <li class="col-lg col-md-6 mt-lg-0 mt-4 motion position-relative"><a href="#"><img class="w-100 h-100 object-fit-cover"
                             src="assets/img/p8.jpg" alt="준비중..."></a></li>
-            </ul>
-            <div class="text-center py-5"><button type="button" id="shadow" class="btn btn-danger px-4 rounded-1">더보기</button></div>
+            </ul> -->
+            <div class="text-center py-5"><a href="2조.pdf" target="_blank" id="shadow"
+                    class="btn btn-danger px-4 rounded-1 position-relative">프로젝트 내용 보기</a>
+            </div>
         </div><!-- .container -->
     </div><!-- #work -->
 
@@ -139,11 +151,11 @@
         <p class="text-center mt-4 mb-5">여러분의 피드백을 기다리고 있습니다!</p>
         <div class="container pb-5 mb-5">
             <div class="row">
-                <div class="col-4 map pe-4">
+                <div class="col-lg-4 col-md-12 map pe-4">
                     <iframe class="w-100 h-100 rounded-2 border border-1"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.672085941133!2d127.1074390763351!3d37.35027123649889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b59c5d7697313%3A0xbba08f656485ef2c!2z65GQ65Oc66a87Lu07ZOo7YSw7ZWZ7JuQIOyEseuCqOu2hOuLuSAo6rWsLuydtOygoOyVhOy5tOuNsOuvuOy7tO2TqO2EsO2VmeybkCk!5e0!3m2!1sko!2skr!4v1761029176552!5m2!1sko!2skr"></iframe>
                 </div>
-                <div class="col-8 contact">
+                <div class="col-lg-8 col-md-12 mt-lg-0 mt-4 contact">
                     <ul class="addr list-unstyled fs-5">
                         <li><i class="fa-solid fa-location-dot me-3"></i>성남시, 분당구</li>
                         <li><i class="fa-solid fa-phone me-3"></i>Phone: <a href="tel: +82 10-5678-1234"
@@ -156,13 +168,13 @@
                     <p>위의 연락처로 <i class="fa-solid fa-phone-volume"></i> 주시거나, 아래에 메모 남겨주세요.</p>
                     <form id="contactForm" class="container">
                         <div class="frm-input row justify-content-between">
-                            <input id="name" class="my-1 col" type="text" name="name" placeholder="Name" required>
-                            <input id="email" class="my-1 col" type="email" name="Email" placeholder="Email" required>
+                            <input id="name" class="my-1 col-6" type="text" name="name" placeholder="Name" required>
+                            <input id="email" class="my-1 col-6" type="email" name="Email" placeholder="Email" required>
                         </div>
                         <textarea class="my-1 col-12" name="messege" id="" placeholder="메시지를 기록하세요."
                             required></textarea>
                         <div class="frm-btn row justify-content-end mt-2"><button id="btnForm" type="submit"
-                                class="btn btn-secondary px-3 rounded-1 col-4 "><i
+                                class="btn btn-dark px-3 rounded-1 col-md-4 col-6"><i
                                     class="fa-solid fa-paper-plane me-2"></i>메시지 보내기</button>
                         </div>
                     </form>
@@ -188,10 +200,14 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+
     <script src="js/scrollMotion.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/dark.js"></script>
     <script src="js/contact.js"></script>
+    <script src="js/prograss.js"></script>
+    <script src="js/counter.js"></script>
 </body>
 
 </html>
