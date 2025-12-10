@@ -75,27 +75,149 @@ body {
     left: 0;
     right: 0;
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 20px 40px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.header-content {
+/* --- Utility Bar (header_util) --- */
+.header_util {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 40px;
+    height: 30px;
+    border-bottom: 1px solid #eee;
+    background-color: #f8f8f8;
+}
+
+.header_util a {
+    vertical-align: middle;
+    margin-left: 19px;
+    font-size: 11px;
+    color: #666;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.header_util a:hover {
+    color: #FF5000;
+}
+
+/* 스크롤 시 header_util 숨기기 */
+.header.scrolled {
+    top: -30px; /* header_util의 높이만큼 위로 이동 */
+}
+
+/* 섹션 2 이상에서 header 배경 투명화 */
+.header.transparent {
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;  /* ← 추가 */
+}
+
+/* --- Inner Header (header_inner) --- */
+.header_inner {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
+    background-color: #ffffff;  /* ← 추가 */
+    transition: background-color 0.3s ease;  /* ← 추가 */
 }
 
-.logo img {
-    width: 60%;
+.header_inner .logo img {
+    height: 30px; /* 로고 이미지 크기 조정 */
+    vertical-align: middle;
 }
 
-.nav {
+/* 섹션 2 이상에서 header_inner 배경 투명화 */
+.header_inner.transparent {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* --- Main Navigation (1 Depth) --- */
+.main-nav {
+    flex-grow: 1;
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    height: 100%;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.nav-item > a {
+    display: block;
+    position: relative;
+    padding: 26px 10px; /* height: 80px - 26px*2 = 28px (여백) */
+    height: 100%;
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-item > a:hover {
+    color: #FF5000;
+}
+
+/* --- Sub Menu (2 Depth) --- */
+.sub-menu {
+    list-style: none;
+    position: absolute;
+    top: 100%; /* 1 Depth 메뉴 바로 아래 */
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 150px;
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+.nav-item:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sub-menu li a {
+    display: block;
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.sub-menu li a:hover {
+    background-color: #f5f5f5;
+    color: #FF5000;
+}
+
+/* --- Right Controls --- */
+.header-right-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
 }
 
 .nav-btn {
@@ -107,12 +229,25 @@ body {
     cursor: pointer;
     font-size: 14px;
     transition: all 0.3s ease;
+    text-decoration: none; /* 추가 */
 }
 
 .nav-btn:hover {
     border-color: #FF5000;
     color: #FF5000;
 }
+
+.btn_mypage {
+    font-size: 24px; /* 아이콘 크기 */
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.btn_mypage:hover {
+    color: #FF5000;
+}
+
 
 /* ==================== 풀페이지 컨테이너 ==================== */
 .fullpage-container {
@@ -217,7 +352,7 @@ body {
 /* ==================== 섹션 1: 키비주얼 ==================== */
 .section-1 {
     background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-    background-image: url(/images/213.jpg);
+    background-image: url(/images/airplane.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -231,7 +366,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.4);
     z-index: 1;
 }
 
@@ -335,7 +470,7 @@ body {
 /* ==================== 섹션 2: 메뉴 스토리 ==================== */
 .section-2 {
     background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-    background-image: url('# 섹션 2 배경 이미지 URL');
+    background-image: url(/images/sanghai.webp);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -348,7 +483,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.2);
     z-index: 1;
 }
 
@@ -470,7 +605,7 @@ body {
 /* ==================== 섹션 3: 브랜드 지원 ==================== */
 .section-3 {
     background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-    background-image: url('# 섹션 3 배경 이미지 URL');
+    background-image: url(/images/213.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -483,7 +618,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.4);
     z-index: 1;
 }
 
@@ -551,7 +686,7 @@ body {
 /* ==================== 섹션 4: 프랜차이즈 ==================== */
 .section-4 {
     background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-    background-image: url('# 섹션 4 배경 이미지 URL');
+    background-image: url(/images/europe.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -564,7 +699,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.3);
     z-index: 1;
 }
 
@@ -620,10 +755,11 @@ body {
 /* ==================== 섹션 5: 뉴스 & 공지사항 ==================== */
 .section-5 {
     background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-    background-image: url('# 섹션 5 배경 이미지 URL');
+    background-image: url(/images/puket.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center 80%;
     background-attachment: fixed;
+    
 }
 
 .section-5::before {
@@ -633,7 +769,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.2);
     z-index: 1;
 }
 

@@ -4,65 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>제주항공</title>
+    <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <!-- 헤더 -->
     <header class="header">
-        <div class="header-content">
+        <div class="header_util">
+            <a href="#">로그인</a>
+            <a href="#">회원가입</a>
+            <a href="#">고객센터</a>
+        </div>
+        <div class="header_inner">
             <div class="logo"><img src="/images/logo_jeju.png" alt="Jejuair"></div>
-            <nav class="nav">
-                <ul class="header_util"><!-- 헤더유틸 -->
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">회원가입</a></li>
-                    <li><a href="#">고객센터</a></li>
-                </ul><!-- //헤더유틸 -->
-
-                <ul class="header_inner"><!-- 헤더이너 -->
-                  <li><a href="#">항공권 예약</a>
-                    <ul class="sub">
-                      <li><a href="#"></a></li>
-                      <li><a href="#"></a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">호텔 예약</a>
-                    <ul class="sub">
-                      <li><a href="#"></a></li>
-                      <li><a href="#"></a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">여행 준비</a>
-                    <ul class="sub">
-                      <li><a href="#"></a></li>
-                      <li><a href="#"></a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">투어/입장권</a>
-                    <ul class="sub">
-                      <li><a href="#"></a></li>
-                      <li><a href="#"></a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">이벤트</a>
-                    <ul class="sub">
-                      <li><a href="#"></a></li>
-                      <li><a href="#"></a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">공지사항</a>
-                    <ul class="sub">
-                      <li><a href="#"></a></li>
-                      <li><a href="#"></a></li>
-                    </ul>
-                  </li>
-                </ul><!-- //헤더이너 -->
-                <button class="nav-btn">English</button>
-                <a href="#" class="btn_mypage"><i class="fa-solid fa-plane-departure"></i></a>
+            
+            <!-- 메인 네비 -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#">항공권 예약</a>
+                        <ul class="sub-menu">
+                            <li><a href="#"># 서브메뉴 1-1</a></li>
+                            <li><a href="#"># 서브메뉴 1-2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">호텔 예약</a>
+                        <ul class="sub-menu">
+                            <li><a href="#"># 서브메뉴 2-1</a></li>
+                            <li><a href="#"># 서브메뉴 2-2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">여행 준비</a>
+                        <ul class="sub-menu">
+                            <li><a href="#"># 서브메뉴 3-1</a></li>
+                            <li><a href="#"># 서브메뉴 3-2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">투어/입장권</a>
+                        <ul class="sub-menu">
+                            <li><a href="#"># 서브메뉴 4-1</a></li>
+                            <li><a href="#"># 서브메뉴 4-2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">이벤트</a>
+                        <ul class="sub-menu">
+                            <li><a href="#"># 서브메뉴 5-1</a></li>
+                            <li><a href="#"># 서브메뉴 5-2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">공지사항</a>
+                        <ul class="sub-menu">
+                            <li><a href="#"># 서브메뉴 6-1</a></li>
+                            <li><a href="#"># 서브메뉴 6-2</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
+
+            <!-- 우상단 버튼 -->
+            <div class="header-right-controls">
+                <button class="nav-btn">English</button>
+                <a href="마이페이지.html" class="btn_mypage"><i class="fa-solid fa-plane-departure"></i></a>
+            </div>
         </div>
     </header>
+
 
     <!-- 풀페이지 스크롤 컨테이너 -->
     <div class="fullpage-container">

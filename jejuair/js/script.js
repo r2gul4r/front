@@ -34,24 +34,33 @@ class FullPageScroll {
             dot.addEventListener('click', () => this.goToSection(index));
         });
     }
-    setupHeaderScroll() {
+        setupHeaderScroll() {
         const header = document.querySelector('.header');
-        const topBar = document.querySelector('.top-bar');
+        const headerInner = document.querySelector('.header_inner');
+
         
-        // 초기 로드 시 top-bar 숨김
+        // 초기 로드 시 top-bar 숨김 (header_util이 사라지도록 header에 scrolled 클래스 추가)
         if (this.currentSection > 0) {
             header.classList.add('scrolled');
+            header.classList.add('transparent');
+            headerInner.classList.add('transparent');
+
         }
 
         // 섹션 이동 시 top-bar 숨김/표시
         window.addEventListener('sectionChange', (e) => {
             if (e.detail.index > 0) {
                 header.classList.add('scrolled');
+                header.classList.add('transparent');
+                headerInner.classList.add('transparent');
             } else {
                 header.classList.remove('scrolled');
+                header.classList.remove('transparent');
+                headerInner.classList.remove('transparent');
             }
         });
     }
+
 
     handleWheel(e) {
         if (this.isScrolling) return;
