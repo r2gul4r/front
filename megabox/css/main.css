@@ -1,8 +1,8 @@
 @charset "utf-8";
 @import url(common.css);
 
-#header::after {
-    background: rgb(0, 0, 0, 0.5);
+#header.active .subbar {
+    background: rgb(0, 0, 0, 0.2);
 }
 
 /* 메인 메뉴 호버시 하단의 바 */
