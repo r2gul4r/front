@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>제주항공 - 여행사</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <!-- ==================== 헤더 시작 ==================== -->
     <header class="header">
@@ -22,7 +25,7 @@
         <div class="header-inner">
             <!-- 로고 -->
             <div class="logo">
-                <a href="#" class="logo-link">#</a>
+                <a href="#" class="logo-link"><img src="/images/logo_jeju.png" alt="제주항공 로고"></a>
             </div>
 
             <!-- 메인 네비게이션 -->
@@ -73,10 +76,10 @@
                 </ul>
             </nav>
 
-            <!-- 헬더 우츧0 컨트롤 (언어 선택, 마이페이지) -->
+            <!-- 헤더 우측 컨트롤 (언어 선택, 마이페이지) -->
             <div class="header-right-controls">
                 <button class="lang-toggle">English</button>
-                <button class="mypage-btn">#</button>
+                <button class="mypage-btn"><i class="fa-solid fa-plane-departure"></i></button>
             </div>
         </div>
     </header>
@@ -86,7 +89,7 @@
     <main class="main-content">
         <!-- ==================== 섹션 1: 항공권 예매 ==================== -->
         <section class="section section-1" id="section-1">
-            <div class="section-bg" style="background-image: url('#');"></div>
+            <div class="section-bg"></div>
             <div class="section-content">
                 <div class="booking-container">
                     <div class="booking-tabs">
@@ -173,11 +176,10 @@
 
         <!-- ==================== 섹션 2: 특별한 혜택 ==================== -->
         <section class="section section-2" id="section-2">
-            <div class="section-bg" style="background-image: url('#');"></div>
+            <div class="section-bg"></div>
             <div class="section-content">
                 <div class="section-header">
                     <h2>특별한 혜택을 확인해 보세요.</h2>
-                    <a href="#" class="view-all">전체보기</a>
                 </div>
                 <div class="benefit-carousel">
                     <button class="carousel-btn prev">‹</button>
@@ -204,28 +206,51 @@
                                     <p>입북 숙소 할인</p>
                                 </div>
                             </div>
+                            <div class="benefit-card">
+                                <div class="card-image" style="background-image: url('#');"></div>
+                                <div class="card-content">
+                                    <h3>제주항공X라쿠텐트래블</h3>
+                                    <p>입북 숙소 할인</p>
+                                </div>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="card-image" style="background-image: url('#');"></div>
+                                <div class="card-content">
+                                    <h3>제주항공X라쿠텐트래블</h3>
+                                    <p>입북 숙소 할인</p>
+                                </div>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="card-image" style="background-image: url('#');"></div>
+                                <div class="card-content">
+                                    <h3>제주항공X라쿠텐트래블</h3>
+                                    <p>입북 숙소 할인</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <button class="carousel-btn next">›</button>
-                    <div class="carousel-dots">
-                        <span class="dot"></span>
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot"></span>
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
             </div>
         </section>
 
         <!-- ==================== 섹션 3: 여행의 편리함 ==================== -->
         <section class="section section-3" id="section-3">
-            <div class="section-bg" style="background-image: url('#');"></div>
+            <div class="section-bg"></div>
             <div class="section-content">
                 <div class="section-header">
                     <h2>여행에 편리함을 더해보세요.</h2>
                 </div>
                 <div class="conv-cards-grid">
                     <div class="conv-card active" data-conv="seat">
-                        <div class="conv-card-image" style="background-image: url('#');"></div>
+                        <div class="conv-card-image-01" style="background-image: url(/images/airplane_sit_01.png);">
+                        </div>
                         <div class="conv-card-content">
                             <h3>사전 좌석</h3>
                             <p>원하는 좌석을 예약해 보세요.</p>
@@ -236,7 +261,7 @@
                         </div>
                     </div>
                     <div class="conv-card" data-conv="guide">
-                        <div class="conv-card-image" style="background-image: url('#');"></div>
+                        <div class="conv-card-image-02" style="background-image: url(/images/air_food_01.png);"></div>
                         <div class="conv-card-content">
                             <h3>기내 서비스</h3>
                             <p>편안한 기내 환경을 제공합니다.</p>
@@ -247,7 +272,8 @@
                         </div>
                     </div>
                     <div class="conv-card" data-conv="service">
-                        <div class="conv-card-image" style="background-image: url('#');"></div>
+                        <div class="conv-card-image-03" style="background-image: url(/images/travel_safe_01.png);">
+                        </div>
                         <div class="conv-card-content">
                             <h3>여행 동반 서비스</h3>
                             <p>여행을 더욱 편하게 만들어드립니다.</p>
@@ -263,7 +289,7 @@
 
         <!-- ==================== 섹션 4: 인기 노선 ==================== -->
         <section class="section section-4" id="section-4">
-            <div class="section-bg" style="background-image: url('#');"></div>
+            <div class="section-bg"></div>
             <div class="section-content">
                 <div class="section-header">
                     <h2>지금 뜨는 인기 노선을 확인해 보세요.</h2>
@@ -314,7 +340,7 @@
 
         <!-- ==================== 섹션 5: J 멤버스 혜택 ==================== -->
         <section class="section section-5" id="section-5">
-            <div class="section-bg" style="background-image: url('#');"></div>
+            <div class="section-bg"></div>
             <div class="section-content">
                 <div class="section-header">
                     <h2>J 멤버스 혜택존을 경험해 보세요.</h2>
@@ -376,7 +402,8 @@
 
     <!-- ==================== 탑 버튼 시작 ==================== -->
     <button class="top-btn" id="topBtn" title="페이지 맨 위로">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
@@ -384,4 +411,5 @@
 
     <script src="/js/script.js"></script>
 </body>
+
 </html>

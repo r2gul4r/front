@@ -28,7 +28,7 @@ function scrollToSection(index) {
 
 /* ==================== 키보드 디바운싱 ==================== */
 let keyTimeout;
-const keyDelay = 15; // 키보드 디바운싱 시간 (ms)
+const keyDelay = 50; // 키보드 디바운싱 시간 (ms)
 
 /* ==================== 키보드 이벤트 처리 (방향키, 스페이스바) ==================== */
 document.addEventListener('keydown', (e) => {
@@ -75,7 +75,7 @@ document.addEventListener('keydown', (e) => {
 
 /* ==================== 마우스 휠 디바운싱 ==================== */
 let wheelTimeout;
-const wheelDelay = 15; // 마우스 휠 디바운싱 시간 (ms)
+const wheelDelay = 50; // 마우스 휠 디바운싱 시간 (ms)
 
 document.addEventListener('wheel', (e) => {
     // 풀페이지 스크롤을 구현할 때는 브라우저 기본 스크롤을 명시적으로 막음
@@ -175,7 +175,8 @@ class Carousel {
         this.items = carouselElement.querySelector('.carousel-items');
         this.prevBtn = carouselElement.querySelector('.carousel-btn.prev');
         this.nextBtn = carouselElement.querySelector('.carousel-btn.next');
-        this.dots = carouselElement.querySelectorAll('.dot');
+        this.dotsContainer = carouselElement.parentElement.querySelector('.carousel-dots');
+        this.dots = this.dotsContainer ? this.dotsContainer.querySelectorAll('.dot') : [];
         
         this.currentIndex = 0;
         this.itemWidth = 0;
@@ -188,9 +189,11 @@ class Carousel {
         if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.prev());
         if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.next());
         
-        this.dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => this.goToSlide(index));
-        });
+        if (this.dots && this.dots.length > 0) {
+            this.dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => this.goToSlide(index));
+            });
+        }
         
         this.updateCarousel();
         window.addEventListener('resize', () => this.updateCarousel());
@@ -214,14 +217,32 @@ class Carousel {
     
     prev() {
         const cards = this.items.querySelectorAll('.benefit-card, .route-card');
-        this.currentIndex = (this.currentIndex - 1 + cards.length) % cards.length;
-        this.scroll();
+        const maxIndex = Math.max(0, cards.length - this.getVisibleCards());
+        
+        if (this.currentIndex > 0) {
+            this.currentIndex--;
+            this.scroll();
+        }
     }
     
     next() {
         const cards = this.items.querySelectorAll('.benefit-card, .route-card');
-        this.currentIndex = (this.currentIndex + 1) % cards.length;
-        this.scroll();
+        const visibleCards = this.getVisibleCards();
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+        
+        // 마지막 카드 바로 전 카드에서 멈춤
+        if (this.currentIndex < maxIndex - 1) {
+            this.currentIndex++;
+            this.scroll();
+        }
+    }
+    
+    getVisibleCards() {
+        // 한 번에 보이는 카드 개수 계산
+        if (!this.container) return 1;
+        const containerWidth = this.container.offsetWidth;
+        const cardWidth = this.itemWidth + this.gap;
+        return Math.floor(containerWidth / cardWidth);
     }
     
     goToSlide(index) {
