@@ -1,4 +1,3 @@
-
 // to the top button
 $(window).scroll(()=>{
     console.log($(this).scrollTop());

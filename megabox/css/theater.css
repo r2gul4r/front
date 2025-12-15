@@ -157,7 +157,9 @@ i {
     border-radius: 50%;
     box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, .5);
     opacity: 0;
+    /* 링크가 동작되지 않게 하기 위해 */
     visibility: hidden;
+    /* visibility는 transition가 지정되지 않는다. */
     transition: .3s;
 }
 

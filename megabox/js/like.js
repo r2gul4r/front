@@ -1,4 +1,3 @@
-
 // --- 좋아요 클릭 이벤트 ---
 $(document).on('click', '.like', function () {
     let $btn = $(this);

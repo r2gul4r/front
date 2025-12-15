@@ -29,6 +29,8 @@
 * {
     box-sizing: border-box;
 }
+
+/* 스크롤 행동을 부드럽게 */
 :root {
     scroll-behavior: smooth;
 }
@@ -81,6 +83,9 @@ address {
     background: #111;
     padding: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+#header .subbar {
+    background: transparent;
 }
 #header.active .subbar {
     position: absolute;
@@ -150,7 +155,7 @@ address {
     justify-content: space-evenly;
 }
 #gnb .main>li {
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 #gnb .main a {
     position: relative;
@@ -182,11 +187,17 @@ address {
     width: calc(100vw - 27px);
     left: 50%;
     transform:translateX(-50%);
-    top:55px;
+    top:48px;
     display: none;
+    padding: 8px 0;
     /* 마지막 메뉴(혜택 메뉴)의 영역이 부족하여 줄 바꿈되는 현상 제거 */
     /* text-wrap: nowrap; */
 }
+
+#gnb .sub.active {
+    display: block;
+}
+
 #gnb .sub li {
     position: relative;
     display: inline-block;
@@ -207,9 +218,6 @@ address {
     left: calc(50% + 270px);
 }
 
-#gnb .sub.active {
-    display: block;
-}
 
 #gnb .sub a {
     display: block;
