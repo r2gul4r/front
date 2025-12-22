@@ -1,0 +1,171 @@
+/* header(헤더) */
+#header {
+    position: relative;
+    z-index: 9999;
+    padding: 15px;
+    border-bottom: 1px solid;
+        background: rgb(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+#header::after {
+    content: '';
+    z-index: -1;
+    position: fixed;
+    top: 98px;
+    left: 0;
+    width: 100vw;
+    height: 45px;
+    display: none;
+    background: rgb(0, 0, 0, 0.5);
+    
+}
+#header.active::after {
+    display: block;
+}
+
+/* logo(로고) */
+#logo a {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 140px;
+    height: 47px;
+    transform: translate(-50%, -50%);
+    background: no-repeat;
+    background-image: url('/images/logo-white_new2.png');
+}
+
+/* top menu */
+#header .top_link {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+#header .top_link a {
+    font-size: 0.8125rem;
+    color: #888;
+}
+#header .top_link a:nth-child(2) {
+    margin: 0 10px;
+}
+
+/* link icon */
+#header .link_icon {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+}
+
+#header .link_icon a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: no-repeat 50% 50%/auto;
+
+}
+#header .link_icon a:first-child {
+    margin-right: 10px;
+}
+#header .link_icon .left_link a:nth-of-type(1) {background-image: url("/images/ico-sitemap-white.png");}
+#header .link_icon .left_link a:nth-of-type(2) {background-image: url("/images/ico-search-white.png");}
+#header .link_icon .right_link a:nth-of-type(1) {background-image: url("/images/ico-mymega-white.png");}
+#header .link_icon .right_link a:nth-of-type(2) {background-image: url("/images/ico-schedule-white.png");}
+
+/* GNB(글로벌 내비게이션 바) */
+#gnb {
+    position: absolute;
+    width: 100%;
+    max-width: 900px;
+    left: 50%;
+    top: 36px;
+    transform: translateX(-50%);
+    /* margin: 0 auto; */
+}
+
+/* 1depth */
+#gnb .main {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    justify-content: space-evenly;
+}
+
+#gnb .main a {
+    position: relative;
+    font-size: 1.125rem;
+    color: #fff;
+}
+
+#gnb .main > li:nth-of-type(1) {
+    margin-left: 30px;
+}
+
+#gnb .main > li:nth-of-type(4) {
+    margin-left: 300px;
+}
+#gnb .main > li:hover .sub {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+/* 메인 메뉴 호버시 하단의 바 */
+#gnb .main > li:not(:nth-of-type(5)):hover > a::after {
+    position: absolute;
+    bottom: -20px;
+    transform: translateX(-100%);
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: #fff;
+}
+
+/* 2depth */
+#gnb .sub {
+    position: absolute;
+    padding-top: 27px;
+    transform: translateX(-25%);
+    display: none;
+    /* 마지막 메뉴(혜택 메뉴)의 영역이 부족하여 줄 바꿈되는 현상 제거 */
+    text-wrap: nowrap;
+}
+#gnb .sub li {
+    padding: 0 8px;
+}
+#gnb .sub a {
+    font-size: 0.9375rem;
+    color: #fff;
+}
+#gnb .sub a:hover {
+    text-decoration: underline;
+}
+
+/* sub-header */
+#header.sub-header {
+    background: #fff;
+    border-color: #333;
+}
+
+#header.sub-header #gnb a {
+    color: #555;
+}
+#header.sub-header #gnb .sub a {
+    color: #fff;
+}
+
+#header.sub-header::after {
+    background: #339eb2;
+}
+#header.sub-header #logo a {
+    background-image: url('/images/logo_new2.png');
+}
+
+#header.sub-header #gnb .main > li:not(:nth-of-type(5)):hover > a::after {
+    background: #339eb2;
+}
+
+#header.sub-header .link_icon .left_link a:nth-of-type(1) {background-image: url("/images/specialtheater/ico-sitemap.png");}
+#header.sub-header .link_icon .left_link a:nth-of-type(2) {background-image: url("/images/specialtheater/ico-search.png");}
+#header.sub-header .link_icon .right_link a:nth-of-type(1) {background-image: url("/images/specialtheater/ico-mymega.png");}
+#header.sub-header .link_icon .right_link a:nth-of-type(2) {background-image: url("/images/specialtheater/ico-schedule.png");}
