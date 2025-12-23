@@ -3,6 +3,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // pages 폴더에서 페이지 컴포넌트를 불러옵니다.
+import Header from './components/Header';
 import Footer from './components/Footer';
 import SpecialTheater from './pages/SpecialTheater';
 import Home from './pages/Home';

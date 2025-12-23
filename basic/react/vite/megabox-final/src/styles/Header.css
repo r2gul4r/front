@@ -158,7 +158,7 @@
     background: #339eb2;
 }
 #header.sub-header #logo a {
-    background-image: url('/images/logo_new2.png');
+    background-image: url('/images/specialtheater/logo_new2.png');
 }
 
 #header.sub-header #gnb .main > li:not(:nth-of-type(5)):hover > a::after {

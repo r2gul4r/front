@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fullpage css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css">
+    <!-- 제이쿼리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 자바스크립트 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+    <title>풀페이지</title>
+    <style>
+        /* reset */
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+/* navigation */
+#menu {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: -10px;
+}
+
+#menu li {
+    display: inline-block;
+}
+
+#menu a {
+    position: relative;
+    top: 5px;
+    color: #111;
+    background: #fff;
+    padding: 20px 20px 10px;
+    border-radius: 0 0 10px 10px;
+    transition: 0.3s;
+}
+
+#menu li.active a {
+    color: #fff;
+    background: #111;
+}
+
+#menu a:hover {
+    top: 10px;
+}
+
+/* 오른쪽 페이저 버튼 색 */
+#fp-nav ul li a span {
+    background: #fff;
+}
+
+/* 오른쪽 페이저 툴립 글자 색 */
+#fp-nav ul li .fp-tooltip {
+    color: #fff;
+}
+
+/* 슬라이드 이미지 크기 */
+.slide img {
+    width: 70%;
+}
+
+.fp-slidesNav ul li a span {
+    background: blue;
+}
+
+/* 슬라이드 좌우 버튼 위치 */
+.fp-controlArrow.fp-prev {
+    left: 140px;
+    background: black;
+    transition: 0.3s;
+    border-color: transparent;
+}
+
+.fp-controlArrow.fp-next {
+    right: 140px;
+    background: black;
+    transition: 0.3s;
+    border-color: transparent;
+}
+
+.fp-controlArrow.fp-prev:hover {
+    background: blue;
+}
+
+.fp-controlArrow.fp-next:hover {
+    background: blue;
+}
+
+.section {
+    text-align: center;
+    font-size: 3em;
+}
+
+#section3 p {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    opacity: 0;
+    transform: translate(-50%);
+}
+
+#footer {
+    background: #111;
+    padding: 100px 0;
+  color: #fff;
+}
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <!-- data-* 사용자 정의 속성 -->
+         <!--  #firstPage 현재 페이지(#)의 id가 firstPage인 위치를 가리킨다 -->
+    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">Section1</a></li>
+    <li data-menuanchor="secondPage"><a href="#secondPage">Section2</a></li>
+    <li data-menuanchor="thirdPage"><a href="#thirdPage">Section3</a></li>
+    <li data-menuanchor="fourthPage"><a href="#fourthPage">Section4</a></li>
+</ul>
+<div id="fullpage">
+    <!-- 섹션1 -->
+    <div class="section">
+        <div id="slide">
+            <div class="slide">slide1</div>
+            <div class="slide">slide2</div>
+            <div class="slide">slide3</div>
+        </div>
+    </div>
+    <!-- 섹션2 -->
+    <div class="section">Section 2</div>
+    <!-- 섹션3 -->
+    <div class="section section3" id="section3">
+        <h2>section3</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <!-- 섹션4 -->
+    <div class="section">Section 4</div>
+    <!-- 푸터 -->
+    <div class="section fp-auto-height" id="footer">footer</div>
+</div>
+<script>
+    $("#fullpage").fullpage({
+    sectionsColor: ["navy", "darkslategray", "blue", "darkblue"],
+    anchors: ["firstPage", "secondPage", "thirdPage", "fourthPage"],
+    menu: "#menu",
+    navigation: true,
+    navigationTooltips: ["firstPage", "secondPage", "thirdPage", "fourthPage"],
+    showActiveTooltip: true,
+    /* navigationPosition: 'right', */
+    slidesNavigation: true,
+    scrollingSpeed: 500,
+    // 현재 페이지를 떠날 때
+    onLeave: function (index, nextIndex, direction) {
+        if (index == 2) {
+            $(".section3 p").animate({ opacity: 1, left: "50%" }, 700);
+        }
+    },
+    // 현재 페이지에 도착한 이후
+    afterLoad: function (anchorLink, index) {
+        if (index == 2) {
+            $(".section3 p").animate({ opacity: 0, left: -500 });
+        }
+    }
+});
+</script>
+</body>
+
+</html>
